@@ -76,7 +76,9 @@ const PricingGrowthPlan: React.FC = () => {
 
         <div className="bg-green-50 rounded-lg p-4 mt-6 border-l-4 border-[#5e8d75]">
           <p className="text-green-800 text-sm">
-            <span className="font-medium">Long-term value:</span> As your business evolves, your GPT evolves with it. We keep it current with your latest services, policies, and team changes.
+            <span className="font-medium">Long-term value:</span> As your business evolves, your GPT
+            evolves with it. We keep it current with your latest services, policies, and team
+            changes.
           </p>
         </div>
 

@@ -15,8 +15,7 @@ export interface FormLabelsProps {
 // Contact Intro Data
 export const contactIntroData: ContactIntroProps = {
   title: "Let's Talk",
-  subtitle:
-    "We'll walk you through what this could look like for your business.",
+  subtitle: "We'll walk you through what this could look like for your business.",
 };
 
 // Contact Form Labels Data

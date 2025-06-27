@@ -27,8 +27,8 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
           <button
             onClick={() => toggleAccordion(index)}
             className={`w-full text-left px-6 py-5 rounded-full flex justify-between items-center transition-all duration-300 shadow-sm ${
-              openIndex === index 
-                ? 'bg-[#4b6a88] text-white' 
+              openIndex === index
+                ? 'bg-[#4b6a88] text-white'
                 : 'bg-white text-gray-900 border border-gray-200 hover:border-gray-300 hover:bg-gray-50'
             }`}
             aria-expanded={openIndex === index ? true : false}
@@ -40,32 +40,32 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
               transition={{ duration: 0.3 }}
               className={`flex-shrink-0 ml-4 ${openIndex === index ? 'text-white' : 'text-gray-900'}`}
             >
-              <svg 
-                width="20" 
-                height="20" 
-                viewBox="0 0 20 20" 
-                fill="none" 
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="current-color"
               >
-                <path 
-                  d="M10 4.16667V15.8333" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
+                <path
+                  d="M10 4.16667V15.8333"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                 />
-                <path 
-                  d="M4.16669 10H15.8334" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
+                <path
+                  d="M4.16669 10H15.8334"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                   strokeLinejoin="round"
                 />
               </svg>
             </motion.div>
           </button>
-          
+
           <AnimatePresence>
             {openIndex === index && (
               <motion.div
@@ -88,4 +88,4 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
   );
 };
 
-export default FAQAccordion; 
+export default FAQAccordion;

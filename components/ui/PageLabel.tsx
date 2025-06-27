@@ -15,4 +15,4 @@ const PageLabel: React.FC<PageLabelProps> = ({ label, className = '' }) => {
   );
 };
 
-export default PageLabel; 
+export default PageLabel;

@@ -18,14 +18,14 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto">
           {/* Pricing Cards Grid - side by side */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {/* Core Build Pricing Card */}
+            {/* Core Build Pricing Card */}
             <div className="flex-1 h-full">
-          <PricingBuildPlan />
+              <PricingBuildPlan />
             </div>
 
-          {/* Monthly Growth Plan Card */}
+            {/* Monthly Growth Plan Card */}
             <div className="flex-1 h-full">
-          <PricingGrowthPlan />
+              <PricingGrowthPlan />
             </div>
           </div>
 

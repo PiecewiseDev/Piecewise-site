@@ -68,7 +68,7 @@ export interface ExplainerProps {
 
 // Explainer section data
 export const explainerData: ExplainerProps = {
-  title: "How a CustomGPT Helps You Work Faster, Clearer, and With Less Effort",
+  title: 'How a CustomGPT Helps You Work Faster, Clearer, and With Less Effort',
   description:
     'Your CustomGPT is built from your documents, tone, and policies. It serves you and your team—not your customers—so you can operate with more clarity, consistency, and calm.',
   features: [
@@ -80,12 +80,14 @@ export const explainerData: ExplainerProps = {
     {
       icon: 'currency',
       title: 'Fast, Professional Drafts',
-      description: 'Respond to sensitive client requests or internal questions in seconds—not 15 minutes.',
+      description:
+        'Respond to sensitive client requests or internal questions in seconds—not 15 minutes.',
     },
     {
       icon: 'chat',
       title: 'Internal Support',
-      description: 'Offer your team instant clarity on job process, expectations, or scheduling rules.',
+      description:
+        'Offer your team instant clarity on job process, expectations, or scheduling rules.',
     },
   ],
   learnMoreText: 'Learn more about how it works',

@@ -41,4 +41,4 @@ export const IconMap: React.FC<IconMapProps> = ({ icon, className }) => {
     default:
       return <Icons.DocumentIcon className={className} />; // Default icon
   }
-}; 
+};

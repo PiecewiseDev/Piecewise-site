@@ -119,7 +119,8 @@ const Footer = () => {
               Our Mission
             </h3>
             <p className="mt-4 text-sm text-navy-light leading-relaxed">
-              To equip service business owners with clarity, tools, and support so they can grow with purpose.
+              To equip service business owners with clarity, tools, and support so they can grow
+              with purpose.
             </p>
             <div className="mt-6">
               <Link

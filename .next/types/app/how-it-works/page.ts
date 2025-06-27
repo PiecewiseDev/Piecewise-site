@@ -1,4 +1,4 @@
-// File: /Users/kylelarsen/Documents/Notation Website/app/how-it-works/page.tsx
+// File: /Users/kylelarsen/Documents/Piecewise-site/app/how-it-works/page.tsx
 import * as entry from '../../../../app/how-it-works/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

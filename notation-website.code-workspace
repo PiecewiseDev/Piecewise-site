@@ -2,8 +2,8 @@
   "folders": [
     {
       "name": "📦 Project Root",
-      "path": "."
-    }
+      "path": ".",
+    },
   ],
   "settings": {
     "explorer.fileNesting.enabled": true,
@@ -13,7 +13,7 @@
     "explorer.compactFolders": false,
     "files.exclude": {
       "node_modules": false,
-      ".next": false
+      ".next": false,
     },
     "explorer.experimental.fileNesting.enabled": true,
     "explorer.experimental.fileNesting.patterns": {
@@ -22,10 +22,10 @@
       "*.jsx": "${capture}.js",
       "*.tsx": "${capture}.ts",
       "tsconfig.json": "tsconfig.*.json",
-      "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
+      "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
     },
     "workbench.colorCustomizations": {
-      "tree.indentGuidesStroke": "#5f7e97"
+      "tree.indentGuidesStroke": "#5f7e97",
     },
     "explorer.sortOrderManual": {
       "folders.order": [
@@ -42,8 +42,8 @@
         "lib",
         "utils",
         "types",
-        ".vscode"
-      ]
-    }
-  }
-} 
+        ".vscode",
+      ],
+    },
+  },
+}

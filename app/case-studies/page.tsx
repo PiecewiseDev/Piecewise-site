@@ -37,7 +37,7 @@ export default function CaseStudiesPage() {
               Could This Work for You?
             </h2>
             <p className="mb-8 text-blue-100 text-lg">
-              Let's find out—no pressure, no tech knowledge needed.
+              Let&apos;s find out—no pressure, no tech knowledge needed.
             </p>
             <Link
               href="/contact"

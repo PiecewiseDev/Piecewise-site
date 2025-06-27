@@ -13,4 +13,4 @@ const PricingIntro: React.FC = () => {
   );
 };
 
-export default PricingIntro; 
+export default PricingIntro;

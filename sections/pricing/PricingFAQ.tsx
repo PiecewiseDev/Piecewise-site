@@ -35,4 +35,4 @@ const PricingFAQ: React.FC = () => {
   );
 };
 
-export default PricingFAQ; 
+export default PricingFAQ;

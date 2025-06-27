@@ -2,13 +2,13 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { ButtonPrimary } from '@/components/ui';
-import { 
-  CaseStudyHero, 
-  CaseStudyProblemSolution, 
-  CaseStudyResults, 
-  CaseStudyQuote, 
-  CaseStudyImplementation, 
-  CaseStudyBackLink 
+import {
+  CaseStudyHero,
+  CaseStudyProblemSolution,
+  CaseStudyResults,
+  CaseStudyQuote,
+  CaseStudyImplementation,
+  CaseStudyBackLink,
 } from '@/sections/case-studies';
 import { caseStudies } from '@/data/caseStudies';
 import { CallToAction } from '@/sections/shared';
@@ -16,13 +16,13 @@ import { Result, ImplementationStep } from '@/types';
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   // Find the case study by slug
-  const caseStudy = caseStudies.find(study => study.slug === params.slug);
-  
+  const caseStudy = caseStudies.find((study) => study.slug === params.slug);
+
   // If no matching case study is found, return a fallback or call notFound()
   if (!caseStudy) {
     notFound();
   }
-  
+
   return {
     title: `${caseStudy.title} | Case Study | Piecewise AI`,
     description: caseStudy.description,
@@ -31,8 +31,8 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
 export default function CaseStudyPage({ params }: { params: { slug: string } }) {
   // Find the case study by slug
-  const caseStudy = caseStudies.find(study => study.slug === params.slug);
-  
+  const caseStudy = caseStudies.find((study) => study.slug === params.slug);
+
   // If no matching case study is found, return 404
   if (!caseStudy) {
     return notFound();
@@ -40,24 +40,25 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
   // Format results for the Results component
   const formattedResults: Result[] = caseStudy.results.map((result: string) => {
-    const [value, metric] = result.split(':').map(part => part.trim());
+    const [value, metric] = result.split(':').map((part) => part.trim());
     return { value, metric };
   });
 
   // Create properly formatted implementation steps if they exist
-  const implementationSteps: ImplementationStep[] = caseStudy.implementationSteps ? 
-    caseStudy.implementationSteps.map((step: string) => {
-      const parts = step.split(':');
-      return {
-        title: parts[0].trim(),
-        description: parts.slice(1).join(':').trim()
-      };
-    }) : [];
+  const implementationSteps: ImplementationStep[] = caseStudy.implementationSteps
+    ? caseStudy.implementationSteps.map((step: string) => {
+        const parts = step.split(':');
+        return {
+          title: parts[0].trim(),
+          description: parts.slice(1).join(':').trim(),
+        };
+      })
+    : [];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Hero Section */}
-      <CaseStudyHero 
+      <CaseStudyHero
         title={caseStudy.title}
         category={caseStudy.category}
         client={caseStudy.client}
@@ -65,10 +66,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       />
 
       {/* Challenge & Solution Section */}
-      <CaseStudyProblemSolution
-        challenge={caseStudy.challenge}
-        solution={caseStudy.solution}
-      />
+      <CaseStudyProblemSolution challenge={caseStudy.challenge} solution={caseStudy.solution} />
 
       {/* Results Section */}
       <CaseStudyResults
@@ -87,9 +85,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       )}
 
       {/* Implementation Steps Section */}
-      {implementationSteps.length > 0 && (
-        <CaseStudyImplementation steps={implementationSteps} />
-      )}
+      {implementationSteps.length > 0 && <CaseStudyImplementation steps={implementationSteps} />}
 
       {/* CTA Section */}
       <CallToAction
@@ -103,4 +99,4 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       <CaseStudyBackLink />
     </div>
   );
-} 
+}

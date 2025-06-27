@@ -11,4 +11,4 @@ export * from './HeartIcon';
 export * from './UsersIcon';
 export * from './ShieldIcon';
 export * from './FaqIcon';
-export * from './IconMap'; 
+export * from './IconMap';

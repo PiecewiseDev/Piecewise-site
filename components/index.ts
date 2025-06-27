@@ -1,6 +1,6 @@
 /**
  * Main Components Library - Index file
- * 
+ *
  * Exports all components from UI and Layout libraries.
  * Import components like:
  *
@@ -11,4 +11,4 @@
 
 export * from './ui';
 export * from './layout';
-export * from './icons'; 
+export * from './icons';

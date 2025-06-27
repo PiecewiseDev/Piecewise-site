@@ -13,4 +13,4 @@ export { default as CaseWins } from './CaseWins';
 export { default as CaseStudiesGrid } from './CaseStudiesGrid';
 export { default as CaseStudyQuotes } from './CaseStudyQuotes';
 export { default as FeaturedCaseStudy } from './FeaturedCaseStudy';
-export { default as CaseStudiesIntro } from './CaseStudiesIntro'; 
+export { default as CaseStudiesIntro } from './CaseStudiesIntro';

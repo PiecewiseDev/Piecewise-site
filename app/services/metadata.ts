@@ -2,10 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Services | Piecewise',
-  description: 'Custom GPT solutions for service businesses. Free up your time while maintaining your unique voice and business expertise.',
+  description:
+    'Custom GPT solutions for service businesses. Free up your time while maintaining your unique voice and business expertise.',
   openGraph: {
     title: 'Services | Piecewise',
-    description: 'Custom GPT solutions for service businesses. Free up your time while maintaining your unique voice and business expertise.',
+    description:
+      'Custom GPT solutions for service businesses. Free up your time while maintaining your unique voice and business expertise.',
     images: ['/images/og/services-og.jpg'],
     type: 'website',
   },
@@ -15,4 +17,4 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-}; 
+};

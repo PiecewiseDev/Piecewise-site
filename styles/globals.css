@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* HSL-based color system */
@@ -22,11 +22,11 @@
 
   --color-background: 210 40% 98%;
   --color-foreground: 210 20% 20%;
-  
+
   /* Legacy variables - mapping to HSL */
   --foreground-rgb: 26, 46, 59;
   --background-rgb: 248, 249, 250;
-  
+
   /* Font variables */
   --font-primary: 'Poppins', system-ui, sans-serif;
 }
@@ -58,11 +58,11 @@ body {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-  
+
   /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
 
@@ -73,36 +73,41 @@ body {
   }
 
   /* Typography */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight text-gray-900;
   }
-  
+
   h1 {
     @apply text-4xl xl:text-5xl leading-tight mb-6;
   }
-  
+
   h2 {
     @apply text-3xl xl:text-4xl leading-tight mb-5;
   }
-  
+
   h3 {
     @apply text-2xl xl:text-3xl leading-tight mb-4;
   }
-  
+
   h4 {
     @apply text-xl leading-tight mb-3;
   }
-  
+
   p {
     @apply text-base text-gray-700 leading-relaxed mb-4;
   }
-  
+
   a {
     @apply text-accent hover:text-accent-dark transition-colors duration-200;
   }
 
   /* SVG icons with text-accent class */
-  svg.text-accent, 
+  svg.text-accent,
   svg.text-navy {
     color: #5e8d75;
   }
@@ -113,7 +118,7 @@ body {
   .btn-primary {
     @apply bg-navy text-white rounded-lg px-6 py-3 shadow-sm hover:opacity-90 inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 active:opacity-90 active:shadow-sm active:translate-y-0.5;
   }
-  
+
   .btn-secondary {
     @apply border border-navy text-navy bg-white rounded-lg px-6 py-3 hover:bg-gray-100 inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 active:opacity-90 active:shadow-sm active:translate-y-0.5;
   }
@@ -121,59 +126,59 @@ body {
   .btn-accent {
     @apply bg-accent text-white rounded-lg px-6 py-3 shadow-sm hover:bg-accent-dark inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 active:opacity-90 active:shadow-sm active:translate-y-0.5;
   }
-  
+
   /* Button focus ring variants that can be added to override default */
   .ring-primary {
     --tw-ring-color: var(--color-navy) !important;
   }
-  
+
   .ring-accent {
     --tw-ring-color: var(--color-accent) !important;
   }
-  
+
   .ring-blue {
     --tw-ring-color: #3b82f6 !important;
   }
-  
+
   .ring-red {
     --tw-ring-color: #ef4444 !important;
   }
-  
+
   .ring-green {
     --tw-ring-color: #22c55e !important;
   }
-  
+
   /* Link Styles */
   .link-underline {
     @apply relative inline-block;
   }
-  
+
   .link-underline::after {
     @apply absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 content-[''];
   }
-  
+
   .link-underline:hover::after {
     @apply w-full;
   }
-  
+
   /* Cards */
   .card {
     @apply bg-white border border-gray-200 p-6 rounded-xl transition-all duration-200;
   }
-  
+
   .card-hover {
     @apply hover:shadow-md;
   }
-  
+
   /* Layouts */
   .section {
     @apply py-16 px-4 md:px-12;
   }
-  
+
   .container-narrow {
     @apply max-w-4xl mx-auto px-4 sm:px-6;
   }
-  
+
   .container-wide {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
@@ -192,11 +197,11 @@ body {
   .icon {
     @apply w-6 h-6 flex-shrink-0;
   }
-  
+
   .icon-sm {
     @apply w-5 h-5 flex-shrink-0;
   }
-  
+
   .icon-lg {
     @apply w-8 h-8 flex-shrink-0;
   }
@@ -219,11 +224,11 @@ body {
   .form-input {
     @apply w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent;
   }
-  
+
   .form-label {
     @apply block mb-2 text-sm font-medium text-gray-700;
   }
-  
+
   .form-group {
     @apply mb-4;
   }
@@ -267,8 +272,8 @@ body {
   }
 
   /* Icon containers with accent backgrounds */
-  .bg-accent\/5, 
-  .bg-accent\/10, 
+  .bg-accent\/5,
+  .bg-accent\/10,
   .bg-accent\/15,
   .bg-accent\/20,
   .bg-navy\/10 {
@@ -278,18 +283,33 @@ body {
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes scrollLogos {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-fade-in {
@@ -311,4 +331,4 @@ body {
 
 .animation-delay-400 {
   animation-delay: 0.4s;
-} 
+}

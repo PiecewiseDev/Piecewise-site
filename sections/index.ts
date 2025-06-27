@@ -11,4 +11,4 @@ export * from './services';
 export * from './pricing';
 export * from './contact';
 export * from './case-studies';
-export * from './how-it-works'; 
+export * from './how-it-works';
