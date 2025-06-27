@@ -1,0 +1,49 @@
+{
+  "folders": [
+    {
+      "name": "📦 Project Root",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.sortOrder": "manual",
+    "explorer.sortOrderLexicographicOptions": "unicode",
+    "explorer.compactFolders": false,
+    "files.exclude": {
+      "node_modules": false,
+      ".next": false
+    },
+    "explorer.experimental.fileNesting.enabled": true,
+    "explorer.experimental.fileNesting.patterns": {
+      "*.ts": "${capture}.js",
+      "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+      "*.jsx": "${capture}.js",
+      "*.tsx": "${capture}.ts",
+      "tsconfig.json": "tsconfig.*.json",
+      "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml"
+    },
+    "workbench.colorCustomizations": {
+      "tree.indentGuidesStroke": "#5f7e97"
+    },
+    "explorer.sortOrderManual": {
+      "folders.order": [
+        "public",
+        "styles",
+        "app",
+        "components",
+        "layouts",
+        "sections",
+        "icons",
+        "data",
+        "constants",
+        "hooks",
+        "lib",
+        "utils",
+        "types",
+        ".vscode"
+      ]
+    }
+  }
+} 

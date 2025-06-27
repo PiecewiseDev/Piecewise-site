@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60">
+  <text x="10" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#333">
+    GREEN<tspan fill="#666">WORKS</tspan>
+  </text>
+  <path d="M175 30 L185 25 L195 30 L185 35 Z" fill="#666" />
+</svg> 

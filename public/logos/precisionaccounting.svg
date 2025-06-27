@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="60" viewBox="0 0 240 60">
+  <text x="10" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#333">
+    PRECISION<tspan fill="#666">ACCOUNTING</tspan>
+  </text>
+  <rect x="210" y="20" width="20" height="20" fill="none" stroke="#666" stroke-width="2" />
+</svg> 
