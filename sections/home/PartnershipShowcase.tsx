@@ -25,7 +25,7 @@ const PartnershipShowcase: React.FC = () => {
     {
       id: 2,
       backgroundImage: '/images/TrinityBackground2.png',
-      logoSrc: '/logos/Trinity+Logo+Wordmark (1).png',
+      logoSrc: '/logos/Trinity+Logo+Wordmark.png',
       logoAlt: 'Trinity Logo',
       location: 'Nashville, TN',
     },
