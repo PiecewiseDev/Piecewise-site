@@ -254,8 +254,8 @@ export default function HomePage() {
 
   // CTA section data
   const ctaData = {
-    title: 'Curious what this would look like for your business?',
-    subtitle: "We'll walk you through it in 15 minutes—no tech skills needed.",
+    title: 'Wondering where a smarter system might fit your business?',
+    subtitle: "Let's talk.",
     buttonText: 'Book a Discovery Call',
     buttonLink: '/contact',
   };
