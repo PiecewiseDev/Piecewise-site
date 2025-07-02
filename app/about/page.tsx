@@ -7,7 +7,7 @@ import {
   FounderNote,
   OurTeam,
   OurMission,
-  OurValues
+  OurValues,
 } from '@/sections/about';
 import { PageLabel } from '@/components/ui';
 import { CallToAction } from '@/sections/shared';
