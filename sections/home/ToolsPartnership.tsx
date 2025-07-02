@@ -7,19 +7,19 @@ const ToolsPartnership: React.FC = () => {
   const aiTools = [
     {
       name: 'ChatGPT',
-      logoSrc: '/logos/toolslogos/Chatgptlogo.png',
+      logoSrc: '/logos/ToolsLogos/Chatgptlogo.png',
     },
-    { name: 'Claude', logoSrc: '/logos/toolslogos/Claudelogo.png' },
-    { name: 'Gemini', logoSrc: '/logos/toolslogos/Geminilogo.png' },
-    { name: 'Grok', logoSrc: '/logos/toolslogos/Groklogo.png' },
-    { name: 'Copilot', logoSrc: '/logos/toolslogos/Copilotlogo.png' },
+    { name: 'Claude', logoSrc: '/logos/ToolsLogos/Claudelogo.png' },
+    { name: 'Gemini', logoSrc: '/logos/ToolsLogos/Geminilogo.png' },
+    { name: 'Grok', logoSrc: '/logos/ToolsLogos/Groklogo.png' },
+    { name: 'Copilot', logoSrc: '/logos/ToolsLogos/Copilotlogo.png' },
     {
       name: 'Midjourney',
-      logoSrc: '/logos/toolslogos/Midjouneylogo.png',
+      logoSrc: '/logos/ToolsLogos/Midjouneylogo.png',
     },
-    { name: 'Zapier', logoSrc: '/logos/toolslogos/Zapierlogo.png' },
-    { name: 'n8n', logoSrc: '/logos/toolslogos/N8nlogo.png' },
-    { name: 'Slack', logoSrc: '/logos/toolslogos/Slacklogo.png' },
+    { name: 'Zapier', logoSrc: '/logos/ToolsLogos/Zapierlogo.png' },
+    { name: 'n8n', logoSrc: '/logos/ToolsLogos/N8nlogo.png' },
+    { name: 'Slack', logoSrc: '/logos/ToolsLogos/Slacklogo.png' },
   ];
 
   return (
