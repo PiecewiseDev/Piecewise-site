@@ -20,7 +20,7 @@ export default function FounderNote() {
 
         {/* Right Column - Founder Note */}
         <div>
-          <h3 className="text-xl font-bold mb-4 text-navy font-dm-sans">A Note From the Builder</h3>
+          <h3 className="text-xl font-bold mb-4 text-navy font-dm-sans">Founder Note</h3>
           <div className="space-y-4 text-navy-light font-dm-sans text-lg">
             <p className="relative">
               <span className="text-accent text-2xl absolute -left-3 top-0">"</span>I built this

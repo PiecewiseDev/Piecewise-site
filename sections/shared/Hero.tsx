@@ -65,10 +65,14 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink }) => {
     >
       <div className="max-w-5xl w-full mx-auto">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6 flex flex-col items-center">
+          <h1
+            className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 flex flex-col items-center"
+            style={{ color: '#1a1a1d' }}
+          >
             <span className="whitespace-nowrap mb-1 text-center">{staticText}</span>
             <span
-              className="text-[#4b6a88] font-bold h-[1.2em] min-w-[6rem] flex items-center justify-center text-5xl md:text-7xl"
+              className="font-bold h-[1.2em] min-w-[6rem] flex items-center justify-center text-5xl md:text-7xl"
+              style={{ color: '#3a66f7' }}
               aria-hidden="true"
             >
               <span className={`transition-opacity duration-500 ease-in-out ${getOpacityClass()}`}>
@@ -76,12 +80,15 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink }) => {
               </span>
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-700 mb-8 text-center max-w-3xl">{subtitle}</p>
+          <p className="text-lg md:text-xl mb-8 text-center max-w-3xl" style={{ color: '#1a1a1d' }}>
+            {subtitle}
+          </p>
           <div className="flex justify-center items-center">
             <Link
               href={ctaLink || '/contact'}
               prefetch={true}
-              className="bg-[#4b6a88] text-white rounded-lg px-6 py-3 shadow-sm hover:opacity-90 inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 active:opacity-90 active:shadow-sm active:translate-y-0.5 gap-2"
+              className="text-white rounded-lg px-6 py-3 shadow-sm hover:opacity-90 inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 active:opacity-90 active:shadow-sm active:translate-y-0.5 gap-2"
+              style={{ backgroundColor: '#3a66f7' }}
             >
               {ctaText || 'Book a Discovery Call'}
               <span aria-hidden="true" className="text-current">

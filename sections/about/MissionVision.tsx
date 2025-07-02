@@ -13,8 +13,9 @@ export default function MissionVision() {
           <div className="w-16 h-1 bg-accent/20 rounded-full mx-auto mb-8"></div>
           <h3 className="text-xl md:text-2xl font-bold mb-4 text-navy">Mission</h3>
           <p className="text-navy-light max-w-md mx-auto font-dm-sans text-lg">
-            To equip service business owners with clarity, tools, and support so they can grow with
-            purpose.
+            To equip businesses with the tools and support they need to navigate emerging
+            technologies with confidence, so they can grow with purpose and serve their communities
+            faithfully.
           </p>
         </div>
 

@@ -7,8 +7,7 @@ const ContactIntro: React.FC = () => {
       <PageLabel label="Contact" />
       <h1 className="mb-6 text-center animate-fade-in">Let&apos;s Talk</h1>
       <p className="text-responsive text-navy-light mb-12 text-center max-w-3xl mx-auto animate-fade-in animation-delay-200">
-        We&apos;ll walk you through what this could look like for your business. It&apos;s
-        zero-pressure and 100% guided.
+        We&apos;ll walk you through what this could look like for your business.
       </p>
     </div>
   );

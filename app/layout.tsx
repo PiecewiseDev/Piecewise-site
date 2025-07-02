@@ -2,6 +2,8 @@ import '@/styles/globals.css';
 import React from 'react';
 import { Inter } from 'next/font/google';
 import { Navbar, Footer } from '@/components/layout';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,6 +31,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

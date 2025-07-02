@@ -55,7 +55,7 @@ const Navbar = () => {
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center gap-2 hover:no-underline">
                 <Image
-                  src="/logos/Piecewise logo1.png"
+                  src="/logos/PiecewiseLogo1.png"
                   alt="Piecewise Logo"
                   width={36}
                   height={36}
@@ -95,7 +95,7 @@ const Navbar = () => {
                 prefetch={true}
                 className="bg-[#4b6a88] text-white rounded-lg px-4 py-1.5 text-sm font-bold shadow-sm hover:bg-[#3d5a75] ring-accent hover:no-underline flex items-center gap-2 transition-all duration-200"
               >
-                Book a Discovery Call
+                Book a Call
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4"
@@ -197,7 +197,7 @@ const Navbar = () => {
                 className="bg-[#4b6a88] text-white rounded-lg px-4 py-2 text-sm font-bold shadow-sm hover:bg-[#3d5a75] ring-accent w-full flex justify-center items-center gap-2 hover:no-underline transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Book a Discovery Call
+                Book a Call
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4"

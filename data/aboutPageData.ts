@@ -66,17 +66,17 @@ export const coreValuesData: CoreValuesProps = {
   values: [
     {
       icon: 'building',
-      title: 'Service First',
+      title: 'Service',
       description: "We serve with humility and care, putting our clients' needs first.",
     },
     {
       icon: 'shield',
-      title: 'Clarity Over Complexity',
+      title: 'Clarity',
       description: 'We simplify the complex and provide clear, accessible solutions.',
     },
     {
       icon: 'check-circle',
-      title: 'Integrity Always',
+      title: 'Integrity',
       description: "We do what's right, even when it's difficult or no one is watching.",
     },
     {
@@ -91,7 +91,7 @@ export const coreValuesData: CoreValuesProps = {
     },
     {
       icon: 'users',
-      title: 'Long-Term Partnership',
+      title: 'Partnership',
       description: 'We build enduring relationships focused on sustained mutual success.',
     },
   ],

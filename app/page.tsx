@@ -1,6 +1,13 @@
 import React from 'react';
 import { Hero, /* ClientLogoStrip, */ Testimonial, CallToAction } from '@/sections/shared';
-import { Benefits, Explainer, UseCases } from '@/sections/home';
+import {
+  Benefits,
+  Explainer,
+  UseCases,
+  ToolsPartnership,
+  PartnershipShowcase,
+  WhatWeOffer,
+} from '@/sections/home';
 import { PageSection } from '@/components/layout';
 
 export default function HomePage() {
@@ -263,22 +270,32 @@ export default function HomePage() {
       </PageSection>
       */}
 
+      <ToolsPartnership />
+
+      <PartnershipShowcase />
+
+      <WhatWeOffer />
+
+      {/* Temporarily archived Benefits section (How Our CustomGPTs Help You)
       <PageSection background="light" width="wide" animate={true} animationDelay={100}>
         <Benefits {...benefitsData} />
       </PageSection>
+      */}
 
+      {/* Temporarily archived Explainer section (What is a CustomGPT?)
       <PageSection background="white" width="wide" animate={true} animationDelay={200}>
         <Explainer {...explainerData} />
       </PageSection>
+      */}
 
+      {/* Temporarily archived UseCases section (Real-World Examples)
       <PageSection background="light" width="wide" animate={true} animationDelay={300}>
         <UseCases {...useCasesData} />
       </PageSection>
+      */}
 
-      {/* Testimonial section temporarily archived
-      <PageSection background="white" width="wide" animate={true} animationDelay={400}>
-        <Testimonial {...testimonialData} />
-      </PageSection>
+      {/* Temporarily archived Testimonial section (success stories)
+      <Testimonial {...testimonialData} />
       */}
 
       <CallToAction {...ctaData} />

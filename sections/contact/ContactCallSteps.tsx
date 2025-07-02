@@ -22,7 +22,7 @@ const ContactCallSteps: React.FC = () => {
                     You share how your business works
                   </h3>
                   <p className="text-navy-light">
-                    We'll ask questions to understand your workflows and client needs.
+                    We&apos;ll ask questions to understand your workflows and client needs.
                   </p>
                 </div>
               </li>
@@ -47,10 +47,10 @@ const ContactCallSteps: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-navy mb-1">
-                    You decide if it's worth exploring
+                    You decide if it&apos;s worth exploring
                   </h3>
                   <p className="text-navy-light">
-                    No pressure—you'll know if this is a good fit for your business.
+                    No pressure—you&apos;ll know if this is a good fit for your business.
                   </p>
                 </div>
               </li>
@@ -77,9 +77,14 @@ const ContactCallSteps: React.FC = () => {
             </div>
             <h3 className="text-xl font-bold text-navy mb-4">25 minutes, fully guided</h3>
             <p className="text-navy-light mb-6">
-              No tech skills needed. We'll walk you through everything.
+              No tech skills needed. We&apos;ll walk you through everything.
             </p>
-            <a href="#contact-form" className="btn-primary hover:no-underline">
+            <a
+              href="https://calendly.com/piecewiseai/discovery-call"
+              className="btn-primary hover:no-underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Schedule Your Call
             </a>
           </div>
