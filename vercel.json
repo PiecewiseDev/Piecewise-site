@@ -29,7 +29,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; img-src 'self' https:; script-src 'self'; object-src 'none';"
+          "value": "default-src 'self'; img-src 'self' https: data:; script-src 'self' 'unsafe-inline'; style-src 'self' https: 'unsafe-inline' fonts.googleapis.com; font-src 'self' https: fonts.gstatic.com fonts.googleapis.com; object-src 'none';"
         }
       ]
     }
