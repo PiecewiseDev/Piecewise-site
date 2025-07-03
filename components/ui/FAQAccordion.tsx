@@ -15,6 +15,7 @@ type FAQAccordionProps = {
 
 export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = '' }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -22,31 +23,67 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
 
   return (
     <div className={`space-y-4 ${className}`}>
-      {faqs.map((faq, index) => (
-        <div key={index} className="overflow-hidden">
+      {faqs.map((faq, index) => {
+        const isOpen = openIndex === index;
+        const ariaExpanded = isOpen ? 'true' : 'false';
+        const ariaControls = `faq-answer-${index}`;
+        
+        return (
+        <div key={index} className="relative">
           <button
             onClick={() => toggleAccordion(index)}
-            className={`w-full text-left px-6 py-5 rounded-full flex justify-between items-center transition-all duration-300 shadow-sm ${
-              openIndex === index
-                ? 'bg-[#4b6a88] text-white'
-                : 'bg-white text-gray-900 border border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-            }`}
-            aria-expanded={openIndex === index ? true : false}
-            aria-controls={`faq-answer-${index}`}
+            onMouseEnter={() => setHoverIndex(index)}
+            onMouseLeave={() => setHoverIndex(null)}
+            className="w-full text-left px-6 py-5 rounded-full flex justify-between items-center transition-all duration-300 shadow-sm relative z-10 overflow-hidden"
+            style={{
+              backgroundColor: '#1a1a1d',
+              color: isOpen ? '#3a66f7' : 'white',
+            }}
+            aria-expanded={ariaExpanded}
+            aria-controls={ariaControls}
           >
-            <span className="text-lg font-bold">{faq.question}</span>
+            {/* Animated white background fill */}
             <motion.div
-              animate={{ rotate: openIndex === index ? 45 : 0 }}
+              initial={{ scale: 1.2, opacity: 0 }}
+              animate={{
+                scale: isOpen ? 1 : 1.2,
+                opacity: isOpen ? 1 : 0,
+              }}
+              transition={{
+                duration: 0.5,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              className="absolute inset-0 bg-white rounded-full"
+              style={{ transformOrigin: 'center' }}
+            />
+
+            <span className="text-lg font-bold relative z-10">{faq.question}</span>
+            <motion.div
+              animate={{ rotate: isOpen ? 45 : 0 }}
               transition={{ duration: 0.3 }}
-              className={`flex-shrink-0 ml-4 ${openIndex === index ? 'text-white' : 'text-gray-900'}`}
+              className="flex-shrink-0 ml-4 relative z-10"
             >
+              {/* Blue hover background */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                  opacity: hoverIndex === index && !isOpen ? 1 : 0,
+                  scale: hoverIndex === index && !isOpen ? 1 : 0.8,
+                }}
+                transition={{ duration: 0.2 }}
+                className="absolute inset-0 rounded-md -m-1"
+                style={{ backgroundColor: '#3a66f7' }}
+              />
               <svg
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="current-color"
+                className="relative z-10"
+                style={{
+                  color: isOpen ? '#3a66f7' : 'white',
+                }}
               >
                 <path
                   d="M10 4.16667V15.8333"
@@ -67,23 +104,35 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
           </button>
 
           <AnimatePresence>
-            {openIndex === index && (
+            {isOpen && (
               <motion.div
-                id={`faq-answer-${index}`}
+                id={ariaControls}
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="overflow-hidden"
+                transition={{ duration: 0.5, ease: 'easeInOut' }}
+                className="overflow-hidden relative"
+                style={{
+                  marginTop: '-1.25rem', // Pull up to overlap with middle of question button (half of py-5 = 1.25rem)
+                  zIndex: 5, // Below the question button
+                }}
               >
-                <div className="mt-2 rounded-2xl bg-[#4b6a88]/10 p-6 text-gray-900 shadow-sm">
+                <div
+                  className="rounded-2xl shadow-sm"
+                  style={{
+                    backgroundColor: 'rgba(220, 220, 220, 0.6)',
+                    color: '#3a66f7',
+                    padding: '3.25rem 1.5rem 2rem 1.5rem', // Extra top padding to account for overlap
+                  }}
+                >
                   <p className="text-base leading-relaxed">{faq.answer}</p>
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
