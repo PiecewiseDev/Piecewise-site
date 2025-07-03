@@ -63,13 +63,13 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink }) => {
       animationDelay={350}
       className="relative overflow-hidden flex flex-col items-center justify-center bg-gradient-to-b from-[#DDE7F2] to-white"
     >
-      <div className="max-w-5xl w-full mx-auto px-4 sm:px-6">
+      <div className="max-w-5xl w-full mx-auto px-6 sm:px-8">
         <div className="flex flex-col items-center justify-center">
           <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 flex flex-col items-center"
             style={{ color: '#1a1a1d' }}
           >
-            <span className="whitespace-nowrap mb-1 text-center leading-tight">{staticText}</span>
+            <span className="mb-1 text-center leading-tight">{staticText}</span>
             <span
               className="font-bold h-[1.2em] min-w-[4rem] sm:min-w-[6rem] flex items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl"
               style={{ color: '#3a66f7' }}
@@ -81,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink }) => {
             </span>
           </h1>
           <p
-            className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-center max-w-3xl px-4"
+            className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-center max-w-3xl px-2 sm:px-4"
             style={{ color: '#1a1a1d' }}
           >
             {subtitle}
@@ -100,7 +100,7 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink }) => {
             </Link>
           </div>
           {/* Image Card Placeholder */}
-          <div className="w-full max-w-4xl mx-auto">
+          <div className="w-full max-w-4xl mx-auto px-2 sm:px-0">
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <Image
                 src="/images/ChatGPTScreenshot.png"

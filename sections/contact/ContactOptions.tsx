@@ -22,7 +22,7 @@ const ContactOptions: React.FC = () => {
                   >
                     Schedule a{' '}
                     <span className="font-semibold" style={{ color: '#3a66f7' }}>
-                      25-minute conversation
+                      30-minute conversation
                     </span>{' '}
                     to explore how a CustomGPT could work for your business.
                   </p>
@@ -125,10 +125,10 @@ const ContactOptions: React.FC = () => {
               <div className="mt-6">
                 <a
                   href="https://calendly.com/piecewiseai/discovery-call"
-                  className="w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-lg transform hover:-translate-y-0.5 text-lg"
+                  className="w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md transform hover:-translate-y-0.5 text-lg"
                   style={{
                     background: 'linear-gradient(135deg, #3a66f7 0%, #667eea 100%)',
-                    boxShadow: '0 4px 15px rgba(58, 102, 247, 0.3)',
+                    boxShadow: '0 2px 8px rgba(58, 102, 247, 0.15)',
                   }}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -228,10 +228,10 @@ const ContactOptions: React.FC = () => {
               <div className="mt-6">
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-lg transform hover:-translate-y-0.5 text-lg"
+                  className="w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md transform hover:-translate-y-0.5 text-lg"
                   style={{
                     background: 'linear-gradient(135deg, #3a66f7 0%, #667eea 100%)',
-                    boxShadow: '0 4px 15px rgba(58, 102, 247, 0.3)',
+                    boxShadow: '0 2px 8px rgba(58, 102, 247, 0.15)',
                   }}
                 >
                   Send Message

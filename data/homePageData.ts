@@ -173,7 +173,7 @@ export const testimonialData: TestimonialProps = {
 // CTA section data
 export const ctaData: CallToActionProps = {
   title: 'Curious what this would look like for your business?',
-  subtitle: "We'll walk you through it in 15 minutes—no tech skills needed.",
+  subtitle: "We'll walk you through it in 30 minutes—no tech skills needed.",
   buttonText: 'Book a Discovery Call',
   buttonLink: '/contact',
 };

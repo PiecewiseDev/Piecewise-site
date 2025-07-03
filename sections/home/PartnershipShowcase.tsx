@@ -180,28 +180,28 @@ const PartnershipShowcase: React.FC = () => {
                 <li className="flex items-start">
                   <span
                     className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
-                    style={{ backgroundColor: '#3a66f7' }}
+                    style={{ backgroundColor: '#1a1a1d' }}
                   ></span>
                   <span>Contractors and crew-based operations</span>
                 </li>
                 <li className="flex items-start">
                   <span
                     className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
-                    style={{ backgroundColor: '#3a66f7' }}
+                    style={{ backgroundColor: '#1a1a1d' }}
                   ></span>
                   <span>Owners and managers with full plates</span>
                 </li>
                 <li className="flex items-start">
                   <span
                     className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
-                    style={{ backgroundColor: '#3a66f7' }}
+                    style={{ backgroundColor: '#1a1a1d' }}
                   ></span>
                   <span>Admins and team leads managing details</span>
                 </li>
                 <li className="flex items-start">
                   <span
                     className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
-                    style={{ backgroundColor: '#3a66f7' }}
+                    style={{ backgroundColor: '#1a1a1d' }}
                   ></span>
                   <span>Teams exploring smarter systems</span>
                 </li>

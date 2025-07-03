@@ -92,7 +92,7 @@ const ContactCallSteps: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-4" style={{ color: '#1a1a1d' }}>
-                25 minutes, fully guided
+                30 minutes, fully guided
               </h3>
               <p className="mb-6" style={{ color: '#1a1a1d', opacity: 0.7 }}>
                 No tech skills needed. We&apos;ll walk you through everything.

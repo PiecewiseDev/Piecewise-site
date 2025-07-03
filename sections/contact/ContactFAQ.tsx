@@ -5,7 +5,7 @@ const faqs: FAQItem[] = [
   {
     question: 'How long does a discovery call take?',
     answer:
-      "Discovery calls are scheduled for 25 minutes. We keep them focused and productive—just enough time to understand your business and show you what's possible, without taking up your whole day.",
+      "Discovery calls are scheduled for 30 minutes. We keep them focused and productive—just enough time to understand your business and show you what's possible, without taking up your whole day.",
   },
   {
     question: 'What happens after the discovery call?',

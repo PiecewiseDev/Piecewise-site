@@ -8,7 +8,7 @@ export default function HowItWorksPage() {
   const ctaData = {
     title: 'Curious if this is a fit?',
     subtitle:
-      'Book a 15-minute discovery call to explore how a CustomGPT can transform your business.',
+      'Book a 30-minute discovery call to explore how a CustomGPT can transform your business.',
     buttonText: 'Book a Discovery Call',
     buttonLink: '/contact',
   };
