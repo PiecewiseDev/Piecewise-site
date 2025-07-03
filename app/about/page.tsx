@@ -30,7 +30,7 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
           style={{
-            backgroundImage: 'url(/images/charlotteskyline.png)',
+            backgroundImage: 'url(/images/Charlotteskyline.png)',
           }}
         />
 
