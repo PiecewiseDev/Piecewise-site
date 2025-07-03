@@ -6,7 +6,8 @@ export default function OurValues() {
   const values = [
     {
       title: 'Service',
-      description: 'We prioritize serving our clients with excellence and putting their success first.',
+      description:
+        'We prioritize serving our clients with excellence and putting their success first.',
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -15,20 +16,22 @@ export default function OurValues() {
             clipRule="evenodd"
           />
         </svg>
-      )
+      ),
     },
     {
       title: 'Clarity',
-      description: 'We communicate simply, making complex technology accessible and understandable.',
+      description:
+        'We communicate simply, making complex technology accessible and understandable.',
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
-      )
+      ),
     },
     {
       title: 'Integrity',
-      description: 'We operate with honesty and transparency, building trust through ethical practices.',
+      description:
+        'We operate with honesty and transparency, building trust through ethical practices.',
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -37,11 +40,12 @@ export default function OurValues() {
             clipRule="evenodd"
           />
         </svg>
-      )
+      ),
     },
     {
       title: 'Stewardship',
-      description: 'We responsibly manage resources, creating lasting value for clients and community.',
+      description:
+        'We responsibly manage resources, creating lasting value for clients and community.',
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
@@ -51,11 +55,12 @@ export default function OurValues() {
             clipRule="evenodd"
           />
         </svg>
-      )
+      ),
     },
     {
       title: 'Faith in Action',
-      description: 'We live out our faith through work, treating every interaction with respect and purpose.',
+      description:
+        'We live out our faith through work, treating every interaction with respect and purpose.',
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path
@@ -64,18 +69,19 @@ export default function OurValues() {
             clipRule="evenodd"
           />
         </svg>
-      )
+      ),
     },
     {
       title: 'Partnership',
-      description: 'We build genuine partnerships, working together toward shared goals and mutual success.',
+      description:
+        'We build genuine partnerships, working together toward shared goals and mutual success.',
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
           <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
           <path d="M6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
         </svg>
-      )
-    }
+      ),
+    },
   ];
 
   return (
@@ -91,13 +97,16 @@ export default function OurValues() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => (
             <div key={index} className="group h-48" style={{ perspective: '1000px' }}>
-              <div className="relative w-full h-full transition-transform duration-700 group-hover:[transform:rotateY(180deg)]" style={{ transformStyle: 'preserve-3d' }}>
+              <div
+                className="relative w-full h-full transition-transform duration-700 group-hover:[transform:rotateY(180deg)]"
+                style={{ transformStyle: 'preserve-3d' }}
+              >
                 {/* Front Side */}
                 <div
                   className="absolute inset-0 w-full h-full rounded-2xl p-6 flex flex-col items-center justify-center"
-                  style={{ 
+                  style={{
                     backgroundColor: '#f1f1f1',
-                    backfaceVisibility: 'hidden'
+                    backfaceVisibility: 'hidden',
                   }}
                 >
                   <div style={{ color: '#1a1a1d' }} className="mb-4">
@@ -114,10 +123,10 @@ export default function OurValues() {
                 {/* Back Side */}
                 <div
                   className="absolute inset-0 w-full h-full rounded-2xl p-6 flex flex-col items-center justify-center"
-                  style={{ 
+                  style={{
                     backgroundColor: '#1a1a1d',
                     backfaceVisibility: 'hidden',
-                    transform: 'rotateY(180deg)'
+                    transform: 'rotateY(180deg)',
                   }}
                 >
                   <h3
@@ -140,4 +149,4 @@ export default function OurValues() {
       </div>
     </div>
   );
-} 
+}

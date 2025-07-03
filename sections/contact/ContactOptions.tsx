@@ -16,7 +16,10 @@ const ContactOptions: React.FC = () => {
 
               <div className="flex-grow space-y-3">
                 <div className="bg-gray-50 rounded-lg p-4">
-                  <p className="text-base leading-relaxed" style={{ color: '#1a1a1d', opacity: 0.8 }}>
+                  <p
+                    className="text-base leading-relaxed"
+                    style={{ color: '#1a1a1d', opacity: 0.8 }}
+                  >
                     Schedule a{' '}
                     <span className="font-semibold" style={{ color: '#3a66f7' }}>
                       25-minute conversation
@@ -271,4 +274,4 @@ const ContactOptions: React.FC = () => {
   );
 };
 
-export default ContactOptions; 
+export default ContactOptions;

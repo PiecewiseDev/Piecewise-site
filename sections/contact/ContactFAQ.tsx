@@ -45,4 +45,4 @@ const ContactFAQ: React.FC = () => {
   );
 };
 
-export default ContactFAQ; 
+export default ContactFAQ;

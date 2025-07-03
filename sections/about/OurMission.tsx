@@ -14,7 +14,7 @@ export default function OurMission() {
             >
               Our Mission
             </h2>
-            
+
             <p
               className="text-base md:text-lg leading-relaxed"
               style={{ color: '#1a1a1d', opacity: 0.9 }}
@@ -53,4 +53,4 @@ export default function OurMission() {
       </div>
     </div>
   );
-} 
+}

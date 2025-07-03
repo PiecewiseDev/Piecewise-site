@@ -43,19 +43,18 @@ export default function OurTeam() {
                 style={{ color: '#f1f1f1', opacity: 0.9 }}
               >
                 Kyle is passionate about helping business owners embrace technology without the
-                overwhelm. With a background in investment banking, he understands the demands
-                of running a business and the importance of maximizing time and resources.
-                His mission is to make AI simple, accessible, and empowering-so business owners
-                can stay ahead without feeling left behind.
+                overwhelm. With a background in investment banking, he understands the demands of
+                running a business and the importance of maximizing time and resources. His mission
+                is to make AI simple, accessible, and empowering-so business owners can stay ahead
+                without feeling left behind.
               </p>
               <p
                 className="text-xs md:text-sm leading-relaxed"
                 style={{ color: '#f1f1f1', opacity: 0.9 }}
               >
-                Kyle believes that technology should serve people, not replace them. By
-                introducing AI solutions that streamline operations, he helps business owners
-                focus on what truly matters-family, faith, and the life they&apos;re building
-                beyond work.
+                Kyle believes that technology should serve people, not replace them. By introducing
+                AI solutions that streamline operations, he helps business owners focus on what
+                truly matters-family, faith, and the life they&apos;re building beyond work.
               </p>
             </div>
 
@@ -116,4 +115,4 @@ export default function OurTeam() {
       </div>
     </div>
   );
-} 
+}
