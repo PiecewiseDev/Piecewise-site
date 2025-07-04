@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://piecewise.ai'),
+  metadataBase: new URL('https://piecewiseai.com'),
   title: 'Custom AI Tools | Piecewise - Built for Service Businesses',
   description:
     'Transform your service business with custom AI tools that understand your processes. We build private CustomGPTs for contractors, managers, and teams to streamline operations and improve efficiency.',
