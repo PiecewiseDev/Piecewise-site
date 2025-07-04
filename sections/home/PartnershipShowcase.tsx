@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 interface ClientSlide {
   id: number;
@@ -8,12 +9,13 @@ interface ClientSlide {
   logoSrc: string;
   logoAlt: string;
   location: string;
+  website: string;
 }
 
 const PartnershipShowcase: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Client data - using placeholders for now
+  // Client data with website URLs
   const clients: ClientSlide[] = [
     {
       id: 1,
@@ -21,6 +23,7 @@ const PartnershipShowcase: React.FC = () => {
       logoSrc: '/logos/Legacy+Logo+Black.png',
       logoAlt: 'Legacy Logo',
       location: 'Louisville, KY',
+      website: 'https://www.legacy-remodeling.com/',
     },
     {
       id: 2,
@@ -28,6 +31,7 @@ const PartnershipShowcase: React.FC = () => {
       logoSrc: '/logos/Trinity+Logo+Wordmark.png',
       logoAlt: 'Trinity Logo',
       location: 'Nashville, TN',
+      website: 'https://www.trinity-parking.com/',
     },
     {
       id: 3,
@@ -35,6 +39,7 @@ const PartnershipShowcase: React.FC = () => {
       logoSrc: '/logos/LKNF-Logo-2022-06.png',
       logoAlt: 'LKNF Logo',
       location: 'Charlotte, NC',
+      website: 'https://www.lakenormanfence.com/',
     },
   ];
 
@@ -76,17 +81,24 @@ const PartnershipShowcase: React.FC = () => {
                       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                         {/* Logo Strip */}
                         <div className="w-full h-32 bg-white/75 flex items-center justify-center mb-4 shadow-lg">
-                          <img
-                            src={client.logoSrc}
-                            alt={client.logoAlt}
-                            className={`w-auto object-contain ${
-                              client.logoAlt === 'Trinity Logo'
-                                ? 'h-12'
-                                : client.logoAlt === 'LKNF Logo'
-                                  ? 'h-20'
-                                  : 'h-16'
-                            }`}
-                          />
+                          <Link
+                            href={client.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block transition-transform duration-300 ease-in-out hover:scale-110 hover:opacity-80"
+                          >
+                            <img
+                              src={client.logoSrc}
+                              alt={client.logoAlt}
+                              className={`w-auto object-contain cursor-pointer ${
+                                client.logoAlt === 'Trinity Logo'
+                                  ? 'h-12'
+                                  : client.logoAlt === 'LKNF Logo'
+                                    ? 'h-20'
+                                    : 'h-16'
+                              }`}
+                            />
+                          </Link>
                         </div>
 
                         {/* Location Text */}
