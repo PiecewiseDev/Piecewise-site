@@ -9,7 +9,10 @@ const ContactOptions: React.FC = () => {
           <div className="bg-white rounded-xl p-8 shadow-lg flex flex-col h-full">
             <div className="relative z-10 flex flex-col h-full">
               <div className="mb-6">
-                <h2 className="text-2xl md:text-3xl font-bold" style={{ color: '#1a1a1d' }}>
+                <h2
+                  className="text-2xl md:text-3xl font-bold text-center md:text-left"
+                  style={{ color: '#1a1a1d' }}
+                >
                   Book a Discovery Call
                 </h2>
               </div>
@@ -122,7 +125,7 @@ const ContactOptions: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-6">
+              <div className="mt-6 flex justify-center">
                 <a
                   href="https://calendly.com/piecewiseai/discovery-call"
                   className="w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md transform hover:-translate-y-0.5 text-lg"
@@ -156,7 +159,10 @@ const ContactOptions: React.FC = () => {
           {/* Right Side - Reach Out Directly Form */}
           <div className="bg-white rounded-xl p-8 shadow-lg flex flex-col h-full">
             <div className="mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold" style={{ color: '#1a1a1d' }}>
+              <h2
+                className="text-2xl md:text-3xl font-bold text-center md:text-left"
+                style={{ color: '#1a1a1d' }}
+              >
                 Reach Out Directly
               </h2>
             </div>
@@ -225,7 +231,7 @@ const ContactOptions: React.FC = () => {
                   placeholder="Tell us about your business and what you're hoping to accomplish"
                 ></textarea>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 flex justify-center">
                 <button
                   type="submit"
                   className="w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md transform hover:-translate-y-0.5 text-lg"

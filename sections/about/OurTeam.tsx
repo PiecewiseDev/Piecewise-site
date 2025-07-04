@@ -6,7 +6,7 @@ export default function OurTeam() {
     <div className="py-16 md:py-24" style={{ backgroundColor: '#1a1a1d' }}>
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <h2
-          className="text-3xl md:text-4xl font-bold leading-tight mb-12 text-left"
+          className="text-3xl md:text-4xl font-bold leading-tight mb-12 text-center md:text-left"
           style={{ color: '#f1f1f1' }}
         >
           Our Team
@@ -14,7 +14,7 @@ export default function OurTeam() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[320px,1fr] gap-12 items-start max-w-5xl">
           {/* Left Column - Profile Image */}
-          <div className="flex justify-start">
+          <div className="flex justify-center md:justify-start">
             <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="/images/kyle-profile.jpg"
@@ -27,7 +27,7 @@ export default function OurTeam() {
           </div>
 
           {/* Right Column - Profile Details */}
-          <div className="flex flex-col h-64 md:h-80 text-left w-full min-w-0">
+          <div className="flex flex-col md:h-80 text-center md:text-left w-full min-w-0">
             <div className="mb-4">
               <h3 className="text-2xl md:text-3xl font-bold mb-2" style={{ color: '#f1f1f1' }}>
                 Kyle Larsen
@@ -37,7 +37,7 @@ export default function OurTeam() {
               </p>
             </div>
 
-            <div className="flex-1 space-y-3 mb-4">
+            <div className="flex-1 space-y-3 mb-6 text-left">
               <p
                 className="text-xs md:text-sm leading-relaxed"
                 style={{ color: '#f1f1f1', opacity: 0.9 }}
@@ -59,7 +59,7 @@ export default function OurTeam() {
             </div>
 
             {/* Social Media Icons */}
-            <div className="flex justify-start space-x-4 pr-2">
+            <div className="flex justify-start space-x-4 pr-4 pb-2">
               <a
                 href="https://www.linkedin.com/in/kylelarsen1819/"
                 target="_blank"

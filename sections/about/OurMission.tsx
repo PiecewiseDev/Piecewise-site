@@ -9,14 +9,14 @@ export default function OurMission() {
           {/* Left Column - Mission Content */}
           <div>
             <h2
-              className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-left"
+              className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-center md:text-left"
               style={{ color: '#1a1a1d' }}
             >
               Our Mission
             </h2>
 
             <p
-              className="text-base md:text-lg leading-relaxed"
+              className="text-base md:text-lg leading-relaxed text-center md:text-left"
               style={{ color: '#1a1a1d', opacity: 0.9 }}
             >
               To equip businesses with the tools and support they need to navigate emerging

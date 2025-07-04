@@ -171,7 +171,7 @@ const PartnershipShowcase: React.FC = () => {
           {/* Right Column - Text Content */}
           <div className="space-y-8">
             <h2
-              className="text-4xl md:text-5xl font-bold leading-tight"
+              className="text-4xl md:text-5xl font-bold leading-tight text-center md:text-left"
               style={{ color: '#1a1a1d' }}
             >
               Who We Partner{' '}
@@ -183,41 +183,46 @@ const PartnershipShowcase: React.FC = () => {
             {/* Bulleted List */}
             <div className="space-y-4">
               <p
-                className="text-lg md:text-xl leading-relaxed max-w-lg"
+                className="text-lg md:text-xl leading-relaxed max-w-lg text-center md:text-left"
                 style={{ color: '#1a1a1d', opacity: 0.9 }}
               >
                 We work closely with:
               </p>
-              <ul className="space-y-3 text-lg" style={{ color: '#1a1a1d' }}>
-                <li className="flex items-start">
-                  <span
-                    className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
-                    style={{ backgroundColor: '#1a1a1d' }}
-                  ></span>
-                  <span>Contractors and crew-based operations</span>
-                </li>
-                <li className="flex items-start">
-                  <span
-                    className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
-                    style={{ backgroundColor: '#1a1a1d' }}
-                  ></span>
-                  <span>Owners and managers with full plates</span>
-                </li>
-                <li className="flex items-start">
-                  <span
-                    className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
-                    style={{ backgroundColor: '#1a1a1d' }}
-                  ></span>
-                  <span>Admins and team leads managing details</span>
-                </li>
-                <li className="flex items-start">
-                  <span
-                    className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
-                    style={{ backgroundColor: '#1a1a1d' }}
-                  ></span>
-                  <span>Teams exploring smarter systems</span>
-                </li>
-              </ul>
+              <div className="flex justify-center md:justify-start">
+                <ul
+                  className="space-y-3 text-lg inline-block text-left"
+                  style={{ color: '#1a1a1d' }}
+                >
+                  <li className="flex items-start">
+                    <span
+                      className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
+                      style={{ backgroundColor: '#1a1a1d' }}
+                    ></span>
+                    <span>Contractors and crew-based operations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span
+                      className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
+                      style={{ backgroundColor: '#1a1a1d' }}
+                    ></span>
+                    <span>Owners and managers with full plates</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span
+                      className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
+                      style={{ backgroundColor: '#1a1a1d' }}
+                    ></span>
+                    <span>Admins and team leads managing details</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span
+                      className="inline-block w-2 h-2 rounded-full mt-3 mr-4 flex-shrink-0"
+                      style={{ backgroundColor: '#1a1a1d' }}
+                    ></span>
+                    <span>Teams exploring smarter systems</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

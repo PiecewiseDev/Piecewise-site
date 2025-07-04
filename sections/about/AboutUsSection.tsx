@@ -5,7 +5,7 @@ export default function AboutUsSection() {
     <div className="py-16 md:py-24" style={{ backgroundColor: '#f1f1f1' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2
-          className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-left"
+          className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-center md:text-left"
           style={{ color: '#1a1a1d' }}
         >
           About Us
@@ -13,7 +13,7 @@ export default function AboutUsSection() {
 
         <div className="space-y-4">
           <p
-            className="text-base md:text-lg leading-relaxed"
+            className="text-base md:text-lg leading-relaxed text-left"
             style={{ color: '#1a1a1d', opacity: 0.9 }}
           >
             At Piecewise, we specialize in building custom AI solutions that help service businesses
@@ -22,7 +22,7 @@ export default function AboutUsSection() {
           </p>
 
           <p
-            className="text-base md:text-lg leading-relaxed"
+            className="text-base md:text-lg leading-relaxed text-left"
             style={{ color: '#1a1a1d', opacity: 0.9 }}
           >
             Our team combines deep technical expertise with real-world business experience to create
@@ -31,7 +31,7 @@ export default function AboutUsSection() {
           </p>
 
           <p
-            className="text-base md:text-lg leading-relaxed"
+            className="text-base md:text-lg leading-relaxed text-left"
             style={{ color: '#1a1a1d', opacity: 0.9 }}
           >
             Based in Charlotte, NC, we&apos;re passionate about helping local and national service

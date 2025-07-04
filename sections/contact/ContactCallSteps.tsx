@@ -97,15 +97,17 @@ const ContactCallSteps: React.FC = () => {
               <p className="mb-6" style={{ color: '#1a1a1d', opacity: 0.7 }}>
                 No tech skills needed. We&apos;ll walk you through everything.
               </p>
-              <a
-                href="https://calendly.com/piecewiseai/discovery-call"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-colors duration-200 text-white hover:opacity-90"
-                style={{ backgroundColor: '#3a66f7' }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Schedule Your Call
-              </a>
+              <div className="flex justify-center">
+                <a
+                  href="https://calendly.com/piecewiseai/discovery-call"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-colors duration-200 text-white hover:opacity-90"
+                  style={{ backgroundColor: '#3a66f7' }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Schedule Your Call
+                </a>
+              </div>
             </div>
           </div>
         </div>

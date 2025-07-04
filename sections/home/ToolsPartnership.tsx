@@ -32,7 +32,7 @@ const ToolsPartnership: React.FC = () => {
           {/* Left Column - Text Content */}
           <div className="space-y-8">
             <h2
-              className="text-4xl md:text-5xl font-bold leading-tight"
+              className="text-4xl md:text-5xl font-bold leading-tight text-center md:text-left"
               style={{ color: '#F1F1F1' }}
             >
               Tools that work{' '}
@@ -54,14 +54,14 @@ const ToolsPartnership: React.FC = () => {
             </h2>
 
             <p
-              className="text-lg md:text-xl leading-relaxed max-w-lg"
+              className="text-lg md:text-xl leading-relaxed max-w-lg text-center md:text-left"
               style={{ color: '#F1F1F1', opacity: 0.9 }}
             >
               We partner with service-driven businesses to help take the first step in their AI
               journey.
             </p>
 
-            <div>
+            <div className="flex justify-center md:justify-start">
               <Link
                 href="/contact"
                 className="inline-flex items-center bg-white text-[#3A66F7] rounded-lg px-6 py-3 text-base font-semibold hover:bg-white/90 transition-colors duration-200 shadow-sm"

@@ -46,7 +46,7 @@ const WhatWeOffer: React.FC = () => {
           {offerings.map((offering, index) => (
             <div key={index} className="relative">
               {/* Phase Number */}
-              <div className="mb-6">
+              <div className="mb-6 flex justify-center md:justify-start">
                 <span
                   className="inline-flex items-center justify-center w-12 h-12 rounded-full text-white font-bold text-lg"
                   style={{
@@ -64,35 +64,40 @@ const WhatWeOffer: React.FC = () => {
 
               {/* Content */}
               <div className="space-y-4">
-                <h3 className="text-xl md:text-2xl font-bold" style={{ color: '#f1f1f1' }}>
+                <h3 className="text-xl md:text-2xl font-bold text-center md:text-left" style={{ color: '#f1f1f1' }}>
                   {offering.title}
                 </h3>
 
-                <p className="text-base leading-relaxed" style={{ color: '#f1f1f1', opacity: 0.9 }}>
+                <p
+                  className="text-base leading-relaxed text-center md:text-left"
+                  style={{ color: '#f1f1f1', opacity: 0.9 }}
+                >
                   {offering.description}
                 </p>
 
                 {/* Features List */}
-                <ul className="space-y-2 pt-2">
-                  {offering.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <span
-                        className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0"
-                        style={{
-                          backgroundColor:
-                            offering.phase === '02'
-                              ? '#3DAEFF'
-                              : offering.phase === '03'
-                                ? '#9A8CFB'
-                                : '#3a66f7',
-                        }}
-                      ></span>
-                      <span className="text-sm" style={{ color: '#f1f1f1', opacity: 0.8 }}>
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex justify-center md:justify-start">
+                  <ul className="space-y-2 pt-2 inline-block text-left">
+                    {offering.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <span
+                          className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0"
+                          style={{
+                            backgroundColor:
+                              offering.phase === '02'
+                                ? '#3DAEFF'
+                                : offering.phase === '03'
+                                  ? '#9A8CFB'
+                                  : '#3a66f7',
+                          }}
+                        ></span>
+                        <span className="text-sm" style={{ color: '#f1f1f1', opacity: 0.8 }}>
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
               {/* Connecting Line (for first two phases only) */}
