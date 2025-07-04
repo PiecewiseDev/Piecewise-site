@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { PageSection } from '@/components/layout';
 import { HeroProps } from '@/lib/types';
 
-const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink }) => {
+const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink, imageAlt }) => {
   const [currentWord, setCurrentWord] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [fadeState, setFadeState] = useState<'in' | 'visible' | 'out'>('in');
@@ -104,7 +104,7 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink }) => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <Image
                 src="/images/ChatGPTScreenshot.png"
-                alt="Hero Image"
+                alt={imageAlt || 'Hero Image'}
                 width={1200}
                 height={675}
                 className="w-full h-auto object-cover"

@@ -10,14 +10,65 @@ import {
 } from '@/sections/home';
 import { PageSection } from '@/components/layout';
 
+// Import and export metadata for SEO
+export { metadata } from './metadata';
+
+// Structured data for SEO
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Piecewise',
+  description: 'Custom AI tools and automation solutions for service businesses',
+  url: 'https://piecewise.ai',
+  logo: 'https://piecewise.ai/logos/PiecewiseLogo2.png',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+1-XXX-XXX-XXXX', // Add your phone number when available
+    contactType: 'customer service',
+    availableLanguage: 'English',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/kylelarsen1819/',
+    // Add other social media profiles when available
+  ],
+  serviceArea: {
+    '@type': 'Country',
+    name: 'United States',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'AI Automation Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Custom AI Development',
+          description:
+            'Custom AI tools and automation solutions built specifically for your business',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI Implementation & Support',
+          description: 'Professional implementation and ongoing support for AI business solutions',
+        },
+      },
+    ],
+  },
+};
+
 export default function HomePage() {
   // Hero section data
   const heroData = {
     subtitle: 'Equip your business with tools that think, act, and grow with you.',
     ctaText: 'Book a Discovery Call',
     ctaLink: '/contact',
-    imageSrc: '/images/IMG_2941.png',
-    imageAlt: 'Hero background image',
+    imageSrc: '/images/ChatGPTScreenshot.png',
+    imageAlt:
+      'Custom AI tools dashboard interface showing business automation and CustomGPT conversation examples for service businesses',
   };
 
   // Benefits section data
@@ -262,6 +313,12 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       <Hero {...heroData} />
 
       {/* Temporarily archived client logo strip

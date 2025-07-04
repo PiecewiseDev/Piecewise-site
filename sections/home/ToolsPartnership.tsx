@@ -99,7 +99,7 @@ const ToolsPartnership: React.FC = () => {
                   <div className="flex items-center justify-center w-full h-20">
                     <img
                       src={tool.logoSrc}
-                      alt={tool.name}
+                      alt={`${tool.name} AI tool logo - Integrated with Piecewise custom AI solutions`}
                       className="max-w-full max-h-full object-contain"
                       style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}
                     />

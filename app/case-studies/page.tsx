@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import {
@@ -11,6 +9,9 @@ import {
   CaseStudyBackLink,
 } from '@/sections/case-studies';
 import { CallToAction } from '@/sections/shared';
+
+// Import and export metadata for SEO
+export { metadata } from './metadata';
 
 export default function CaseStudiesPage() {
   return (
