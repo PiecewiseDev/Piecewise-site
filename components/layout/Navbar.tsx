@@ -47,7 +47,7 @@ const Navbar = () => {
           className={`transition-all duration-300 ${
             scrolled
               ? 'backdrop-blur-sm rounded-full shadow-md mx-4 sm:mx-auto px-6 max-w-3xl border border-gray-200/50'
-              : 'max-w-7xl mx-auto px-8 rounded-2xl shadow-sm border border-gray-200/30'
+              : 'max-w-7xl mx-4 sm:mx-auto px-6 sm:px-8 rounded-2xl shadow-sm border border-gray-200/30'
           }`}
           style={{ backgroundColor: '#f1f1f1' }}
         >
@@ -164,12 +164,13 @@ const Navbar = () => {
       <div
         className={`${
           isMenuOpen ? 'block' : 'hidden'
-        } md:hidden fixed top-[calc(3rem+1rem+0.75rem)] left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-40 transition-all duration-300`}
+        } md:hidden fixed top-[calc(3rem+1rem+0.75rem)] left-4 right-4 bg-white border-t border-gray-100 shadow-lg z-40 transition-all duration-300 rounded-b-xl`}
         id="mobile-menu"
         aria-label="Mobile navigation menu"
+        style={{ backgroundColor: '#f1f1f1' }}
       >
-        <div className="container-wide">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="max-w-7xl mx-auto">
+          <div className="px-4 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.name}

@@ -58,10 +58,10 @@ const ContactOptions: React.FC = () => {
                 </h2>
               </div>
 
-              <div className="flex-grow space-y-3">
-                <div className="bg-gray-50 rounded-lg p-4">
+              <div className="flex-grow flex flex-col justify-between space-y-6 md:space-y-4">
+                <div className="bg-gray-50 rounded-lg p-8 flex items-center min-h-[120px]">
                   <p
-                    className="text-base leading-relaxed"
+                    className="text-base leading-relaxed m-0"
                     style={{ color: '#1a1a1d', opacity: 0.8 }}
                   >
                     Schedule a{' '}
@@ -72,8 +72,8 @@ const ContactOptions: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="space-y-2">
-                  <h3 className="text-base font-semibold mb-2" style={{ color: '#1a1a1d' }}>
+                <div className="space-y-3">
+                  <h3 className="text-base font-semibold text-center md:text-left" style={{ color: '#1a1a1d' }}>
                     What you&apos;ll get:
                   </h3>
 
@@ -100,7 +100,7 @@ const ContactOptions: React.FC = () => {
                       <p className="text-sm font-medium" style={{ color: '#1a1a1d' }}>
                         No pressure consultation
                       </p>
-                      <p className="text-xs -mt-0.5" style={{ color: '#1a1a1d', opacity: 0.7 }}>
+                      <p className="text-xs -mt-1" style={{ color: '#1a1a1d', opacity: 0.7 }}>
                         Just a focused discussion about your specific needs
                       </p>
                     </div>
@@ -129,7 +129,7 @@ const ContactOptions: React.FC = () => {
                       <p className="text-sm font-medium" style={{ color: '#1a1a1d' }}>
                         Real business examples
                       </p>
-                      <p className="text-xs -mt-0.5" style={{ color: '#1a1a1d', opacity: 0.7 }}>
+                      <p className="text-xs -mt-1" style={{ color: '#1a1a1d', opacity: 0.7 }}>
                         See how businesses like yours are using AI
                       </p>
                     </div>
@@ -158,7 +158,7 @@ const ContactOptions: React.FC = () => {
                       <p className="text-sm font-medium" style={{ color: '#1a1a1d' }}>
                         Clear next steps
                       </p>
-                      <p className="text-xs -mt-0.5" style={{ color: '#1a1a1d', opacity: 0.7 }}>
+                      <p className="text-xs -mt-1" style={{ color: '#1a1a1d', opacity: 0.7 }}>
                         Walk away with a concrete plan forward
                       </p>
                     </div>
