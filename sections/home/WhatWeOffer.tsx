@@ -69,9 +69,11 @@ const WhatWeOffer: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
+        <div
+          className={`text-center mb-16 transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2
             className="text-4xl md:text-5xl font-bold leading-tight mb-6"
             style={{ color: '#f1f1f1' }}
@@ -83,7 +85,7 @@ const WhatWeOffer: React.FC = () => {
         {/* Offerings Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {offerings.map((offering, index) => (
-                        <div
+            <div
               key={index}
               className={`relative rounded-3xl p-8 transition-all duration-1000 border border-white/10 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
@@ -95,10 +97,7 @@ const WhatWeOffer: React.FC = () => {
             >
               {/* Content */}
               <div className="space-y-6 pt-4">
-                <h3
-                  className="text-lg md:text-xl font-bold text-left"
-                  style={{ color: '#f1f1f1' }}
-                >
+                <h3 className="text-lg md:text-xl font-bold text-left" style={{ color: '#f1f1f1' }}>
                   {offering.title}
                 </h3>
 

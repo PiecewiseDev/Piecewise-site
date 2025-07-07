@@ -24,9 +24,12 @@ export default function OurValues() {
             setHasSpun(true);
           }, 1800);
           // Remove spinning state after animation completes
-          setTimeout(() => {
-            setIsSpinning(false);
-          }, 1800 + 6 * 150 + 800); // delay + stagger + animation duration
+          setTimeout(
+            () => {
+              setIsSpinning(false);
+            },
+            1800 + 6 * 150 + 800
+          ); // delay + stagger + animation duration
           observer.disconnect();
         }
       },
@@ -153,7 +156,7 @@ export default function OurValues() {
             >
               <div
                 className="relative w-full h-full transition-transform duration-700 group-hover:[transform:rotateY(180deg)]"
-                style={{ 
+                style={{
                   transformStyle: 'preserve-3d',
                   animation: isSpinning ? `peek 800ms ease-in-out ${index * 150}ms` : 'none',
                 }}

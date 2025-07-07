@@ -97,8 +97,8 @@ export default function CaseStudyQuotes() {
           <div className="flex-shrink-0 w-full md:w-80 lg:w-96 snap-center">
             <div className="bg-blue-50/50 rounded-lg p-6 h-full relative">
               <p className="text-navy-light italic mb-4 leading-relaxed text-lg">
-                "The Custom GPT handles billing questions better than most of my staff. Clients can't
-                tell they're talking to AI."
+                "The Custom GPT handles billing questions better than most of my staff. Clients
+                can't tell they're talking to AI."
               </p>
               <p className="font-medium text-navy">Sarah, Accounting Practice Manager</p>
             </div>

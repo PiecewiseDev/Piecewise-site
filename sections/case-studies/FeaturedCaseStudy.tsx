@@ -99,8 +99,8 @@ export default function FeaturedCaseStudy() {
                 <div>
                   <h5 className="font-bold text-navy mb-1">What We Built</h5>
                   <p className="text-navy-light">
-                    Custom GPT trained on GreenVista's tone, pricing model, crew SOPs, and plant care
-                    knowledge base.
+                    Custom GPT trained on GreenVista's tone, pricing model, crew SOPs, and plant
+                    care knowledge base.
                   </p>
                 </div>
               </div>
