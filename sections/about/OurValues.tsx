@@ -1,8 +1,39 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 export default function OurValues() {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // IntersectionObserver for fade-in animation
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   const values = [
     {
       title: 'Service',
@@ -10,11 +41,7 @@ export default function OurValues() {
         'We prioritize serving our clients with excellence and putting their success first.',
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-          <path
-            fillRule="evenodd"
-            d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V8zm0 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z"
-            clipRule="evenodd"
-          />
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
     },
@@ -24,7 +51,11 @@ export default function OurValues() {
         'We communicate simply, making complex technology accessible and understandable.',
       icon: (
         <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          <path
+            fillRule="evenodd"
+            d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+            clipRule="evenodd"
+          />
         </svg>
       ),
     },
@@ -85,10 +116,12 @@ export default function OurValues() {
   ];
 
   return (
-    <div className="py-16 md:py-24" style={{ backgroundColor: '#1a1a1d' }}>
+    <div className="py-16 md:py-24" style={{ backgroundColor: '#1a1a1d' }} ref={containerRef}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2
-          className="text-3xl md:text-4xl font-bold leading-tight mb-16 text-center md:text-left"
+          className={`text-3xl md:text-4xl font-bold leading-tight mb-16 text-center md:text-left transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
           style={{ color: '#f1f1f1' }}
         >
           Our Values
@@ -96,7 +129,16 @@ export default function OurValues() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => (
-            <div key={index} className="group h-48" style={{ perspective: '1000px' }}>
+            <div
+              key={index}
+              className={`group h-48 transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+              }`}
+              style={{
+                perspective: '1000px',
+                transitionDelay: isVisible ? `${index * 150 + 300}ms` : '0ms',
+              }}
+            >
               <div
                 className="relative w-full h-full transition-transform duration-700 group-hover:[transform:rotateY(180deg)]"
                 style={{ transformStyle: 'preserve-3d' }}

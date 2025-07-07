@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 interface ClientSlide {
@@ -14,6 +14,36 @@ interface ClientSlide {
 
 const PartnershipShowcase: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // IntersectionObserver for fade-in animation
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
 
   // Client data with website URLs
   const clients: ClientSlide[] = [
@@ -52,11 +82,13 @@ const PartnershipShowcase: React.FC = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#f1f1f1' }} className="py-16 md:py-24">
+    <div style={{ backgroundColor: '#f1f1f1' }} className="py-16 md:py-24" ref={containerRef}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Image Carousel */}
-          <div className="relative">
+          <div className={`relative transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <div className="relative h-[32rem] rounded-xl overflow-hidden">
               {/* Carousel Container */}
               <div
@@ -92,11 +124,19 @@ const PartnershipShowcase: React.FC = () => {
                               alt={client.logoAlt}
                               className={`w-auto object-contain cursor-pointer ${
                                 client.logoAlt === 'Trinity Logo'
-                                  ? 'h-12'
+                                  ? 'h-12 drop-shadow-md filter contrast-110 saturate-110'
                                   : client.logoAlt === 'LKNF Logo'
                                     ? 'h-20'
                                     : 'h-16'
                               }`}
+                              style={
+                                client.logoAlt === 'Trinity Logo'
+                                  ? {
+                                      filter:
+                                        'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15)) contrast(110%)',
+                                    }
+                                  : undefined
+                              }
                             />
                           </Link>
                         </div>
@@ -171,7 +211,9 @@ const PartnershipShowcase: React.FC = () => {
           {/* Right Column - Text Content */}
           <div className="space-y-8">
             <h2
-              className="text-4xl md:text-5xl font-bold leading-tight text-center md:text-left"
+              className={`text-4xl md:text-5xl font-bold leading-tight text-center md:text-left transition-all duration-1000 delay-300 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
               style={{ color: '#1a1a1d' }}
             >
               Who We Partner{' '}
@@ -181,7 +223,9 @@ const PartnershipShowcase: React.FC = () => {
             </h2>
 
             {/* Bulleted List */}
-            <div className="space-y-4">
+            <div className={`space-y-4 transition-all duration-1000 delay-500 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}>
               <p
                 className="text-lg md:text-xl leading-relaxed max-w-lg text-center md:text-left"
                 style={{ color: '#1a1a1d', opacity: 0.9 }}

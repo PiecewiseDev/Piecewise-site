@@ -41,16 +41,16 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-2' : 'py-4'}`}
+        className={`fixed top-3 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-1' : 'py-2'}`}
       >
         <div
-          className={`container-wide transition-all duration-300 ${
+          className={`transition-all duration-300 ${
             scrolled
-              ? 'bg-white/95 backdrop-blur-sm rounded-full shadow-md mx-auto px-6'
-              : 'bg-white'
+              ? 'bg-white/95 backdrop-blur-sm rounded-full shadow-md mx-auto px-6 max-w-3xl border border-gray-200/50'
+              : 'bg-white max-w-7xl mx-auto px-8 rounded-2xl shadow-sm border border-gray-200/30'
           }`}
         >
-          <div className="flex justify-between items-center h-14 py-2">
+          <div className="flex justify-between items-center h-12 py-1">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center gap-2 hover:no-underline">
@@ -93,7 +93,7 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 prefetch={true}
-                className="bg-[#4b6a88] text-white rounded-lg px-4 py-1.5 text-sm font-bold shadow-sm hover:bg-[#3d5a75] ring-accent hover:no-underline flex items-center gap-2 transition-all duration-200"
+                className="bg-blue-600 text-white rounded-lg px-4 py-1.5 text-sm font-bold shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 hover:no-underline flex items-center gap-2 transition-all duration-200"
               >
                 Book a Call
                 <svg
@@ -167,7 +167,7 @@ const Navbar = () => {
       <div
         className={`${
           isMenuOpen ? 'block' : 'hidden'
-        } md:hidden fixed top-[calc(4rem+1.5rem)] left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-40 transition-all duration-300`}
+        } md:hidden fixed top-[calc(3rem+1rem+0.75rem)] left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-40 transition-all duration-300`}
         id="mobile-menu"
         aria-label="Mobile navigation menu"
       >
@@ -194,7 +194,7 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 prefetch={true}
-                className="bg-[#4b6a88] text-white rounded-lg px-4 py-2 text-sm font-bold shadow-sm hover:bg-[#3d5a75] ring-accent w-full flex justify-center items-center gap-2 hover:no-underline transition-all duration-200"
+                className="bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-bold shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 w-full flex justify-center items-center gap-2 hover:no-underline transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Book a Call

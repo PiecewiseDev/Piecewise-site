@@ -1,12 +1,53 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState, useRef } from 'react';
 
 const ContactOptions: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // IntersectionObserver for fade-in animation
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="pt-8 pb-16 sm:pt-12 sm:pb-24" style={{ backgroundColor: '#f1f1f1' }}>
+    <div
+      className="pt-6 pb-12 sm:pt-10 sm:pb-16"
+            style={{
+        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)',
+      }}
+      ref={containerRef}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Book a Discovery Call */}
-          <div className="bg-white rounded-xl p-8 shadow-lg flex flex-col h-full">
+          <div className={`bg-white rounded-xl p-8 shadow-lg flex flex-col h-full transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <div className="relative z-10 flex flex-col h-full">
               <div className="mb-6">
                 <h2
@@ -128,7 +169,7 @@ const ContactOptions: React.FC = () => {
               <div className="mt-6 flex justify-center">
                 <a
                   href="https://calendly.com/piecewiseai/discovery-call"
-                  className="w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md transform hover:-translate-y-0.5 text-lg"
+                  className="group w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md hover:scale-105 transform hover:-translate-y-0.5 text-lg"
                   style={{
                     background: 'linear-gradient(135deg, #3a66f7 0%, #667eea 100%)',
                     boxShadow: '0 2px 8px rgba(58, 102, 247, 0.15)',
@@ -138,7 +179,7 @@ const ContactOptions: React.FC = () => {
                 >
                   Schedule Your Call
                   <svg
-                    className="ml-3 w-5 h-5"
+                    className="ml-3 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -157,7 +198,9 @@ const ContactOptions: React.FC = () => {
           </div>
 
           {/* Right Side - Reach Out Directly Form */}
-          <div className="bg-white rounded-xl p-8 shadow-lg flex flex-col h-full">
+          <div className={`bg-white rounded-xl p-8 shadow-lg flex flex-col h-full transition-all duration-1000 delay-300 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <div className="mb-6">
               <h2
                 className="text-2xl md:text-3xl font-bold text-center md:text-left"
@@ -234,7 +277,7 @@ const ContactOptions: React.FC = () => {
               <div className="mt-6 flex justify-center">
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md transform hover:-translate-y-0.5 text-lg"
+                  className="group w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md hover:scale-105 transform hover:-translate-y-0.5 text-lg"
                   style={{
                     background: 'linear-gradient(135deg, #3a66f7 0%, #667eea 100%)',
                     boxShadow: '0 2px 8px rgba(58, 102, 247, 0.15)',
@@ -242,7 +285,7 @@ const ContactOptions: React.FC = () => {
                 >
                   Send Message
                   <svg
-                    className="ml-3 w-5 h-5"
+                    className="ml-3 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -260,21 +303,23 @@ const ContactOptions: React.FC = () => {
             </form>
           </div>
         </div>
-      </div>
 
-      {/* Direct Email Alternative */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center mt-16">
-        <div className="h-px w-24 bg-gray-400 mx-auto mb-8"></div>
-        <p style={{ color: '#1a1a1d', opacity: 0.8 }}>
-          Prefer to reach out directly? Email us at{' '}
-          <a
-            href="mailto:kyle@piecewiseai.com"
-            className="font-semibold hover:opacity-80 transition-opacity"
-            style={{ color: '#3a66f7' }}
-          >
-            kyle@piecewiseai.com
-          </a>
-        </p>
+        {/* Direct Email Alternative */}
+        <div className={`max-w-6xl mx-auto px-4 sm:px-6 text-center mt-16 transition-all duration-1000 delay-600 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
+          <div className="h-px w-24 bg-gray-400 mx-auto mb-8"></div>
+          <p style={{ color: '#1a1a1d', opacity: 0.8 }}>
+            Prefer to reach out directly? Email us at{' '}
+            <a
+              href="mailto:kyle@piecewiseai.com"
+              className="font-semibold hover:opacity-80 transition-opacity"
+              style={{ color: '#3a66f7' }}
+            >
+              kyle@piecewiseai.com
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );

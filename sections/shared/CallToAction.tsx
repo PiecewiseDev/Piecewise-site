@@ -23,9 +23,23 @@ const CallToAction: React.FC<CallToActionProps> = ({ title, subtitle, buttonText
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">{subtitle}</p>
             <Link
               href={buttonLink}
-              className="btn bg-white hover:bg-white/90 py-3 px-8 text-lg inline-flex items-center font-medium transition-all duration-200 rounded-lg shadow-lg hover:no-underline text-[#4a6fa5] hover:shadow-xl hover:scale-[1.03] transition-all duration-200 ease-in-out focus:ring-2 focus:ring-white ring-offset-2 ring-offset-[#4a6fa5]"
+              className="group btn bg-white hover:bg-white/90 py-3 px-8 text-lg inline-flex items-center font-medium transition-all duration-200 rounded-lg shadow-lg hover:no-underline text-[#4a6fa5] hover:shadow-xl hover:scale-105 transition-all duration-200 ease-in-out focus:ring-2 focus:ring-white ring-offset-2 ring-offset-[#4a6fa5]"
             >
               {buttonText}
+              <svg
+                className="ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
             </Link>
           </div>
         </div>

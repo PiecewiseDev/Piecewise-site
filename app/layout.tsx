@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
         <Navbar />
-        <main id="main-content" className="flex-grow pt-24 bg-background">
+        <main id="main-content" className="flex-grow pt-20 bg-background">
           {children}
         </main>
         <Footer />

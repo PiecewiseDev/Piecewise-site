@@ -1,13 +1,50 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 export default function OurMission() {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // IntersectionObserver for fade-in animation
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="py-16 md:py-24" style={{ backgroundColor: '#f1f1f1' }}>
+    <div className="py-16 md:py-24" style={{ backgroundColor: '#f1f1f1' }} ref={containerRef}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Mission Content */}
-          <div>
+          <div
+            className={`transition-all duration-1000 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <h2
               className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-center md:text-left"
               style={{ color: '#1a1a1d' }}
@@ -26,7 +63,11 @@ export default function OurMission() {
           </div>
 
           {/* Right Column - Image Placeholder */}
-          <div className="flex justify-center lg:justify-end">
+          <div
+            className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
             <div className="relative w-full max-w-md h-64 md:h-80 bg-gray-200 rounded-2xl overflow-hidden shadow-lg flex items-center justify-center">
               {/* Placeholder content */}
               <div className="text-center">

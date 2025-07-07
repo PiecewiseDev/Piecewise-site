@@ -88,11 +88,11 @@ const Testimonial: React.FC<TestimonialProps> = ({
         <div className="flex justify-center mt-12">
           <Link
             href={linkHref}
-            className="inline-flex items-center text-navy font-medium hover:text-accent hover:no-underline transition-colors"
+            className="group inline-flex items-center text-navy font-medium hover:text-accent hover:no-underline hover:scale-105 transition-all duration-200"
           >
             {linkText}
             <svg
-              className="ml-2 w-4 h-4"
+              className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

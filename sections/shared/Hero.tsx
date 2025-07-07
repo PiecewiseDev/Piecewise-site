@@ -24,10 +24,10 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink, imageAlt }) => 
         setFadeState('visible');
       }, 500); // 500ms fade in duration
     } else if (fadeState === 'visible') {
-      // Word is fully visible - hold for 3 seconds
+      // Word is fully visible - hold for 2 seconds
       timer = setTimeout(() => {
         setFadeState('out');
-      }, 3000);
+      }, 2000);
     } else if (fadeState === 'out') {
       // Word is fading out
       timer = setTimeout(() => {
@@ -55,24 +55,29 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink, imageAlt }) => 
   };
 
   return (
-    <PageSection
-      background="white"
-      width="wide"
-      padding="large"
-      animate={true}
-      animationDelay={350}
-      className="relative overflow-hidden flex flex-col items-center justify-center bg-gradient-to-b from-[#DDE7F2] to-white"
-    >
-      <div className="max-w-5xl w-full mx-auto px-6 sm:px-8">
-        <div className="flex flex-col items-center justify-center">
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 flex flex-col items-center"
-            style={{ color: '#1a1a1d' }}
-          >
-            <span className="mb-1 text-center leading-tight">{staticText}</span>
+    <div className="relative h-[85vh] -mt-20 flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/ChatGPTScreenshot.png"
+          alt={imageAlt || 'Hero Background'}
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Lightened overlay with subtle blur */}
+        <div className="absolute inset-0 bg-white/40 backdrop-blur-[3px]"></div>
+        {/* Additional gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/40 to-white/50"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl w-full mx-auto px-6 sm:px-8 pt-20">
+        <div className="flex flex-col items-center justify-center text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 flex flex-col items-center text-gray-900">
+            <span className="mb-1 leading-tight drop-shadow-sm">{staticText}</span>
             <span
-              className="font-bold h-[1.2em] min-w-[4rem] sm:min-w-[6rem] flex items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl"
-              style={{ color: '#3a66f7' }}
+              className="font-bold h-[1.2em] min-w-[4rem] sm:min-w-[6rem] flex items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-blue-600 drop-shadow-sm"
               aria-hidden="true"
             >
               <span className={`transition-opacity duration-500 ease-in-out ${getOpacityClass()}`}>
@@ -80,41 +85,27 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink, imageAlt }) => 
               </span>
             </span>
           </h1>
-          <p
-            className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-center max-w-3xl px-2 sm:px-4"
-            style={{ color: '#1a1a1d' }}
-          >
+          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-center max-w-3xl px-2 sm:px-4 text-gray-700 drop-shadow-sm">
             {subtitle}
           </p>
-          <div className="flex justify-center items-center mb-8 sm:mb-12">
+          <div className="flex justify-center items-center">
             <Link
               href={ctaLink || '/contact'}
               prefetch={true}
-              className="text-white rounded-lg px-4 sm:px-6 py-2 sm:py-3 shadow-sm hover:opacity-90 inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 active:opacity-90 active:shadow-sm active:translate-y-0.5 gap-2 text-sm sm:text-base"
-              style={{ backgroundColor: '#3a66f7' }}
+              className="group bg-blue-600 text-white rounded-lg px-4 sm:px-6 py-2 sm:py-3 shadow-lg hover:bg-blue-700 hover:scale-105 hover:shadow-xl inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 active:bg-blue-800 active:shadow-sm active:translate-y-0.5 gap-2 text-sm sm:text-base"
             >
               {ctaText || 'Book a Discovery Call'}
-              <span aria-hidden="true" className="text-current">
+              <span
+                aria-hidden="true"
+                className="text-current transition-transform duration-200 group-hover:translate-x-1"
+              >
                 →
               </span>
             </Link>
           </div>
-          {/* Image Card Placeholder */}
-          <div className="w-full max-w-4xl mx-auto px-2 sm:px-0">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <Image
-                src="/images/ChatGPTScreenshot.png"
-                alt={imageAlt || 'Hero Image'}
-                width={1200}
-                height={675}
-                className="w-full h-auto object-cover"
-                priority
-              />
-            </div>
-          </div>
         </div>
       </div>
-    </PageSection>
+    </div>
   );
 };
 

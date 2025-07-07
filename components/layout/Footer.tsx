@@ -135,11 +135,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 sm:mt-12 border-t border-gray-200 pt-8 text-center">
-          <p className="text-sm text-navy-light">
-            © {new Date().getFullYear()} Piecewise, Inc. All rights reserved.
-          </p>
-        </div>
       </div>
     </footer>
   );

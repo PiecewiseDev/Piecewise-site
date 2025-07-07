@@ -4,7 +4,7 @@ import { IconMap } from '@/components/icons';
 
 // Hero section data
 export const heroData: HeroProps = {
-  subtitle: 'Equip your business with tools that think, act, and grow with you.',
+  subtitle: 'Equip your business with tools that think like you.',
   ctaText: 'Book a Discovery Call',
   ctaLink: '/contact',
   imageSrc: '/images/IMG_2941.png',

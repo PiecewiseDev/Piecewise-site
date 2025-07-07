@@ -25,20 +25,21 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section with Charlotte Skyline Background */}
-      <div className="relative" style={{ height: 'calc(80vh - 2rem)' }}>
+      <div className="relative h-[85vh] -mt-20 flex items-center justify-center overflow-hidden">
         {/* Charlotte Skyline Background - Only for hero + navbar area */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
           style={{
             backgroundImage: 'url(/images/Charlotteskyline.png)',
+            filter: 'blur(1px)',
           }}
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#4b6a88]/10 to-white" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#4b6a88]/10 to-[#f8f8f8]" />
 
         {/* Hero Content */}
-        <div className="relative z-20 pt-24 pb-32 h-full flex items-center">
+        <div className="relative z-20 pt-20 pb-32 h-full flex items-center">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 w-full">
             <PageLabel label="About Us" />
             <h1

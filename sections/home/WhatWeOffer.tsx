@@ -1,6 +1,39 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState, useRef } from 'react';
 
 const WhatWeOffer: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // IntersectionObserver for fade-in animation
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   const offerings = [
     {
       phase: '01',
@@ -29,10 +62,13 @@ const WhatWeOffer: React.FC = () => {
     <div
       style={{ backgroundColor: '#1a1a1d' }}
       className="py-16 md:py-24 shadow-[0_-8px_32px_rgba(0,0,0,0.15),0_8px_32px_rgba(0,0,0,0.15)]"
+      ref={containerRef}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}>
           <h2
             className="text-4xl md:text-5xl font-bold leading-tight mb-6"
             style={{ color: '#f1f1f1' }}
@@ -44,7 +80,15 @@ const WhatWeOffer: React.FC = () => {
         {/* Offerings Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {offerings.map((offering, index) => (
-            <div key={index} className="relative">
+            <div
+              key={index}
+              className={`relative transition-all duration-1000 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+              }`}
+              style={{
+                transitionDelay: isVisible ? `${index * 200 + 300}ms` : '0ms',
+              }}
+            >
               {/* Phase Number */}
               <div className="mb-6 flex justify-center md:justify-start">
                 <span

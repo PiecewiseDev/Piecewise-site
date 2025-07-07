@@ -92,7 +92,17 @@ export default function ClientLogoStrip({
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="h-10 md:h-12 max-w-[130px] filter grayscale-[60%] hover:grayscale-0 transition duration-300 ease-in-out object-contain"
+                  className={`h-10 md:h-12 max-w-[130px] filter grayscale-[60%] hover:grayscale-0 transition duration-300 ease-in-out object-contain ${
+                    logo.alt === 'Trinity' ? 'drop-shadow-sm contrast-110' : ''
+                  }`}
+                  style={
+                    logo.alt === 'Trinity'
+                      ? {
+                          filter:
+                            'grayscale(60%) drop-shadow(0 0.5px 1px rgba(0, 0, 0, 0.12)) contrast(110%)',
+                        }
+                      : undefined
+                  }
                 />
               </div>
             ))}

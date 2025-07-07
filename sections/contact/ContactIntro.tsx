@@ -3,8 +3,13 @@ import { PageLabel } from '@/components/ui';
 
 const ContactIntro: React.FC = () => {
   return (
-    <div className="py-8 sm:py-12" style={{ backgroundColor: '#f1f1f1' }}>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <div
+      className="relative h-[50vh] -mt-20 flex items-center justify-center overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)',
+      }}
+    >
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-20">
         <PageLabel label="Contact" />
         <h1
           className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-center animate-fade-in"
@@ -13,7 +18,7 @@ const ContactIntro: React.FC = () => {
           Let&apos;s Talk
         </h1>
         <p
-          className="text-lg md:text-xl mb-12 text-center max-w-3xl mx-auto animate-fade-in animation-delay-200"
+          className="text-lg md:text-xl mb-6 text-center max-w-3xl mx-auto animate-fade-in animation-delay-200"
           style={{ color: '#1a1a1d' }}
         >
           We&apos;ll walk you through what this could look like for your business.

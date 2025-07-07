@@ -1,18 +1,57 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 
 export default function OurTeam() {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // IntersectionObserver for fade-in animation
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="py-16 md:py-24" style={{ backgroundColor: '#1a1a1d' }}>
+    <div className="py-16 md:py-24" style={{ backgroundColor: '#1a1a1d' }} ref={containerRef}>
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <h2
-          className="text-3xl md:text-4xl font-bold leading-tight mb-12 text-center md:text-left"
+          className={`text-3xl md:text-4xl font-bold leading-tight mb-12 text-center md:text-left transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
           style={{ color: '#f1f1f1' }}
         >
           Our Team
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[320px,1fr] gap-12 items-start max-w-5xl">
+        <div
+          className={`grid grid-cols-1 lg:grid-cols-[320px,1fr] gap-12 items-start max-w-5xl transition-all duration-1000 delay-300 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           {/* Left Column - Profile Image */}
           <div className="flex justify-center md:justify-start">
             <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
