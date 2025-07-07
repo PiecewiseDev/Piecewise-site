@@ -46,9 +46,10 @@ const Navbar = () => {
         <div
           className={`transition-all duration-300 ${
             scrolled
-              ? 'bg-white/95 backdrop-blur-sm rounded-full shadow-md mx-4 sm:mx-auto px-6 max-w-3xl border border-gray-200/50'
-              : 'bg-white max-w-7xl mx-auto px-8 rounded-2xl shadow-sm border border-gray-200/30'
+              ? 'backdrop-blur-sm rounded-full shadow-md mx-4 sm:mx-auto px-6 max-w-3xl border border-gray-200/50'
+              : 'max-w-7xl mx-auto px-8 rounded-2xl shadow-sm border border-gray-200/30'
           }`}
+          style={{ backgroundColor: '#f1f1f1' }}
         >
           <div className="flex justify-between items-center h-12 py-1">
             {/* Logo */}
@@ -77,7 +78,7 @@ const Navbar = () => {
                     link.href === '/pricing' ||
                     link.href === '/services'
                   }
-                  className="inline-flex items-center text-navy-light hover:text-accent hover:no-underline px-1 text-sm font-medium transition-colors duration-200"
+                  className="inline-flex items-center text-navy-light hover:text-blue-600 hover:no-underline px-1 text-sm font-medium transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
@@ -89,7 +90,7 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 prefetch={true}
-                className="bg-blue-600 text-white rounded-lg px-4 py-1.5 text-sm font-bold shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 hover:no-underline flex items-center gap-2 transition-all duration-200"
+                className="bg-blue-600 text-white rounded-lg px-4 py-1.5 text-sm font-bold shadow-sm hover:text-gray-100 focus:ring-2 focus:ring-blue-500 hover:no-underline flex items-center gap-2 transition-all duration-200"
               >
                 Book a Call
                 <svg
@@ -176,7 +177,7 @@ const Navbar = () => {
                 prefetch={
                   link.href === '/contact' || link.href === '/pricing' || link.href === '/services'
                 }
-                className="inline-block text-navy-light hover:text-accent hover:no-underline block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full hover:bg-gray-50"
+                className="inline-block text-navy-light hover:text-blue-600 hover:no-underline block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
@@ -186,7 +187,7 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 prefetch={true}
-                className="bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-bold shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 w-full flex justify-center items-center gap-2 hover:no-underline transition-all duration-200"
+                className="bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-bold shadow-sm hover:text-gray-100 focus:ring-2 focus:ring-blue-500 w-full flex justify-center items-center gap-2 hover:no-underline transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Book a Call

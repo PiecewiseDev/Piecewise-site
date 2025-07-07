@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     siteName: 'Piecewise',
     images: [
       {
-        url: '/images/ChatGPTScreenshot.png',
+        url: '/logos/piecewiselogo6.png',
         width: 1200,
         height: 675,
-        alt: 'Custom AI tools dashboard showing business automation interface',
+        alt: 'Piecewise - Custom AI Tools for Service Businesses',
       },
     ],
   },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Custom AI Tools for Service Businesses | Piecewise',
     description:
       'Transform your service business with custom AI tools that understand your processes.',
-    images: ['/images/ChatGPTScreenshot.png'],
+    images: ['/logos/piecewiselogo6.png'],
   },
   robots: {
     index: true,

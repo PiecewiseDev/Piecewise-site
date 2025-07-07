@@ -14,6 +14,11 @@ export const metadata = {
   title: 'Professional Business Website',
   description: 'A professional business website with a clean, modern design',
   viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+  icons: {
+    icon: '/logos/piecewiselogo6.png',
+    shortcut: '/logos/piecewiselogo6.png',
+    apple: '/logos/piecewiselogo6.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
