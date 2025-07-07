@@ -27,7 +27,7 @@ const StyledLink: React.FC<StyledLinkProps> = ({
   children,
   className = '',
   variant = 'default',
-  underline = true,
+  underline = false,
   external = false,
 }) => {
   // Variant styles
@@ -53,12 +53,6 @@ const StyledLink: React.FC<StyledLinkProps> = ({
     >
       <span className="relative inline-flex overflow-hidden group">
         <span className="relative z-10">{children}</span>
-        {underline && (
-          <span
-            className="absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full"
-            aria-hidden="true"
-          />
-        )}
       </span>
     </Link>
   );

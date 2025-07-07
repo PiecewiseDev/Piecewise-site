@@ -153,14 +153,6 @@ body {
     @apply relative inline-block;
   }
 
-  .link-underline::after {
-    @apply absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 content-[''];
-  }
-
-  .link-underline:hover::after {
-    @apply w-full;
-  }
-
   /* Cards */
   .card {
     @apply bg-white border border-gray-200 p-6 rounded-xl transition-all duration-200;

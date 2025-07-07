@@ -92,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink, imageAlt }) => 
             <Link
               href={ctaLink || '/contact'}
               prefetch={true}
-              className="group bg-blue-600 text-white rounded-lg px-4 sm:px-6 py-2 sm:py-3 shadow-lg hover:bg-blue-700 hover:scale-105 hover:shadow-xl inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 active:bg-blue-800 active:shadow-sm active:translate-y-0.5 gap-2 text-sm sm:text-base"
+              className="group bg-blue-600 text-white hover:text-gray-100 rounded-lg px-4 sm:px-6 py-2 sm:py-3 shadow-lg hover:bg-blue-700 hover:scale-105 hover:shadow-xl inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 active:bg-blue-800 active:shadow-sm active:translate-y-0.5 gap-2 text-sm sm:text-base"
             >
               {ctaText || 'Book a Discovery Call'}
               <span

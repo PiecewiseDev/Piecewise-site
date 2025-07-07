@@ -20,7 +20,7 @@ const structuredData = {
   name: 'Piecewise',
   description: 'Custom AI tools and automation solutions for service businesses',
   url: 'https://piecewiseai.com',
-  logo: 'https://piecewiseai.com/logos/PiecewiseLogo2.png',
+  logo: 'https://piecewiseai.com/logos/piecewiselogo6.png',
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+1-XXX-XXX-XXXX', // Add your phone number when available

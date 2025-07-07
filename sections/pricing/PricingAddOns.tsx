@@ -95,7 +95,7 @@ const PricingAddOns: React.FC = () => {
             <p className="text-navy-light mb-4">{addon.description}</p>
             <a
               href="/contact"
-              className="text-accent font-medium hover:underline inline-flex items-center"
+              className="text-accent font-medium inline-flex items-center"
             >
               Learn more
               <svg

@@ -55,14 +55,14 @@ const Navbar = () => {
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center gap-2 hover:no-underline">
                 <Image
-                  src="/logos/PiecewiseLogo1.png"
+                  src="/logos/piecewiselogo6.png"
                   alt="Piecewise Logo"
                   width={36}
                   height={36}
-                  className="h-8 w-auto object-contain"
+                  className="h-7 w-auto object-contain"
                   priority
                 />
-                <span className="text-lg font-semibold text-gray-900">Piecewise</span>
+                <span className="text-lg font-semibold text-gray-900">piecewise</span>
               </Link>
             </div>
 
@@ -77,13 +77,9 @@ const Navbar = () => {
                     link.href === '/pricing' ||
                     link.href === '/services'
                   }
-                  className="relative inline-flex items-center text-navy-light hover:text-accent hover:no-underline group px-1 text-sm font-medium transition-colors duration-200"
+                  className="inline-flex items-center text-navy-light hover:text-accent hover:no-underline px-1 text-sm font-medium transition-colors duration-200"
                 >
-                  <span className="relative z-10">{link.name}</span>
-                  <span
-                    className="absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full"
-                    aria-hidden="true"
-                  />
+                  {link.name}
                 </Link>
               ))}
             </nav>
@@ -180,14 +176,10 @@ const Navbar = () => {
                 prefetch={
                   link.href === '/contact' || link.href === '/pricing' || link.href === '/services'
                 }
-                className="relative inline-block text-navy-light hover:text-accent hover:no-underline group block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full hover:bg-gray-50"
+                className="inline-block text-navy-light hover:text-accent hover:no-underline block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <span className="relative z-10">{link.name}</span>
-                <span
-                  className="absolute left-0 bottom-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full"
-                  aria-hidden="true"
-                />
+                {link.name}
               </Link>
             ))}
             <div className="mt-4 px-3 py-2">
