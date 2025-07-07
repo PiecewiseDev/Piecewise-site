@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: 'Piecewise',
     images: [
       {
-        url: '/logos/piecewiselogo6.png',
+        url: '/logos/piecewiselogo7.png',
         width: 1200,
         height: 675,
         alt: 'Piecewise - Custom AI Tools for Service Businesses',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Custom AI Tools for Service Businesses | Piecewise',
     description:
       'Transform your service business with custom AI tools that understand your processes.',
-    images: ['/logos/piecewiselogo6.png'],
+    images: ['/logos/piecewiselogo7.png'],
   },
   robots: {
     index: true,
