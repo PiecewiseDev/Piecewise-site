@@ -14,7 +14,10 @@ const Footer = () => {
             </h3>
             <address className="mt-4 space-y-3 not-italic">
               <p className="text-sm text-navy-light mt-4">
-                <a href="mailto:kyle@piecewiseai.com" className="hover:text-accent">
+                <a
+                  href="mailto:kyle@piecewiseai.com"
+                  className="hover:text-[#3daeff] transition-colors duration-200"
+                >
                   kyle@piecewiseai.com
                 </a>
               </p>
@@ -22,7 +25,7 @@ const Footer = () => {
             <div className="mt-6 flex space-x-6">
               <a
                 href="#"
-                className="text-navy-light hover:text-accent hover:no-underline"
+                className="text-navy-light hover:text-[#3daeff] hover:no-underline transition-colors duration-200"
                 aria-label="LinkedIn"
               >
                 <span className="sr-only">LinkedIn</span>
@@ -47,7 +50,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/"
-                    className="text-navy-light hover:text-accent text-sm hover:no-underline focus-visible"
+                    className="text-navy-light hover:text-[#3daeff] text-sm hover:no-underline focus-visible transition-colors duration-200"
                   >
                     Home
                   </Link>
@@ -55,7 +58,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/about"
-                    className="text-navy-light hover:text-accent text-sm hover:no-underline focus-visible"
+                    className="text-navy-light hover:text-[#3daeff] text-sm hover:no-underline focus-visible transition-colors duration-200"
                   >
                     About Us
                   </Link>
@@ -106,7 +109,7 @@ const Footer = () => {
                   <Link
                     href="/contact"
                     prefetch={true}
-                    className="text-navy-light hover:text-accent text-sm hover:no-underline focus-visible"
+                    className="text-navy-light hover:text-[#3daeff] text-sm hover:no-underline focus-visible transition-colors duration-200"
                   >
                     Contact
                   </Link>

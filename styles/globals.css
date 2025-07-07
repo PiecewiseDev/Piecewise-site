@@ -120,7 +120,11 @@ body {
   }
 
   .btn-secondary {
-    @apply border border-navy text-navy bg-white rounded-lg px-6 py-3 hover:bg-gray-100 inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 active:opacity-90 active:shadow-sm active:translate-y-0.5;
+    @apply border border-navy text-navy bg-white rounded-lg px-6 py-3 inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 active:opacity-90 active:shadow-sm active:translate-y-0.5;
+  }
+  
+  .btn-secondary:hover {
+    color: #3daeff;
   }
 
   .btn-accent {

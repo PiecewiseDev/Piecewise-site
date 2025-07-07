@@ -79,7 +79,7 @@ export default function OurMission() {
                 alt="Open Bible with notebook and pen - representing our faith-centered mission"
                 fill
                 style={{ objectFit: 'cover' }}
-                className=""
+                className="transition-transform duration-300 hover:scale-105"
               />
             </div>
           </div>
