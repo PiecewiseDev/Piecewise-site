@@ -65,7 +65,7 @@ export const growthPlanData: PricingPlanProps = {
   subtitle: 'For ongoing optimization',
   price: '$300/mo',
   features: [
-    { text: 'Regular updates to your CustomGPT' },
+    { text: 'Regular updates to your Custom GPT' },
     { text: 'Monthly reporting and insights' },
     { text: 'Priority email support' },
     { text: 'Training for new team members' },
@@ -78,7 +78,7 @@ export const growthPlanData: PricingPlanProps = {
 // Add-Ons Data
 export const addOnsData: PricingAddOnsProps = {
   title: 'Optional Add-On GPTs',
-  subtitle: 'Enhance your main CustomGPT with these specialized tools',
+  subtitle: 'Enhance your main Custom GPT with these specialized tools',
   addOns: [
     {
       title: 'Estimate Generator',

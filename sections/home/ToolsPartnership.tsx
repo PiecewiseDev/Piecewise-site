@@ -130,7 +130,7 @@ const ToolsPartnership: React.FC = () => {
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center bg-white text-[#3A66F7] rounded-lg px-6 py-3 text-base font-semibold hover:bg-white/90 hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-lg"
+                className="inline-flex items-center bg-white text-[#3A66F7] rounded-lg px-6 py-3 text-base font-semibold hover:bg-white/90 hover:text-[#2d52e3] hover:scale-105 transition-all duration-200 shadow-sm hover:shadow-lg"
               >
                 See what a tool like ChatGPT could do
                 <svg

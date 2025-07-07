@@ -20,7 +20,7 @@ export default function AboutIntro() {
               not answering the same policy questions or writing routine emails all day.
             </p>
             <p>
-              Our CustomGPTs act as your personal assistant who understands your business from the
+              Our Custom GPTs act as your personal assistant who understands your business from the
               inside out—freeing you to focus on what matters while maintaining the personal touch
               your customers value.
             </p>

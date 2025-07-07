@@ -348,3 +348,10 @@ body {
 .animation-delay-2000 {
   animation-delay: 2s;
 }
+
+/* Peek animation for Our Values cards */
+@keyframes peek {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(25deg); }
+  100% { transform: rotateY(0deg); }
+}

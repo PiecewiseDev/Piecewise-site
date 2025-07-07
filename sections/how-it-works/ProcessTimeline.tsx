@@ -49,7 +49,7 @@ export default function ProcessTimeline() {
                   </div>
                   <p className="text-navy-light">
                     We'll have a no-pressure conversation about your business, where you're spending
-                    too much time, and how a CustomGPT could help.
+                    too much time, and how a Custom GPT could help.
                   </p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function ProcessTimeline() {
                     </div>
                   </div>
                   <p className="text-navy-light md:text-right">
-                    Using your emails, documents, and policies, we create a CustomGPT that captures
+                    Using your emails, documents, and policies, we create a Custom GPT that captures
                     your voice and business logic.
                   </p>
                 </div>
@@ -144,7 +144,7 @@ export default function ProcessTimeline() {
                     </div>
                   </div>
                   <p className="text-navy-light">
-                    We walk through the CustomGPT together and make any refinements needed until it
+                    We walk through the Custom GPT together and make any refinements needed until it
                     feels like a natural extension of your business.
                   </p>
                 </div>
@@ -192,7 +192,7 @@ export default function ProcessTimeline() {
                     </div>
                   </div>
                   <p className="text-navy-light md:text-right">
-                    As your business evolves, we'll help keep your CustomGPT current with your
+                    As your business evolves, we'll help keep your Custom GPT current with your
                     latest policies, products, and team changes.
                   </p>
                 </div>

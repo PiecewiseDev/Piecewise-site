@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://piecewiseai.com'),
   title: 'Custom AI Tools | Piecewise - Built for Service Businesses',
   description:
-    'Transform your service business with custom AI tools that understand your processes. We build private CustomGPTs for contractors, managers, and teams to streamline operations and improve efficiency.',
+    'Transform your service business with custom AI tools that understand your processes. We build private Custom GPTs for contractors, managers, and teams to streamline operations and improve efficiency.',
   keywords: [
     'custom GPT for small business',
     'AI support for service teams',

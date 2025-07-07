@@ -39,7 +39,7 @@ export default function FeaturedCaseStudy() {
             <div className="mt-6 border-l-4 border-accent/30 pl-4 italic text-navy-light">
               <p className="text-lg">
                 "Our team was spending hours each day responding to the same customer questions. Now
-                our CustomGPT handles most of this automatically, giving us back time to focus on
+                our Custom GPT handles most of this automatically, giving us back time to focus on
                 growing the business."
               </p>
               <p className="mt-4 font-medium text-navy not-italic">— Mike Benson, Owner</p>
@@ -99,7 +99,7 @@ export default function FeaturedCaseStudy() {
                 <div>
                   <h5 className="font-bold text-navy mb-1">What We Built</h5>
                   <p className="text-navy-light">
-                    CustomGPT trained on GreenVista's tone, pricing model, crew SOPs, and plant care
+                    Custom GPT trained on GreenVista's tone, pricing model, crew SOPs, and plant care
                     knowledge base.
                   </p>
                 </div>

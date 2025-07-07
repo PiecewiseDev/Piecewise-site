@@ -105,7 +105,7 @@ export default function Comparison() {
                 />
               </svg>
             </span>
-            Your CustomGPT
+            Your Custom GPT
           </h3>
 
           <ul className="space-y-6">

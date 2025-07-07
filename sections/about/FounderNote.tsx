@@ -35,7 +35,7 @@ export default function FounderNote() {
                 same queries over and over.
               </p>
               <p>
-                Our CustomGPTs aren&apos;t about replacing the human touch—they&apos;re about
+                Our Custom GPTs aren&apos;t about replacing the human touch—they&apos;re about
                 freeing you to be more present where it truly matters. They handle the routine so
                 you can focus on the relationships and work that only you can do.
               </p>

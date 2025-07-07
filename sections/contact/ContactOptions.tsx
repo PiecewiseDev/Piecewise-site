@@ -68,7 +68,7 @@ const ContactOptions: React.FC = () => {
                     <span className="font-semibold" style={{ color: '#1a1a1d' }}>
                       30-minute conversation
                     </span>{' '}
-                    to explore how a CustomGPT could work for your business.
+                    to explore how a Custom GPT could work for your business.
                   </p>
                 </div>
 

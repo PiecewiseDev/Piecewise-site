@@ -46,7 +46,7 @@ const ContactCallSteps: React.FC = () => {
                       We walk you through a real demo
                     </h3>
                     <p style={{ color: '#1a1a1d', opacity: 0.7 }}>
-                      See a CustomGPT in action for a business similar to yours.
+                      See a Custom GPT in action for a business similar to yours.
                     </p>
                   </div>
                 </li>

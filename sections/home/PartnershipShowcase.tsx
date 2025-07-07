@@ -15,7 +15,9 @@ interface ClientSlide {
 const PartnershipShowcase: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
   // IntersectionObserver for fade-in animation
   useEffect(() => {
@@ -41,6 +43,30 @@ const PartnershipShowcase: React.FC = () => {
     return () => {
       if (containerRef.current) {
         observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isPaused && isVisible) {
+      autoPlayRef.current = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % 3); // 3 slides total
+      }, 4000); // Change slide every 4 seconds
+    }
+
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+    };
+  }, [isPaused, isVisible]);
+
+  // Clear auto-play when component unmounts
+  useEffect(() => {
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
       }
     };
   }, []);
@@ -75,10 +101,23 @@ const PartnershipShowcase: React.FC = () => {
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % clients.length);
+    // Pause auto-play briefly when user manually navigates
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 6000); // Resume after 6 seconds
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + clients.length) % clients.length);
+    // Pause auto-play briefly when user manually navigates
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 6000); // Resume after 6 seconds
+  };
+
+  const handleSlideClick = (index: number) => {
+    setCurrentSlide(index);
+    // Pause auto-play briefly when user manually navigates
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 6000); // Resume after 6 seconds
   };
 
   return (
@@ -89,7 +128,11 @@ const PartnershipShowcase: React.FC = () => {
           <div className={`relative transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <div className="relative h-[32rem] rounded-xl overflow-hidden">
+            <div 
+              className="relative h-[32rem] rounded-xl overflow-hidden"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               {/* Carousel Container */}
               <div
                 className="flex transition-transform duration-500 ease-in-out h-full"
@@ -197,7 +240,7 @@ const PartnershipShowcase: React.FC = () => {
                 {clients.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => setCurrentSlide(index)}
+                    onClick={() => handleSlideClick(index)}
                     className={`w-2 h-2 rounded-full transition-colors duration-200 ${
                       index === currentSlide ? 'bg-white' : 'bg-white/50'
                     }`}

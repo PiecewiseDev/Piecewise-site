@@ -38,7 +38,7 @@ const BuildChecklist: React.FC<BuildChecklistProps> = () => {
     <div className="max-w-5xl mx-auto mb-16">
       <div className="bg-white rounded-lg shadow-card p-8 lg:p-12 hover:scale-[1.02] hover:shadow-lg transition-all duration-200">
         <p className="text-lg text-navy-light mb-10 text-center max-w-3xl mx-auto">
-          Every CustomGPT we build includes a comprehensive package of services to ensure your AI
+          Every Custom GPT we build includes a comprehensive package of services to ensure your AI
           assistant works exactly the way your business does.
         </p>
 

@@ -37,7 +37,7 @@ const BuildAddOns: React.FC<BuildAddOnsProps> = () => {
           Need Something Extra?
         </h2>
         <p className="text-lg text-navy-light mb-10 text-center max-w-3xl mx-auto">
-          Enhance your CustomGPT with these specialized add-ons designed for specific business
+          Enhance your Custom GPT with these specialized add-ons designed for specific business
           needs.
         </p>
 

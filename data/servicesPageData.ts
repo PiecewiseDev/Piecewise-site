@@ -170,8 +170,8 @@ export const buildAddOnsData: BuildAddOnsProps = {
 // Build Comparison Data
 export const buildComparisonData: BuildComparisonProps = {
   title: 'Comparison',
-  description: 'See how our CustomGPT solution compares to using standard ChatGPT:',
-  customGPTColumn: 'CustomGPT',
+  description: 'See how our Custom GPT solution compares to using standard ChatGPT:',
+  customGPTColumn: 'Custom GPT',
   standardChatGPTColumn: 'Standard ChatGPT',
   features: [
     {

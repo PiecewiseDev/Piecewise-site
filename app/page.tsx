@@ -68,12 +68,12 @@ export default function HomePage() {
     ctaLink: '/contact',
     imageSrc: '/images/ChatGPTScreenshot.png',
     imageAlt:
-      'Custom AI tools dashboard interface showing business automation and CustomGPT conversation examples for service businesses',
+      'Custom AI tools dashboard interface showing business automation and Custom GPT conversation examples for service businesses',
   };
 
   // Benefits section data
   const benefitsData = {
-    title: 'How Our CustomGPTs Help You',
+    title: 'How Our Custom GPTs Help You',
     subtitle:
       'Designed specifically for service businesses, our AI solutions streamline operations and improve client experience.',
     benefits: [
@@ -145,9 +145,9 @@ export default function HomePage() {
 
   // Explainer section data
   const explainerData = {
-    title: "What's a CustomGPT?",
+    title: "What's a Custom GPT?",
     description:
-      'A CustomGPT is a private AI assistant tailored specifically to your business, not a generic chatbot. It works behind the scenes to help you and your team, not as a customer-facing tool.',
+      'A Custom GPT is a private AI assistant tailored specifically to your business, not a generic chatbot. It works behind the scenes to help you and your team, not as a customer-facing tool.',
     features: [
       {
         icon: (
@@ -217,7 +217,7 @@ export default function HomePage() {
   // Use Cases section data
   const useCasesData = {
     title: 'Real-World Examples',
-    subtitle: 'See how service businesses use CustomGPTs to respond to common situations',
+    subtitle: 'See how service businesses use Custom GPTs to respond to common situations',
     useCases: [
       {
         icon: (
@@ -238,7 +238,7 @@ export default function HomePage() {
         ),
         title: 'Reply to a discount request',
         description:
-          'Let your CustomGPT handle discount requests consistently according to your business policies.',
+          'Let your Custom GPT handle discount requests consistently according to your business policies.',
         promptExample:
           "\"Customer is asking for 15% off. Here's what they wrote: 'I've been quoted less by another company. Can you match their price?'\"",
       },

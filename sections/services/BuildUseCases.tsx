@@ -145,7 +145,7 @@ const BuildUseCases: React.FC<BuildUseCasesProps> = () => {
           What It Can Do
         </h2>
         <p className="text-lg text-navy-light mb-10 text-center max-w-3xl mx-auto">
-          Your CustomGPT can handle a wide range of tasks, freeing up your time while maintaining
+          Your Custom GPT can handle a wide range of tasks, freeing up your time while maintaining
           your business standards.
         </p>
 

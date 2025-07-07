@@ -19,7 +19,7 @@ export const caseStudies: CaseStudy[] = [
       '92% consistency score in quality reviews',
     ],
     quote: {
-      text: 'The CustomGPT has transformed how we deliver advisory services. Our team can now provide high-quality, consistent advice at scale, allowing us to serve more clients without sacrificing quality.',
+      text: 'The Custom GPT has transformed how we deliver advisory services. Our team can now provide high-quality, consistent advice at scale, allowing us to serve more clients without sacrificing quality.',
       author: 'Jennifer Smith, Managing Partner',
     },
     implementationSteps: [
@@ -73,7 +73,7 @@ export const caseStudies: CaseStudy[] = [
       '28% increase in conversion rate from inquiry to booking',
     ],
     quote: {
-      text: "Before the CustomGPT, I was skeptical about AI. Now it feels like I have a version of myself available to my team 24/7. It's transformed how I run my business, giving me time to focus on growth instead of admin.",
+      text: "Before the Custom GPT, I was skeptical about AI. Now it feels like I have a version of myself available to my team 24/7. It's transformed how I run my business, giving me time to focus on growth instead of admin.",
       author: 'Sarah Johnson, Owner',
     },
     implementationSteps: [

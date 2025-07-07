@@ -26,7 +26,7 @@ export interface BenefitsProps {
 
 // Benefits section data
 export const benefitsData: BenefitsProps = {
-  title: 'How Our CustomGPTs Help You',
+  title: 'How Our Custom GPTs Help You',
   subtitle:
     'Built for service businesses. Designed to support clarity, consistency, and calm inside your operation.s3',
   benefits: [
@@ -68,9 +68,9 @@ export interface ExplainerProps {
 
 // Explainer section data
 export const explainerData: ExplainerProps = {
-  title: 'How a CustomGPT Helps You Work Faster, Clearer, and With Less Effort',
+  title: 'How a Custom GPT Helps You Work Faster, Clearer, and With Less Effort',
   description:
-    'Your CustomGPT is built from your documents, tone, and policies. It serves you and your team—not your customers—so you can operate with more clarity, consistency, and calm.',
+    'Your Custom GPT is built from your documents, tone, and policies. It serves you and your team—not your customers—so you can operate with more clarity, consistency, and calm.',
   features: [
     {
       icon: 'document',
@@ -111,13 +111,13 @@ export interface UseCasesProps {
 // Use Cases section data
 export const useCasesData: UseCasesProps = {
   title: 'Real-World Examples',
-  subtitle: 'See how service businesses use CustomGPTs to respond to common situations',
+  subtitle: 'See how service businesses use Custom GPTs to respond to common situations',
   useCases: [
     {
       icon: 'currency',
       title: 'Reply to a discount request',
       description:
-        'Let your CustomGPT handle discount requests consistently according to your business policies.',
+        'Let your Custom GPT handle discount requests consistently according to your business policies.',
       promptExample:
         "\"Customer is asking for 15% off. Here's what they wrote: 'I've been quoted less by another company. Can you match their price?'\"",
     },

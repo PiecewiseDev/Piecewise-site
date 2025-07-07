@@ -15,7 +15,7 @@ export default function ClientTestimonials() {
   const testimonials: Testimonial[] = [
     {
       quote:
-        'Piecewise built us a CustomGPT that saves our team over 15 hours per week on customer inquiries. It feels like having an extra team member who knows all our policies and procedures.',
+        'Piecewise built us a Custom GPT that saves our team over 15 hours per week on customer inquiries. It feels like having an extra team member who knows all our policies and procedures.',
       name: 'Sarah Johnson',
       title: 'Operations Manager',
       company: 'GreenScape Landscaping',
@@ -31,7 +31,7 @@ export default function ClientTestimonials() {
     },
     {
       quote:
-        'The CustomGPT we got from Piecewise has transformed how we onboard new employees. Training time has been cut in half, and our new hires get up to speed much faster.',
+        'The Custom GPT we got from Piecewise has transformed how we onboard new employees. Training time has been cut in half, and our new hires get up to speed much faster.',
       name: 'Lisa Rodriguez',
       title: 'HR Director',
       company: 'Bright Education Services',
@@ -99,7 +99,7 @@ export default function ClientTestimonials() {
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">What Our Clients Say</h2>
         <p className="text-navy-light text-center max-w-3xl mx-auto mb-12">
           Don't just take our word for it. Here's what clients have experienced after implementing
-          their CustomGPT solutions.
+          their Custom GPT solutions.
         </p>
 
         <div className="relative">

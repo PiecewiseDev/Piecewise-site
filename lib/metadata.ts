@@ -6,7 +6,7 @@ export const defaultMetadata: Metadata = {
     default: 'Piecewise | Custom GPTs for Service Businesses',
     template: '%s | Piecewise',
   },
-  description: 'We build private CustomGPTs that think like your business, not like a chatbot.',
+  description: 'We build private Custom GPTs that think like your business, not like a chatbot.',
   keywords: ['custom gpt', 'ai assistant', 'service business', 'business automation'],
   authors: [{ name: 'Piecewise' }],
   creator: 'Piecewise',
