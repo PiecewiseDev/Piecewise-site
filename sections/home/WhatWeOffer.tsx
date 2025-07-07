@@ -36,25 +36,28 @@ const WhatWeOffer: React.FC = () => {
 
   const offerings = [
     {
-      phase: '01',
+      phase: '1',
       title: 'Discovery & Strategy',
       description:
         'We understand your business, identify opportunities, and map out an AI implementation plan that fits your workflow.',
       features: ['Business assessment', 'Workflow analysis', 'Custom strategy roadmap'],
+      color: '#3a66f7',
     },
     {
-      phase: '02',
+      phase: '2',
       title: 'Custom AI Development',
       description:
         'We build and train AI tools specifically for your business, using your data, processes, and business knowledge.',
       features: ['Custom AI training', 'Integration setup', 'Knowledge base creation'],
+      color: '#3DAEFF',
     },
     {
-      phase: '03',
+      phase: '3',
       title: 'Implementation & Support',
       description:
         'We ensure smooth adoption with training, ongoing support, and continuous optimization as your business evolves.',
       features: ['Team training', 'Ongoing support', 'Performance optimization'],
+      color: '#9A8CFB',
     },
   ];
 
@@ -80,59 +83,41 @@ const WhatWeOffer: React.FC = () => {
         {/* Offerings Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {offerings.map((offering, index) => (
-            <div
+                        <div
               key={index}
-              className={`relative transition-all duration-1000 ${
+              className={`relative rounded-3xl p-8 transition-all duration-1000 border border-white/10 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{
+                background: `linear-gradient(to right, #1a1a1d, ${offering.color}30)`,
                 transitionDelay: isVisible ? `${index * 200 + 300}ms` : '0ms',
               }}
             >
-              {/* Phase Number */}
-              <div className="mb-6 flex justify-center md:justify-start">
-                <span
-                  className="inline-flex items-center justify-center w-12 h-12 rounded-full text-white font-bold text-lg"
-                  style={{
-                    backgroundColor:
-                      offering.phase === '02'
-                        ? '#3DAEFF'
-                        : offering.phase === '03'
-                          ? '#9A8CFB'
-                          : '#3a66f7',
-                  }}
-                >
-                  {offering.phase}
-                </span>
-              </div>
-
               {/* Content */}
-              <div className="space-y-4">
-                <h3 className="text-xl md:text-2xl font-bold text-center md:text-left" style={{ color: '#f1f1f1' }}>
+              <div className="space-y-6 pt-4">
+                <h3
+                  className="text-lg md:text-xl font-bold text-left"
+                  style={{ color: '#f1f1f1' }}
+                >
                   {offering.title}
                 </h3>
 
                 <p
-                  className="text-base leading-relaxed text-center md:text-left"
+                  className="text-base leading-relaxed text-left"
                   style={{ color: '#f1f1f1', opacity: 0.9 }}
                 >
                   {offering.description}
                 </p>
 
                 {/* Features List */}
-                <div className="flex justify-center md:justify-start">
-                  <ul className="space-y-2 pt-2 inline-block text-left">
+                <div>
+                  <ul className="space-y-3 pt-2">
                     {offering.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start">
                         <span
-                          className="inline-block w-1.5 h-1.5 rounded-full mt-2.5 mr-3 flex-shrink-0"
+                          className="inline-block w-2 h-2 rounded-full mt-2.5 mr-3 flex-shrink-0"
                           style={{
-                            backgroundColor:
-                              offering.phase === '02'
-                                ? '#3DAEFF'
-                                : offering.phase === '03'
-                                  ? '#9A8CFB'
-                                  : '#3a66f7',
+                            backgroundColor: offering.color,
                           }}
                         ></span>
                         <span className="text-sm" style={{ color: '#f1f1f1', opacity: 0.8 }}>
@@ -143,11 +128,6 @@ const WhatWeOffer: React.FC = () => {
                   </ul>
                 </div>
               </div>
-
-              {/* Connecting Line (for first two phases only) */}
-              {index < 2 && (
-                <div className="hidden md:block absolute top-6 left-full w-full h-px bg-gradient-to-r from-white/30 to-transparent transform translate-x-6"></div>
-              )}
             </div>
           ))}
         </div>

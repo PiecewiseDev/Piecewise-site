@@ -65,7 +65,7 @@ const ContactOptions: React.FC = () => {
                     style={{ color: '#1a1a1d', opacity: 0.8 }}
                   >
                     Schedule a{' '}
-                    <span className="font-semibold" style={{ color: '#3a66f7' }}>
+                    <span className="font-semibold" style={{ color: '#1a1a1d' }}>
                       30-minute conversation
                     </span>{' '}
                     to explore how a CustomGPT could work for your business.
@@ -81,7 +81,7 @@ const ContactOptions: React.FC = () => {
                     <div className="flex-shrink-0 mt-0.5">
                       <div
                         className="w-5 h-5 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: '#3a66f7' }}
+                        style={{ backgroundColor: '#2563eb' }}
                       >
                         <svg
                           className="w-2.5 h-2.5 text-white"
@@ -110,7 +110,7 @@ const ContactOptions: React.FC = () => {
                     <div className="flex-shrink-0 mt-0.5">
                       <div
                         className="w-5 h-5 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: '#3a66f7' }}
+                        style={{ backgroundColor: '#2563eb' }}
                       >
                         <svg
                           className="w-2.5 h-2.5 text-white"
@@ -139,7 +139,7 @@ const ContactOptions: React.FC = () => {
                     <div className="flex-shrink-0 mt-0.5">
                       <div
                         className="w-5 h-5 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: '#3a66f7' }}
+                        style={{ backgroundColor: '#2563eb' }}
                       >
                         <svg
                           className="w-2.5 h-2.5 text-white"
@@ -171,8 +171,8 @@ const ContactOptions: React.FC = () => {
                   href="https://calendly.com/piecewiseai/discovery-call"
                   className="group w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md hover:scale-105 transform hover:-translate-y-0.5 text-lg"
                   style={{
-                    background: 'linear-gradient(135deg, #3a66f7 0%, #667eea 100%)',
-                    boxShadow: '0 2px 8px rgba(58, 102, 247, 0.15)',
+                    background: '#2563eb',
+                    boxShadow: '0 2px 8px rgba(37, 99, 235, 0.15)',
                   }}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -279,8 +279,8 @@ const ContactOptions: React.FC = () => {
                   type="submit"
                   className="group w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md hover:scale-105 transform hover:-translate-y-0.5 text-lg"
                   style={{
-                    background: 'linear-gradient(135deg, #3a66f7 0%, #667eea 100%)',
-                    boxShadow: '0 2px 8px rgba(58, 102, 247, 0.15)',
+                    background: '#2563eb',
+                    boxShadow: '0 2px 8px rgba(37, 99, 235, 0.15)',
                   }}
                 >
                   Send Message
@@ -314,7 +314,7 @@ const ContactOptions: React.FC = () => {
             <a
               href="mailto:kyle@piecewiseai.com"
               className="font-semibold hover:opacity-80 transition-opacity"
-              style={{ color: '#3a66f7' }}
+              style={{ color: '#2563eb' }}
             >
               kyle@piecewiseai.com
             </a>

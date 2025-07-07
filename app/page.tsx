@@ -63,7 +63,7 @@ const structuredData = {
 export default function HomePage() {
   // Hero section data
   const heroData = {
-    subtitle: 'Equip your business with tools that think, act, and grow with you.',
+    subtitle: 'Equip your business with tools that think like you.',
     ctaText: 'Book a Discovery Call',
     ctaLink: '/contact',
     imageSrc: '/images/ChatGPTScreenshot.png',

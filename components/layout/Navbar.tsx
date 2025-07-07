@@ -46,7 +46,7 @@ const Navbar = () => {
         <div
           className={`transition-all duration-300 ${
             scrolled
-              ? 'bg-white/95 backdrop-blur-sm rounded-full shadow-md mx-auto px-6 max-w-3xl border border-gray-200/50'
+              ? 'bg-white/95 backdrop-blur-sm rounded-full shadow-md mx-4 sm:mx-auto px-6 max-w-3xl border border-gray-200/50'
               : 'bg-white max-w-7xl mx-auto px-8 rounded-2xl shadow-sm border border-gray-200/30'
           }`}
         >
