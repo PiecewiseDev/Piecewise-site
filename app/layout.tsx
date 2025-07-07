@@ -11,12 +11,13 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Professional Business Website',
-  description: 'A professional business website with a clean, modern design',
+  title: 'Piecewise - Custom AI Tools for Service Businesses',
+  description:
+    'Transform your service business with custom AI tools built specifically for your needs',
   viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
   icons: {
-    icon: '/logos/piecewiselogo6.png',
-    shortcut: '/logos/piecewiselogo6.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
     apple: '/logos/piecewiselogo6.png',
   },
 };

@@ -4,6 +4,10 @@ export const metadata: Metadata = {
   title: 'Pricing | Piecewise - Transparent Plans for Custom GPT Solutions',
   description:
     'Transparent pricing for our Custom GPT solutions. Plans tailored to help service businesses save time and improve customer experience.',
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
     title: 'Pricing | Piecewise - Transparent Plans for Custom GPT Solutions',
     description:

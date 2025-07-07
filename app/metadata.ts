@@ -11,6 +11,11 @@ export const metadata: Metadata = {
     'AI for trades and contractors',
     'internal AI assistant',
     'simple AI tools for operations',
+    'business automation',
+    'AI consulting',
+    'custom AI solutions',
+    'service business AI',
+    'ChatGPT for business',
   ],
   openGraph: {
     title: 'Custom AI Tools Built to Help You Lead, Serve, and Grow',
@@ -48,5 +53,8 @@ export const metadata: Metadata = {
   },
   verification: {
     google: '', // Add your Google Search Console verification code here when ready
+  },
+  alternates: {
+    canonical: 'https://piecewiseai.com',
   },
 };

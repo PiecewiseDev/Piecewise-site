@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /how-it-works
+Disallow: /pricing
+Disallow: /case-studies
+
+# Block all dynamic case study routes
+Disallow: /case-studies/*
+
+# Allow access to important files
+Allow: /sitemap.xml
+Allow: /*.css
+Allow: /*.js
+Allow: /images/
+Allow: /logos/
+
+# Sitemap location
+Sitemap: https://piecewiseai.com/sitemap.xml 
