@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: 'Piecewise - Custom AI Tools for Service Businesses',
+  title: 'Piecewise | Custom AI Tools for Your Business',
   description:
     'Transform your service business with custom AI tools built specifically for your needs',
   viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
