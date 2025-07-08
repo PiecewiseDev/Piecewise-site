@@ -107,25 +107,27 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
               {isOpen && (
                 <motion.div
                   id={ariaControls}
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
+                  initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                  animate={{ height: 'auto', opacity: 1, marginTop: '-1.25rem' }}
+                  exit={{ height: 0, opacity: 0, marginTop: 0 }}
                   transition={{ duration: 0.5, ease: 'easeInOut' }}
                   className="overflow-hidden relative"
                   style={{
-                    marginTop: '-1.25rem', // Pull up to overlap with middle of question button (half of py-5 = 1.25rem)
                     zIndex: 5, // Below the question button
                   }}
                 >
                   <div
                     className="rounded-2xl shadow-sm"
                     style={{
-                      backgroundColor: 'rgba(220, 220, 220, 0.6)',
+                      backgroundColor: 'rgba(220, 220, 220, 0.7)',
                       color: '#3a66f7',
-                      padding: '3.25rem 1.5rem 2rem 1.5rem', // Extra top padding to account for overlap
+                      padding: '3.25rem 1.5rem 1rem 1.5rem', // Extra top padding to account for overlap
                     }}
                   >
-                    <p className="text-base leading-relaxed">{faq.answer}</p>
+                    <p
+                      className="text-base leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: faq.answer.replace(/\n/g, '<br/>') }}
+                    />
                   </div>
                 </motion.div>
               )}

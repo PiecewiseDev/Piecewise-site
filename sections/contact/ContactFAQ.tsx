@@ -3,29 +3,29 @@ import FAQAccordion, { FAQItem } from '@/components/ui/FAQAccordion';
 
 const faqs: FAQItem[] = [
   {
-    question: 'How long does a discovery call take?',
+    question: 'What is Piecewise, exactly?',
     answer:
-      "Discovery calls are scheduled for 30 minutes. We keep them focused and productive—just enough time to understand your business and show you what's possible, without taking up your whole day.",
+      "We're a service partner. What we deliver first might look like a tool, but what we actually provide is a structured, thoughtful way to bring AI into your business, with clarity and control.",
   },
   {
-    question: 'What happens after the discovery call?',
+    question: 'So what exactly do you offer?',
     answer:
-      "If it seems like a good fit, we'll discuss next steps and timeline. If not, no worries—you'll still walk away with clarity on how AI tools could work for your type of business.",
+      "Most clients start with a custom GPT, because it's the best on-ramp into AI. It's powerful, simple to use, and helps teams build clarity around what AI <strong>can</strong> and <strong>shouldn't</strong> do in a service business. From there, we often evolve into other tools, structure, or support, based on what your team needs next.",
   },
   {
-    question: 'Do I need any technical knowledge?',
+    question: 'Why do you start with a GPT?',
     answer:
-      'Not at all. We handle all the technical setup and explain everything in plain terms. You focus on running your business—we focus on making the technology work for you.',
+      'Because it works, right away. A well-trained GPT brings immediate wins (fewer repeated questions, more consistent communication) and helps business owners get comfortable using AI as a support system. It also keeps humans in the loop, where judgment, tone, and trust still matter.',
   },
   {
-    question: 'Is this a sales call?',
+    question: 'How custom is "custom"?',
     answer:
-      "It's a conversation about your business needs. We'll ask questions to understand how you work and show you real examples. There's no pressure—you'll know if this makes sense for your situation.",
+      "Completely. We use your policies, documents, tone, and priorities. Nothing is generic. We've developed a structured system for building these tools the right way, so they feel less like a gimmick and more like a reliable extension of your thinking.",
   },
   {
-    question: "What if I'm not ready to commit yet?",
+    question: 'How do I know if this is a fit?',
     answer:
-      "That's perfectly fine. Many business owners need time to think it over or discuss with their team. We're here when you're ready, and there's no rush.",
+      "We'll figure that out together. You don't need to prepare anything before reaching out. Just bring your business and your questions, we'll walk you through what's possible.",
   },
 ];
 
