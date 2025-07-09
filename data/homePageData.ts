@@ -172,7 +172,7 @@ export const testimonialData: TestimonialProps = {
 
 // CTA section data
 export const ctaData: CallToActionProps = {
-  title: 'Ready to explore AI for your business?',
+  title: 'Ready to explore AI?',
   primaryButton: {
     text: "Let's talk",
     link: '/contact',

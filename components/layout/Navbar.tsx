@@ -78,7 +78,7 @@ const Navbar = () => {
                     link.href === '/pricing' ||
                     link.href === '/services'
                   }
-                  className="inline-flex items-center text-navy-light hover:text-blue-600 hover:no-underline px-1 text-sm font-medium transition-colors duration-200"
+                  className="inline-flex items-center text-navy-light hover:text-[#3daeff] hover:no-underline px-1 text-sm font-medium transition-colors duration-200"
                 >
                   {link.name}
                 </Link>
@@ -178,7 +178,7 @@ const Navbar = () => {
                 prefetch={
                   link.href === '/contact' || link.href === '/pricing' || link.href === '/services'
                 }
-                className="inline-block text-navy-light hover:text-blue-600 hover:no-underline block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full hover:bg-gray-50"
+                className="inline-block text-navy-light hover:text-[#3daeff] hover:no-underline block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}

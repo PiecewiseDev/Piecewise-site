@@ -74,10 +74,10 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink, imageAlt }) => 
       {/* Content */}
       <div className="relative z-10 max-w-5xl w-full mx-auto px-6 sm:px-8 pt-20">
         <div className="flex flex-col items-center justify-center text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 flex flex-col items-center text-gray-900">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 flex flex-col items-center text-gray-900">
             <span className="mb-1 leading-tight drop-shadow-sm">{staticText}</span>
             <span
-              className="font-bold h-[1.2em] min-w-[4rem] sm:min-w-[6rem] flex items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-blue-600 drop-shadow-sm"
+              className="font-bold h-[1.2em] min-w-[4rem] sm:min-w-[6rem] flex items-center justify-center text-4xl sm:text-4xl md:text-5xl lg:text-6xl text-blue-600 drop-shadow-sm"
               aria-hidden="true"
             >
               <span className={`transition-opacity duration-500 ease-in-out ${getOpacityClass()}`}>

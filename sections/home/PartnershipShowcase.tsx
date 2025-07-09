@@ -159,7 +159,7 @@ const PartnershipShowcase: React.FC = () => {
                         {/* Logo Strip */}
                         <div
                           className={`w-full h-32 flex items-center justify-center mb-4 shadow-lg ${
-                            client.logoAlt === 'Trinity Logo' ? 'bg-white/50' : 'bg-white/75'
+                            client.logoAlt === 'Trinity Logo' ? 'bg-white/65' : 'bg-white/75'
                           }`}
                         >
                           <Link

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { PageSection } from '@/components/layout';
 import { CallToActionProps } from '@/lib/types';
 
-const CallToAction: React.FC<CallToActionProps> = ({ title, primaryButton, secondaryButton }) => {
+const CallToAction: React.FC<CallToActionProps> = ({ title, primaryButton, secondaryButton, titleSize = 'large' }) => {
   return (
     <PageSection
       background="white"
@@ -18,7 +18,7 @@ const CallToAction: React.FC<CallToActionProps> = ({ title, primaryButton, secon
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Left-aligned title */}
         <h2
-          className="text-3xl md:text-4xl font-bold text-center md:text-left mb-12 max-w-3xl whitespace-nowrap"
+          className={`${titleSize === 'large' ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} font-bold text-center md:text-left mb-16 max-w-3xl mx-auto md:mx-0 md:whitespace-nowrap`}
           style={{ color: '#1a1a1d' }}
         >
           {title}

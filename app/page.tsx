@@ -305,7 +305,7 @@ export default function HomePage() {
 
   // CTA section data
   const ctaData = {
-    title: 'Ready to explore AI for your business?',
+    title: 'Ready to explore AI?',
     primaryButton: {
       text: "Let's talk",
       link: '/contact',

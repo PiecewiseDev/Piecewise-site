@@ -74,6 +74,7 @@ export interface CallToActionProps {
     link: string;
     description: string;
   };
+  titleSize?: 'large' | 'small';
 }
 
 export interface HeroProps {

@@ -46,7 +46,7 @@ const ContactOptions: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Book a Discovery Call */}
           <div
-            className={`bg-white rounded-xl p-8 shadow-lg flex flex-col h-full transition-all duration-1000 ${
+            className={`bg-white rounded-xl p-8 shadow-md flex flex-col h-full transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
@@ -174,7 +174,7 @@ const ContactOptions: React.FC = () => {
               <div className="mt-6 flex justify-center">
                 <a
                   href="https://calendly.com/piecewiseai/discovery-call"
-                  className="group w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md hover:scale-105 transform hover:-translate-y-0.5 text-lg"
+                  className="group w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:text-white hover:opacity-90 hover:shadow-md hover:scale-105 transform hover:-translate-y-0.5 text-lg"
                   style={{
                     background: '#2563eb',
                     boxShadow: '0 2px 8px rgba(37, 99, 235, 0.15)',
@@ -204,7 +204,7 @@ const ContactOptions: React.FC = () => {
 
           {/* Right Side - Reach Out Directly Form */}
           <div
-            className={`bg-white rounded-xl p-8 shadow-lg flex flex-col h-full transition-all duration-1000 delay-300 ${
+            className={`bg-white rounded-xl p-8 shadow-md flex flex-col h-full transition-all duration-1000 delay-300 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
