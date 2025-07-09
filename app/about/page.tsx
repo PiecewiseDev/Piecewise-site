@@ -16,7 +16,7 @@ import { CallToAction } from '@/sections/shared';
 export default function AboutPage() {
   // CTA section data
   const ctaData = {
-    title: 'Curious what\'s possible?',
+    title: "Curious what's possible?",
     primaryButton: {
       text: "Let's talk",
       link: '/contact',

@@ -5,7 +5,12 @@ import Link from 'next/link';
 import { PageSection } from '@/components/layout';
 import { CallToActionProps } from '@/lib/types';
 
-const CallToAction: React.FC<CallToActionProps> = ({ title, primaryButton, secondaryButton, titleSize = 'large' }) => {
+const CallToAction: React.FC<CallToActionProps> = ({
+  title,
+  primaryButton,
+  secondaryButton,
+  titleSize = 'large',
+}) => {
   return (
     <PageSection
       background="white"
