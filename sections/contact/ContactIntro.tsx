@@ -3,16 +3,22 @@ import { PageLabel } from '@/components/ui';
 
 const ContactIntro: React.FC = () => {
   return (
-    <div
-      className="relative h-[50vh] -mt-20 flex items-center justify-center overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)',
-      }}
-    >
+    <div className="relative h-[55vh] -mt-20 flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/images/deskimage1.jpg)',
+          filter: 'blur(4px)',
+        }}
+      />
+
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-white/45" />
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-20">
         <PageLabel label="Contact" />
         <h1
-          className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-center animate-fade-in"
+          className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-center animate-fade-in"
           style={{ color: '#1a1a1d' }}
         >
           Let&apos;s Talk

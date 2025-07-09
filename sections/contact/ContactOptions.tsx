@@ -37,7 +37,7 @@ const ContactOptions: React.FC = () => {
   return (
     <div
       className="pt-6 pb-12 sm:pt-10 sm:pb-16"
-      style={{
+            style={{
         background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)',
       }}
       ref={containerRef}
@@ -47,7 +47,7 @@ const ContactOptions: React.FC = () => {
           {/* Left Side - Book a Discovery Call */}
           <div
             className={`bg-white rounded-xl p-8 shadow-lg flex flex-col h-full transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
             <div className="relative z-10 flex flex-col h-full">
@@ -194,7 +194,7 @@ const ContactOptions: React.FC = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
                     />
                   </svg>
                 </a>
@@ -205,7 +205,7 @@ const ContactOptions: React.FC = () => {
           {/* Right Side - Reach Out Directly Form */}
           <div
             className={`bg-white rounded-xl p-8 shadow-lg flex flex-col h-full transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
             <div className="mb-6">
@@ -314,7 +314,7 @@ const ContactOptions: React.FC = () => {
         {/* Direct Email Alternative */}
         <div
           className={`max-w-6xl mx-auto px-4 sm:px-6 text-center mt-16 transition-all duration-1000 delay-600 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
           <div className="h-px w-24 bg-gray-400 mx-auto mb-8"></div>

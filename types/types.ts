@@ -64,9 +64,16 @@ export interface CaseStudyProblemSolutionProps {
 // Shared UI Component Props
 export interface CallToActionProps {
   title: string;
-  subtitle: string;
-  buttonText: string;
-  buttonLink: string;
+  primaryButton: {
+    text: string;
+    link: string;
+    description: string;
+  };
+  secondaryButton: {
+    text: string;
+    link: string;
+    description: string;
+  };
 }
 
 export interface HeroProps {

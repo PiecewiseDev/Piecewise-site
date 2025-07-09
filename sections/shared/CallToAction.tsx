@@ -5,29 +5,39 @@ import Link from 'next/link';
 import { PageSection } from '@/components/layout';
 import { CallToActionProps } from '@/lib/types';
 
-const CallToAction: React.FC<CallToActionProps> = ({ title, subtitle, buttonText, buttonLink }) => {
+const CallToAction: React.FC<CallToActionProps> = ({ title, primaryButton, secondaryButton }) => {
   return (
     <PageSection
       background="white"
       width="wide"
-      padding="normal"
-      centered
+      padding="large"
       animate={true}
       animationDelay={350}
-      className="!bg-[#f1f1f1]"
+      className="!bg-[#f1f1f1] !py-20"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="bg-[#4a6fa5] rounded-2xl shadow-xl overflow-hidden">
-          <div className="p-10 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">{title}</h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">{subtitle}</p>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Left-aligned title */}
+        <h2
+          className="text-3xl md:text-4xl font-bold text-center md:text-left mb-12 max-w-3xl whitespace-nowrap"
+          style={{ color: '#1a1a1d' }}
+        >
+          {title}
+        </h2>
+
+        {/* Two buttons container */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Primary Button */}
+          <div className="space-y-3">
             <Link
-              href={buttonLink}
-              className="group btn bg-white hover:bg-white/90 py-3 px-8 text-lg inline-flex items-center font-medium transition-all duration-200 rounded-lg shadow-lg hover:no-underline text-[#4a6fa5] hover:text-[#3a5f95] hover:shadow-xl hover:scale-105 transition-all duration-200 ease-in-out focus:ring-2 focus:ring-white ring-offset-2 ring-offset-[#4a6fa5]"
+              href={primaryButton.link}
+              className="group inline-flex items-center justify-between w-full px-6 py-4 border-2 border-gray-300 rounded-lg hover:border-gray-400 transition-all duration-200 hover:shadow-sm"
             >
-              {buttonText}
+              <span className="text-lg font-semibold" style={{ color: '#1a1a1d' }}>
+                {primaryButton.text}
+              </span>
               <svg
-                className="ml-2 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
+                className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
+                style={{ color: '#1a1a1d' }}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -41,6 +51,39 @@ const CallToAction: React.FC<CallToActionProps> = ({ title, subtitle, buttonText
                 />
               </svg>
             </Link>
+            <p className="text-sm" style={{ color: '#1a1a1d', opacity: 0.7 }}>
+              {primaryButton.description}
+            </p>
+          </div>
+
+          {/* Secondary Button */}
+          <div className="space-y-3">
+            <Link
+              href={secondaryButton.link}
+              className="group inline-flex items-center justify-between w-full px-6 py-4 border-2 border-gray-300 rounded-lg hover:border-gray-400 transition-all duration-200 hover:shadow-sm"
+            >
+              <span className="text-lg font-semibold" style={{ color: '#1a1a1d' }}>
+                {secondaryButton.text}
+              </span>
+              <svg
+                className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
+                style={{ color: '#1a1a1d' }}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </Link>
+            <p className="text-sm" style={{ color: '#1a1a1d', opacity: 0.7 }}>
+              {secondaryButton.description}
+            </p>
           </div>
         </div>
       </div>

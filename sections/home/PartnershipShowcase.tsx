@@ -131,7 +131,7 @@ const PartnershipShowcase: React.FC = () => {
             }`}
           >
             <div
-              className="relative h-[32rem] rounded-xl overflow-hidden"
+              className="relative h-[32rem] rounded-xl overflow-hidden shadow-[-8px_0_16px_-4px_rgba(0,0,0,0.1)]"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
@@ -157,7 +157,11 @@ const PartnershipShowcase: React.FC = () => {
                       {/* Logo and Location Content */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                         {/* Logo Strip */}
-                        <div className="w-full h-32 bg-white/75 flex items-center justify-center mb-4 shadow-lg">
+                        <div
+                          className={`w-full h-32 flex items-center justify-center mb-4 shadow-lg ${
+                            client.logoAlt === 'Trinity Logo' ? 'bg-white/50' : 'bg-white/75'
+                          }`}
+                        >
                           <Link
                             href={client.website}
                             target="_blank"
@@ -261,10 +265,7 @@ const PartnershipShowcase: React.FC = () => {
               }`}
               style={{ color: '#1a1a1d' }}
             >
-              Who We Partner{' '}
-              <span className="font-extrabold" style={{ color: '#1a1a1d' }}>
-                With
-              </span>
+              Who We Partner With
             </h2>
 
             {/* Bulleted List */}

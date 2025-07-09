@@ -39,7 +39,7 @@ export default function OurTeam() {
     <div className="py-16 md:py-24" style={{ backgroundColor: '#1a1a1d' }} ref={containerRef}>
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <h2
-          className={`text-3xl md:text-4xl font-bold leading-tight mb-12 text-center md:text-left transition-all duration-1000 ${
+          className={`text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-12 text-center md:text-left transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
           style={{ color: '#f1f1f1' }}
@@ -82,10 +82,10 @@ export default function OurTeam() {
                 style={{ color: '#f1f1f1', opacity: 0.9 }}
               >
                 Kyle is passionate about helping business owners embrace technology without the
-                overwhelm. With a background in investment banking, he understands the demands of
-                running a business and the importance of maximizing time and resources. His mission
-                is to make AI simple, accessible, and empowering, so business owners can stay ahead
-                without feeling left behind.
+                overwhelm. With a background in finance and consulting, he understands the demands
+                of running a business and the importance of maximizing time and resources. His
+                mission is to make AI simple, accessible, and empowering, so business owners can
+                stay ahead without feeling left behind.
               </p>
               <p
                 className="text-xs md:text-sm leading-relaxed"

@@ -172,8 +172,15 @@ export const testimonialData: TestimonialProps = {
 
 // CTA section data
 export const ctaData: CallToActionProps = {
-  title: 'Curious what this would look like for your business?',
-  subtitle: "We'll walk you through it in 30 minutes—no tech skills needed.",
-  buttonText: 'Book a Discovery Call',
-  buttonLink: '/contact',
+  title: 'Ready to explore AI for your business?',
+  primaryButton: {
+    text: "Let's talk",
+    link: '/contact',
+    description: 'Schedule a discovery call to explore AI solutions for your business',
+  },
+  secondaryButton: {
+    text: 'Learn more about us',
+    link: '/about',
+    description: 'Discover our mission and approach to custom AI development',
+  },
 };

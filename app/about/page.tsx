@@ -16,10 +16,17 @@ import { CallToAction } from '@/sections/shared';
 export default function AboutPage() {
   // CTA section data
   const ctaData = {
-    title: 'Ready to see how AI can transform your business?',
-    subtitle: "Let's talk.",
-    buttonText: 'Book a Discovery Call',
-    buttonLink: '/contact',
+    title: 'Want to see what AI could do?',
+    primaryButton: {
+      text: "Let's talk",
+      link: '/contact',
+      description: 'Schedule a discovery call to discuss your specific needs',
+    },
+    secondaryButton: {
+      text: 'See our services',
+      link: '/services',
+      description: 'Explore our custom AI development offerings',
+    },
   };
 
   return (

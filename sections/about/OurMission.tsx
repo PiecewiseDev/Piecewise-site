@@ -46,7 +46,7 @@ export default function OurMission() {
             }`}
           >
             <h2
-              className="text-3xl md:text-4xl font-bold leading-tight mb-8 text-center md:text-left"
+              className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-8 text-center md:text-left"
               style={{ color: '#1a1a1d' }}
             >
               Our Mission

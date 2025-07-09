@@ -134,7 +134,7 @@ export default function OurValues() {
     <div className="py-16 md:py-24" style={{ backgroundColor: '#1a1a1d' }} ref={containerRef}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2
-          className={`text-3xl md:text-4xl font-bold leading-tight mb-16 text-center md:text-left transition-all duration-1000 ${
+          className={`text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-16 text-center md:text-left transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
           style={{ color: '#f1f1f1' }}
