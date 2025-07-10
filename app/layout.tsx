@@ -16,8 +16,11 @@ export const metadata = {
     'Transform your service business with custom AI tools built specifically for your needs',
   viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
   icons: {
-    icon: '/logos/piecewiselogo6.png',
-    shortcut: '/logos/piecewiselogo6.png',
+    icon: [
+      { url: '/logos/piecewiselogo6.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+    ],
+    shortcut: '/favicon.ico',
     apple: '/logos/piecewiselogo6.png',
   },
 };
