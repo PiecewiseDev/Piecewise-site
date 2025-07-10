@@ -10,10 +10,7 @@ export async function POST(request: NextRequest) {
 
     // Validate required fields
     if (!name || !email) {
-      return NextResponse.json(
-        { error: 'Name and email are required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Name and email are required' }, { status: 400 });
     }
 
     // Send email using Resend
@@ -34,14 +31,18 @@ export async function POST(request: NextRequest) {
             ${business ? `<p><strong>Business Type:</strong> ${business}</p>` : ''}
           </div>
 
-          ${message ? `
+          ${
+            message
+              ? `
             <div style="margin: 20px 0;">
               <h3 style="color: #2563eb; margin-bottom: 5px;">Message</h3>
               <div style="background-color: #f8fafc; padding: 15px; border-left: 4px solid #2563eb; border-radius: 4px;">
                 <p style="margin: 0; line-height: 1.6;">${message.replace(/\n/g, '<br>')}</p>
               </div>
             </div>
-          ` : ''}
+          `
+              : ''
+          }
 
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 14px;">
             <p>This email was sent from the contact form on your website.</p>
@@ -54,21 +55,12 @@ export async function POST(request: NextRequest) {
 
     if (error) {
       console.error('Resend error:', error);
-      return NextResponse.json(
-        { error: 'Failed to send email' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
     }
 
-    return NextResponse.json(
-      { message: 'Email sent successfully', id: data?.id },
-      { status: 200 }
-    );
+    return NextResponse.json({ message: 'Email sent successfully', id: data?.id }, { status: 200 });
   } catch (error) {
     console.error('API error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
-} 
+}
