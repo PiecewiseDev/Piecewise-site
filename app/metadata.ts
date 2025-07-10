@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://piecewiseai.com'),
-  title: 'Piecewise | Custom AI Tools for Your Business',
+  title: 'Piecewise | Custom AI Development, Implementation, and Support',
   description:
     'Transform your service business with custom AI tools that understand your processes. We build private Custom GPTs for contractors, managers, and teams to streamline operations and improve efficiency.',
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'ChatGPT for business',
   ],
   openGraph: {
-    title: 'Piecewise | Custom AI Tools for Your Business',
+    title: 'Piecewise | Custom AI Development, Implementation, and Support',
     description:
       'Equip your business with tools that think, act, and grow with you. Custom AI solutions designed specifically for service businesses.',
     type: 'website',
@@ -26,19 +26,19 @@ export const metadata: Metadata = {
     siteName: 'Piecewise',
     images: [
       {
-        url: '/logos/piecewiselogo7.png',
+        url: '/logos/piecewiselogo6.png',
         width: 1200,
         height: 675,
-        alt: 'Piecewise - Custom AI Tools for Your Business',
+        alt: 'Piecewise - Custom AI Development, Implementation, and Support',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Piecewise | Custom AI Tools for Your Business',
+    title: 'Piecewise | Custom AI Development, Implementation, and Support',
     description:
       'Transform your service business with custom AI tools that understand your processes.',
-    images: ['/logos/piecewiselogo7.png'],
+    images: ['/logos/piecewiselogo6.png'],
   },
   robots: {
     index: true,
