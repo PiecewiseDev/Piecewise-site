@@ -7,10 +7,7 @@ export async function POST(request: NextRequest) {
   try {
     // Check if API key is available at runtime
     if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 'dummy-key-for-build') {
-      return NextResponse.json(
-        { error: 'Email service not configured' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'Email service not configured' }, { status: 500 });
     }
 
     const body = await request.json();
