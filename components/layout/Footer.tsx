@@ -25,7 +25,7 @@ const Footer = () => {
             <div className="mt-6 flex space-x-6">
               <a
                 href="#"
-                className="text-navy-light hover:text-[#3daeff] hover:no-underline transition-colors duration-200"
+                className="text-navy-light hover:text-navy hover:no-underline transition-colors duration-200"
                 aria-label="LinkedIn"
               >
                 <span className="sr-only">LinkedIn</span>

@@ -117,17 +117,21 @@ const ContactOptions: React.FC = () => {
               </div>
 
               <div className="flex-grow flex flex-col justify-between space-y-6 md:space-y-4">
-                <div className="bg-gray-50 rounded-lg p-8 flex items-center min-h-[120px]">
-                  <p
-                    className="text-base leading-relaxed m-0"
-                    style={{ color: '#1a1a1d', opacity: 0.8 }}
-                  >
-                    Schedule a{' '}
-                    <span className="font-semibold" style={{ color: '#1a1a1d' }}>
-                      30-minute conversation
-                    </span>{' '}
-                    to explore how a Custom GPT could work for your business.
-                  </p>
+                <div className="bg-gray-50 rounded-lg p-8 flex items-center min-h-[120px] relative overflow-hidden border border-gray-200">
+                  {/* Blue tint overlay */}
+                  <div className="absolute inset-0 rounded-lg" style={{ backgroundColor: 'rgba(37, 99, 235, 0.01)' }}></div>
+                  <div className="relative z-10 w-full">
+                    <p
+                      className="text-base leading-relaxed m-0"
+                      style={{ color: '#1a1a1d', opacity: 0.8 }}
+                    >
+                      Schedule a{' '}
+                      <span className="font-semibold" style={{ color: '#1a1a1d' }}>
+                        30-minute conversation
+                      </span>{' '}
+                      to explore how a Custom GPT could work for your business.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="space-y-3">

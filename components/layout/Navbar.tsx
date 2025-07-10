@@ -90,12 +90,12 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 prefetch={true}
-                className="bg-blue-600 text-white rounded-lg px-4 py-1.5 text-sm font-bold shadow-sm hover:text-gray-100 focus:ring-2 focus:ring-blue-500 hover:no-underline flex items-center gap-2 transition-all duration-200"
+                className="group bg-blue-600 text-white rounded-lg px-3 py-1 text-sm font-bold shadow-sm hover:text-gray-100 focus:ring-2 focus:ring-blue-500 hover:no-underline flex items-center gap-2 transition-all duration-200"
               >
                 Book a Call
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
+                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -188,13 +188,13 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 prefetch={true}
-                className="bg-blue-600 text-white rounded-lg px-4 py-2 text-sm font-bold shadow-sm hover:text-gray-100 focus:ring-2 focus:ring-blue-500 w-full flex justify-center items-center gap-2 hover:no-underline transition-all duration-200"
+                className="group bg-blue-600 text-white rounded-lg px-3 py-1.5 text-sm font-bold shadow-sm hover:text-gray-100 focus:ring-2 focus:ring-blue-500 w-full flex justify-center items-center gap-2 hover:no-underline transition-all duration-200"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Book a Call
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4"
+                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

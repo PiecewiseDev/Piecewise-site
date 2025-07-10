@@ -18,12 +18,12 @@ const CallToAction: React.FC<CallToActionProps> = ({
       padding="large"
       animate={true}
       animationDelay={350}
-      className="!bg-[#f1f1f1] !py-20"
+      className="!bg-[#f1f1f1] !py-8 md:!py-20"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Left-aligned title */}
         <h2
-          className={`${titleSize === 'large' ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} font-bold text-center md:text-left mb-16 max-w-3xl mx-auto md:mx-0 md:whitespace-nowrap`}
+          className={`${titleSize === 'large' ? 'text-4xl md:text-5xl' : 'text-3xl md:text-4xl'} font-bold text-center md:text-left mb-12 md:mb-14 max-w-3xl mx-auto md:mx-0 md:whitespace-nowrap`}
           style={{ color: '#1a1a1d' }}
         >
           {title}
@@ -35,7 +35,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
           <div className="space-y-3">
             <Link
               href={primaryButton.link}
-              className="group inline-flex items-center justify-between w-full px-6 py-4 border-2 border-gray-300 rounded-lg hover:border-gray-400 transition-all duration-200 hover:shadow-sm"
+              className="group inline-flex items-center justify-between w-full px-6 py-4 border-2 border-gray-400 rounded-lg hover:border-gray-600 transition-all duration-200 hover:shadow-md"
             >
               <span className="text-lg font-semibold" style={{ color: '#1a1a1d' }}>
                 {primaryButton.text}
@@ -65,7 +65,7 @@ const CallToAction: React.FC<CallToActionProps> = ({
           <div className="space-y-3">
             <Link
               href={secondaryButton.link}
-              className="group inline-flex items-center justify-between w-full px-6 py-4 border-2 border-gray-300 rounded-lg hover:border-gray-400 transition-all duration-200 hover:shadow-sm"
+              className="group inline-flex items-center justify-between w-full px-6 py-4 border-2 border-gray-400 rounded-lg hover:border-gray-600 transition-all duration-200 hover:shadow-md"
             >
               <span className="text-lg font-semibold" style={{ color: '#1a1a1d' }}>
                 {secondaryButton.text}
