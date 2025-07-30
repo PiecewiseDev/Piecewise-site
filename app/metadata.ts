@@ -2,42 +2,45 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://piecewiseai.com'),
-  title: 'Piecewise | Custom AI Development, Implementation, and Support',
+  title: 'Piecewise | Custom GPT Solutions That Save Time for Service Business Owners',
   description:
-    'Transform your service business with custom AI tools that understand your processes. We build private Custom GPTs for contractors, managers, and teams to streamline operations and improve efficiency.',
+    'Transform your service business with custom AI assistants that reduce stress and save hours daily. We build private Custom GPTs for contractors, managers, and service teams to automate operations while maintaining your unique voice. Get started today.',
   keywords: [
-    'custom GPT for small business',
-    'AI support for service teams',
-    'AI for trades and contractors',
-    'internal AI assistant',
-    'simple AI tools for operations',
-    'business automation',
-    'AI consulting',
-    'custom AI solutions',
-    'service business AI',
-    'ChatGPT for business',
+    'custom GPT for service businesses',
+    'AI automation for contractors',
+    'service business AI assistant',
+    'reduce business stress with AI',
+    'custom AI for small business owners',
+    'ChatGPT for service companies',
+    'business process automation',
+    'AI consulting for service trades',
+    'custom AI implementation',
+    'save time with AI automation',
+    'AI for field service management',
+    'custom business AI solutions',
   ],
   openGraph: {
-    title: 'Piecewise | Custom AI Development, Implementation, and Support',
+    title: 'Piecewise | Custom GPT Solutions That Save Time for Service Business Owners',
     description:
-      'Equip your business with tools that think, act, and grow with you. Custom AI solutions designed specifically for service businesses.',
+      'Transform your service business with custom AI assistants that reduce stress and save hours daily. Private Custom GPTs designed specifically for service businesses.',
     type: 'website',
     locale: 'en_US',
     siteName: 'Piecewise',
+    url: 'https://piecewiseai.com',
     images: [
       {
         url: '/logos/piecewiselogo7.png',
         width: 1200,
         height: 675,
-        alt: 'Piecewise - Custom AI Development, Implementation, and Support',
+        alt: 'Piecewise - Custom GPT Solutions for Service Business Owners',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Piecewise | Custom AI Development, Implementation, and Support',
+    title: 'Piecewise | Custom GPT Solutions for Service Business Owners',
     description:
-      'Transform your service business with custom AI tools that understand your processes.',
+      'Transform your service business with custom AI assistants that reduce stress and save hours daily.',
     images: ['/logos/piecewiselogo7.png'],
   },
   robots: {

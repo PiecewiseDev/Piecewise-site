@@ -45,7 +45,7 @@ export const aboutIntroData: AboutIntroProps = {
   subtitle:
     'Our mission is to empower service businesses with AI tools that simplify operations and reduce stress.',
   paragraphs: [
-    'We created Piecewise AI after seeing firsthand how service business owners were overwhelmed by the constant flow of inquiries, repetitive tasks, and the challenge of maintaining consistent messaging.',
+    'We created Piecewise after seeing firsthand how service business owners were overwhelmed by the constant flow of inquiries, repetitive tasks, and the challenge of maintaining consistent messaging.',
     'Our custom AI solutions are built to address these pain points directly, giving owners and their teams more time to focus on the high-value work that really matters.',
   ],
 };
@@ -100,10 +100,10 @@ export const coreValuesData: CoreValuesProps = {
 // Founder Note Data
 export const founderNoteData: FounderNoteProps = {
   title: 'A Note From Our Founder',
-  note: "I started Piecewise AI because I saw too many hardworking service business owners burning out from the constant stress of managing every detail. Our AI solutions are built specifically to lighten that load, giving you back time for what truly matters — whether that's growing your business or simply enjoying more of your life outside of work.",
+  note: "I started Piecewise because I saw too many hardworking service business owners burning out from the constant stress of managing every detail. Our AI solutions are built specifically to lighten that load, giving you back time for what truly matters — whether that's growing your business or simply enjoying more of your life outside of work.",
   founderName: 'Kyle Larsen',
   founderTitle: 'Founder & CEO',
-  founderImage: '/images/kyle-profile.jpg',
+  founderImage: '/images/kyle-profile.webp',
 };
 
 // About CTA Data

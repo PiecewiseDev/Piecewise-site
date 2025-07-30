@@ -9,56 +9,15 @@ import {
   WhatWeOffer,
 } from '@/sections/home';
 import { PageSection } from '@/components/layout';
+import {
+  organizationSchema,
+  websiteSchema,
+  localBusinessSchema,
+  generateSchemaScript,
+} from '@/lib/structured-data';
 
 // Import and export metadata for SEO
 export { metadata } from './metadata';
-
-// Structured data for SEO
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Piecewise',
-  description: 'Custom AI tools and automation solutions for service businesses',
-  url: 'https://piecewiseai.com',
-  logo: 'https://piecewiseai.com/logos/piecewiselogo6.png',
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+1-XXX-XXX-XXXX', // Add your phone number when available
-    contactType: 'customer service',
-    availableLanguage: 'English',
-  },
-  sameAs: [
-    'https://www.linkedin.com/in/kylelarsen1819/',
-    // Add other social media profiles when available
-  ],
-  serviceArea: {
-    '@type': 'Country',
-    name: 'United States',
-  },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'AI Automation Services',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Custom AI Development',
-          description:
-            'Custom AI tools and automation solutions built specifically for your business',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'AI Implementation & Support',
-          description: 'Professional implementation and ongoing support for AI business solutions',
-        },
-      },
-    ],
-  },
-};
 
 export default function HomePage() {
   // Hero section data
@@ -111,13 +70,13 @@ export default function HomePage() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
         ),
         title: 'Stay Consistent',
         description:
-          'Your policies, your tone, every time. Maintain a consistent voice and reliable information across all interactions.',
+          'Every client gets the same professional experience, regardless of who on your team is available.',
       },
       {
         icon: (
@@ -132,13 +91,13 @@ export default function HomePage() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
             />
           </svg>
         ),
-        title: 'Stress Less',
+        title: 'Reduce Stress',
         description:
-          'Fewer questions, more clarity. Reduce repetitive inquiries and provide instant answers to common requests.',
+          'Stop worrying about missed messages or inconsistent responses. Your AI assistant has you covered.',
       },
     ],
   };
@@ -306,6 +265,8 @@ export default function HomePage() {
   // CTA section data
   const ctaData = {
     title: 'Take the first step',
+    subtitle:
+      'Join forward-thinking service businesses already using AI to work smarter, not harder.',
     primaryButton: {
       text: "Let's talk",
       link: '/contact',
@@ -320,11 +281,10 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Structured Data for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      {/* Enhanced Structured Data for SEO */}
+      <script {...generateSchemaScript(organizationSchema)} />
+      <script {...generateSchemaScript(websiteSchema)} />
+      <script {...generateSchemaScript(localBusinessSchema)} />
 
       <Hero {...heroData} />
 

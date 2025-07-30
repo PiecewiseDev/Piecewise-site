@@ -15,12 +15,16 @@ export default function FounderNote() {
           {/* Left Column - Founder Image */}
           <div className="flex justify-center md:justify-start">
             <div className="relative w-40 h-40 md:w-48 md:h-48 bg-gray-50 rounded-full overflow-hidden border-4 border-accent/10">
-              <Image
-                src="/images/kyle-profile.jpg"
-                alt="Kyle Larsen - Founder & CEO"
-                fill
-                style={{ objectFit: 'cover' }}
-              />
+              <picture>
+                <source srcSet="/images/kyle-profile.webp" type="image/webp" />
+                <Image
+                  src="/images/kyle-profile.jpg"
+                  alt="Kyle Larsen - Founder & CEO"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </div>
 

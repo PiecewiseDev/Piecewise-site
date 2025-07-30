@@ -55,13 +55,17 @@ export default function OurTeam() {
           {/* Left Column - Profile Image */}
           <div className="flex justify-center md:justify-start">
             <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="/images/kyle-profile.jpg"
-                alt="Kyle Larsen - Founder & Lead Consultant"
-                fill
-                style={{ objectFit: 'cover' }}
-                className="transition-transform duration-300 hover:scale-105 rounded-2xl"
-              />
+              <picture>
+                <source srcSet="/images/kyle-profile.webp" type="image/webp" />
+                <Image
+                  src="/images/kyle-profile.jpg"
+                  alt="Kyle Larsen - Founder & Lead Consultant"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="transition-transform duration-300 hover:scale-105 rounded-2xl"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </div>
 

@@ -8,7 +8,7 @@ const ContactIntro: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/images/deskimage1.jpg)',
+          backgroundImage: 'url(/images/deskimage1.webp), url(/images/deskimage1.jpg)',
           filter: 'blur(4px)',
         }}
       />

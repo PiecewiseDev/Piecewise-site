@@ -6,6 +6,7 @@ import Link from 'next/link';
 interface ClientSlide {
   id: number;
   backgroundImage: string;
+  backgroundImageFallback: string;
   logoSrc: string;
   logoAlt: string;
   location: string;
@@ -75,7 +76,8 @@ const PartnershipShowcase: React.FC = () => {
   const clients: ClientSlide[] = [
     {
       id: 1,
-      backgroundImage: '/images/LRRBackground2.jpg',
+      backgroundImage: '/images/LRRBackground2.webp',
+      backgroundImageFallback: '/images/LRRBackground2.jpg',
       logoSrc: '/logos/Legacy+Logo+Black.png',
       logoAlt: 'Legacy Logo',
       location: 'Louisville, KY',
@@ -83,7 +85,8 @@ const PartnershipShowcase: React.FC = () => {
     },
     {
       id: 2,
-      backgroundImage: '/images/TrinityBackground2.png',
+      backgroundImage: '/images/TrinityBackground2.webp',
+      backgroundImageFallback: '/images/TrinityBackground2.png',
       logoSrc: '/logos/Trinity+Logo+Wordmark.png',
       logoAlt: 'Trinity Logo',
       location: 'Nashville, TN',
@@ -91,7 +94,8 @@ const PartnershipShowcase: React.FC = () => {
     },
     {
       id: 3,
-      backgroundImage: '/images/LKNFBackground2.jpg',
+      backgroundImage: '/images/LKNFBackground2.webp',
+      backgroundImageFallback: '/images/LKNFBackground2.jpg',
       logoSrc: '/logos/LKNF-Logo-2022-06.png',
       logoAlt: 'LKNF Logo',
       location: 'Charlotte, NC',
@@ -146,7 +150,7 @@ const PartnershipShowcase: React.FC = () => {
                     <div
                       className="absolute inset-0 bg-gradient-to-br from-gray-300 to-gray-500"
                       style={{
-                        backgroundImage: `url(${client.backgroundImage})`,
+                        backgroundImage: `url(${client.backgroundImage}), url(${client.backgroundImageFallback})`,
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                       }}

@@ -74,13 +74,17 @@ export default function OurMission() {
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.05)',
               }}
             >
-              <Image
-                src="/images/t-steele-x-mIAFbAL-o-unsplash.jpg"
-                alt="Open Bible with notebook and pen - representing our faith-centered mission"
-                fill
-                style={{ objectFit: 'cover' }}
-                className="transition-transform duration-300 hover:scale-105"
-              />
+              <picture>
+                <source srcSet="/images/t-steele-x-mIAFbAL-o-unsplash.webp" type="image/webp" />
+                <Image
+                  src="/images/t-steele-x-mIAFbAL-o-unsplash.jpg"
+                  alt="Open Bible with notebook and pen - representing our faith-centered mission"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </div>
         </div>

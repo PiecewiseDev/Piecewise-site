@@ -1,0 +1,28 @@
+{
+  "name": "Piecewise - Custom AI Solutions",
+  "short_name": "Piecewise",
+  "description": "Custom AI solutions for service businesses",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logos/piecewiselogo6.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logos/piecewiselogo6.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-US",
+  "scope": "/",
+  "id": "piecewise-ai"
+}

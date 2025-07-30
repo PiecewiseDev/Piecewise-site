@@ -58,13 +58,16 @@ const Hero: React.FC<HeroProps> = ({ subtitle, ctaText, ctaLink, imageAlt }) => 
     <div className="relative h-[85vh] -mt-20 flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/ChatGPTScreenshot.png"
-          alt={imageAlt || 'Hero Background'}
-          fill
-          className="object-cover object-center"
-          priority
-        />
+        <picture>
+          <source srcSet="/images/ChatGPTScreenshot.webp" type="image/webp" />
+          <Image
+            src="/images/ChatGPTScreenshot.png"
+            alt={imageAlt || 'Hero Background'}
+            fill
+            className="object-cover object-center"
+            priority
+          />
+        </picture>
         {/* Lightened overlay with subtle blur */}
         <div className="absolute inset-0 bg-white/40 backdrop-blur-[3px]"></div>
         {/* Additional gradient overlay for better text readability */}
