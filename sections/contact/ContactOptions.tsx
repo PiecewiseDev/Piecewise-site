@@ -83,7 +83,7 @@ const ContactOptions: React.FC = () => {
         setSubmitStatus('error');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
+      // Handle form submission errors gracefully without exposing details
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

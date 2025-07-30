@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       // Check if the page contains a redirect call
       return content.includes('redirect(') && content.includes("redirect('/')");
     } catch (error) {
-      console.warn(`Could not check redirect status for ${pagePath}:`, error);
+      // Silently handle errors - don't expose internal logic in production
       return false;
     }
   }
@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   });
 
-  // Log which pages are included/excluded for debugging
+  // Log which pages are included/excluded for debugging (development only)
   if (process.env.NODE_ENV === 'development') {
     console.log('Sitemap generation:');
     Object.keys(DEFAULT_PAGE_CONFIGS).forEach((route) => {

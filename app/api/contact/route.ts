@@ -59,13 +59,13 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
+      // Don't expose internal email service errors to the client
       return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
     }
 
     return NextResponse.json({ message: 'Email sent successfully', id: data?.id }, { status: 200 });
   } catch (error) {
-    console.error('API error:', error);
+    // Don't expose internal server errors to the client
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
