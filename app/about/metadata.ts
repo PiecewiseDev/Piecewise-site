@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About Piecewise | Custom AI Solutions for Service Business Owners',
   description:
-    'Meet the team behind Piecewise. We help service business owners reduce stress and save time with custom AI assistants. Learn our mission to empower businesses through simple, effective AI automation. Schedule your discovery call today.',
+    'Meet the Charlotte-based team behind Piecewise. We help service business owners reduce stress and save time with custom AI assistants. Learn our mission to empower businesses through simple, effective AI automation. Schedule your discovery call today.',
   keywords: [
     'custom AI for service businesses',
     'AI automation for contractors',
@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     'reduce business stress with AI',
     'custom AI assistants',
     'AI for small business owners',
+    'Charlotte AI consulting team',
+    'AI developers Charlotte NC',
+    'Kyle Larsen Charlotte',
+    'Piecewise Charlotte team',
+    'North Carolina AI consultants',
+    'Charlotte tech founders',
   ],
   alternates: {
     canonical: 'https://piecewiseai.com/about',
@@ -22,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Piecewise | Custom AI Solutions for Service Business Owners',
     description:
-      'Meet the team helping service business owners save time and reduce stress with custom AI assistants. Learn our mission and schedule your discovery call.',
+      'Meet the Charlotte-based team helping service business owners save time and reduce stress with custom AI assistants. Learn our mission and schedule your discovery call.',
     images: [
       {
         url: '/images/kyle-profile.webp',
@@ -40,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Piecewise | Custom AI Solutions for Service Business Owners',
     description:
-      'Meet the team helping service business owners save time and reduce stress with custom AI assistants.',
+      'Meet the Charlotte-based team helping service business owners save time and reduce stress with custom AI assistants.',
     images: ['/images/kyle-profile.webp'],
   },
   robots: {
@@ -53,6 +59,14 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'format-detection': 'telephone=no',
+    'theme-color': '#3a66f7',
+    'color-scheme': 'light',
   },
 };
 

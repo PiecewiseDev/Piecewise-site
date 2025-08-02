@@ -11,6 +11,7 @@ import {
 } from '@/sections/about';
 import { PageLabel } from '@/components/ui';
 import { CallToAction } from '@/sections/shared';
+import { generateSchemaScript, organizationSchema, founderSchema } from '@/lib/structured-data';
 // import { Comparison } from '@/sections/shared'; // Temporarily archived
 
 export default function AboutPage() {
@@ -31,13 +32,18 @@ export default function AboutPage() {
 
   return (
     <>
+      {/* Enhanced Structured Data for About Page SEO */}
+      <script {...generateSchemaScript(organizationSchema)} />
+      <script {...generateSchemaScript(founderSchema)} />
+
       {/* Hero Section with Charlotte Skyline Background */}
       <div className="relative h-[75vh] -mt-20 flex items-center justify-center overflow-hidden">
         {/* Charlotte Skyline Background - Only for hero + navbar area */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
           style={{
-            backgroundImage: 'url(/images/Charlotteskyline.png)',
+            backgroundImage:
+              'url(/images/Charlotteskyline.webp), url(/images/Charlotteskyline.png)',
             filter: 'blur(1px)',
           }}
         />

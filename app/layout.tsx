@@ -69,6 +69,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           name="bingbot"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
+
+        {/* Geographic meta tags for local SEO */}
+        <meta name="geo.region" content="US-NC" />
+        <meta name="geo.placename" content="Charlotte" />
+        <meta name="geo.position" content="35.2271;-80.8431" />
+        <meta name="ICBM" content="35.2271, -80.8431" />
+        <meta name="geo.country" content="US" />
+        <meta name="geo.state" content="North Carolina" />
+        <meta name="geo.city" content="Charlotte" />
       </head>
       <body className={`${inter.className} flex flex-col min-h-screen antialiased`}>
         <a

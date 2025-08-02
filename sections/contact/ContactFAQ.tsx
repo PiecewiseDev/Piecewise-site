@@ -30,8 +30,31 @@ const faqs: FAQItem[] = [
 ];
 
 const ContactFAQ: React.FC = () => {
+  // Generate FAQ schema for search engines (invisible to users)
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+          .replace(/<[^>]*>/g, '')
+          .replace(/&[^;]+;/g, ' ')
+          .trim(),
+      },
+    })),
+  };
+
   return (
     <div className="py-16 sm:py-24" style={{ backgroundColor: '#1a1a1d' }}>
+      {/* Invisible FAQ Schema Markup for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <h2
           className="text-3xl md:text-4xl font-bold text-center mb-12"

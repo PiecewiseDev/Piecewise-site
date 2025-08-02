@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://piecewiseai.com'),
   title: 'Piecewise | Custom GPT Solutions That Save Time for Service Business Owners',
   description:
-    'Transform your service business with custom AI assistants that reduce stress and save hours daily. We build private Custom GPTs for contractors, managers, and service teams to automate operations while maintaining your unique voice. Get started today.',
+    'Transform your service business with custom AI assistants that reduce stress and save hours daily. Our Charlotte-based team builds private Custom GPTs for contractors, managers, and service teams to automate operations while maintaining your unique voice. Get started today.',
   keywords: [
     'custom GPT for service businesses',
     'AI automation for contractors',
@@ -18,11 +18,17 @@ export const metadata: Metadata = {
     'save time with AI automation',
     'AI for field service management',
     'custom business AI solutions',
+    'AI consultants Charlotte NC',
+    'custom AI solutions Charlotte',
+    'business automation Charlotte',
+    'AI development North Carolina',
+    'Charlotte tech consulting',
+    'Mecklenburg County AI services',
   ],
   openGraph: {
     title: 'Piecewise | Custom GPT Solutions That Save Time for Service Business Owners',
     description:
-      'Transform your service business with custom AI assistants that reduce stress and save hours daily. Private Custom GPTs designed specifically for service businesses.',
+      'Transform your service business with custom AI assistants that reduce stress and save hours daily. Charlotte-based team creating private Custom GPTs designed specifically for service businesses.',
     type: 'website',
     locale: 'en_US',
     siteName: 'Piecewise',
@@ -40,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Piecewise | Custom GPT Solutions for Service Business Owners',
     description:
-      'Transform your service business with custom AI assistants that reduce stress and save hours daily.',
+      'Transform your service business with custom AI assistants that reduce stress and save hours daily. Charlotte-based AI consultants.',
     images: ['/logos/piecewiselogo7.png'],
   },
   robots: {

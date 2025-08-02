@@ -71,30 +71,57 @@ export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Piecewise',
-  description: 'Custom AI development and implementation for service businesses',
+  description:
+    'Custom AI development and implementation for service businesses based in Charlotte, NC',
   url: 'https://piecewiseai.com',
   telephone: 'Contact via website',
   email: 'contact@piecewiseai.com',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'US',
-    addressRegion: 'Multiple States',
+    addressRegion: 'NC',
+    addressLocality: 'Charlotte',
+    postalCode: '28202',
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '39.8283', // Center of US
-    longitude: '-98.5795',
+    latitude: '35.2271',
+    longitude: '-80.8431',
   },
   areaServed: [
+    {
+      '@type': 'City',
+      name: 'Charlotte',
+      '@id': 'https://en.wikipedia.org/wiki/Charlotte,_North_Carolina',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Mecklenburg County',
+    },
+    {
+      '@type': 'State',
+      name: 'North Carolina',
+    },
     {
       '@type': 'Country',
       name: 'United States',
     },
   ],
-  serviceArea: {
-    '@type': 'Country',
-    name: 'United States',
-  },
+  serviceArea: [
+    {
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: '35.2271',
+        longitude: '-80.8431',
+      },
+      geoRadius: '50 miles',
+    },
+    {
+      '@type': 'State',
+      name: 'North Carolina',
+    },
+  ],
   priceRange: '$$',
   paymentAccepted: ['Credit Card', 'Bank Transfer'],
   currenciesAccepted: 'USD',
