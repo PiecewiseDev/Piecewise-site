@@ -13,6 +13,8 @@ import {
   organizationSchema,
   websiteSchema,
   localBusinessSchema,
+  customGPTServiceSchema,
+  automationServiceSchema,
   generateSchemaScript,
 } from '@/lib/structured-data';
 
@@ -285,6 +287,8 @@ export default function HomePage() {
       <script {...generateSchemaScript(organizationSchema)} />
       <script {...generateSchemaScript(websiteSchema)} />
       <script {...generateSchemaScript(localBusinessSchema)} />
+      <script {...generateSchemaScript(customGPTServiceSchema)} />
+      <script {...generateSchemaScript(automationServiceSchema)} />
 
       <Hero {...heroData} />
 

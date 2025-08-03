@@ -33,12 +33,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     siteName: 'Piecewise',
     url: 'https://piecewiseai.com',
+    countryName: 'United States',
     images: [
       {
         url: '/logos/piecewiselogo7.png',
         width: 1200,
         height: 675,
         alt: 'Piecewise - Custom GPT Solutions for Service Business Owners',
+        type: 'image/png',
       },
     ],
   },
@@ -47,7 +49,14 @@ export const metadata: Metadata = {
     title: 'Piecewise | Custom GPT Solutions for Service Business Owners',
     description:
       'Transform your service business with custom AI assistants that reduce stress and save hours daily. Charlotte-based AI consultants.',
-    images: ['/logos/piecewiselogo7.png'],
+    images: [
+      {
+        url: '/logos/piecewiselogo7.png',
+        alt: 'Piecewise - Custom GPT Solutions for Service Business Owners',
+        width: 1200,
+        height: 675,
+      },
+    ],
   },
   robots: {
     index: true,

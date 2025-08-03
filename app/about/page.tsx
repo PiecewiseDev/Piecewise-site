@@ -11,7 +11,12 @@ import {
 } from '@/sections/about';
 import { PageLabel } from '@/components/ui';
 import { CallToAction } from '@/sections/shared';
-import { generateSchemaScript, organizationSchema, founderSchema } from '@/lib/structured-data';
+import {
+  generateSchemaScript,
+  organizationSchema,
+  founderSchema,
+  aboutPageSchema,
+} from '@/lib/structured-data';
 // import { Comparison } from '@/sections/shared'; // Temporarily archived
 
 export default function AboutPage() {
@@ -35,6 +40,7 @@ export default function AboutPage() {
       {/* Enhanced Structured Data for About Page SEO */}
       <script {...generateSchemaScript(organizationSchema)} />
       <script {...generateSchemaScript(founderSchema)} />
+      <script {...generateSchemaScript(aboutPageSchema)} />
 
       {/* Hero Section with Charlotte Skyline Background */}
       <div className="relative h-[75vh] -mt-20 flex items-center justify-center overflow-hidden">

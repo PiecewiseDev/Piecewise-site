@@ -21,6 +21,8 @@ export const organizationSchema = {
     availableLanguage: 'English',
     url: 'https://piecewiseai.com/contact',
   },
+  foundingDate: '2025',
+  numberOfEmployees: '1-10',
   founder: {
     '@type': 'Person',
     name: 'Kyle Larsen',
@@ -319,6 +321,206 @@ export function generateBreadcrumbSchema(breadcrumbs: Array<{ name: string; url:
     })),
   };
 }
+
+// Enhanced Service Schemas for specific offerings
+export const customGPTServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Custom GPT Development',
+  description:
+    'Private AI assistants built specifically for service businesses to automate operations while maintaining your unique voice',
+  provider: {
+    '@type': 'Organization',
+    name: 'Piecewise',
+    foundingDate: '2025',
+    url: 'https://piecewiseai.com',
+    sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
+  },
+  serviceType: 'AI Development',
+  category: 'Custom AI Solutions',
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Charlotte',
+    },
+    {
+      '@type': 'State',
+      name: 'North Carolina',
+    },
+    {
+      '@type': 'Country',
+      name: 'United States',
+    },
+  ],
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Service Business Owners',
+  },
+  offers: {
+    '@type': 'Offer',
+    name: 'Custom GPT Development Package',
+    description: 'Complete custom AI assistant development with training and support',
+    priceRange: '$$',
+    availability: 'https://schema.org/InStock',
+    validFrom: '2025-01-01',
+  },
+};
+
+export const aiConsultingServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'AI Consulting Services',
+  description:
+    'Professional AI consulting and implementation for service businesses based in Charlotte, NC',
+  provider: {
+    '@type': 'Organization',
+    name: 'Piecewise',
+    foundingDate: '2025',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Charlotte',
+      addressRegion: 'NC',
+      addressCountry: 'US',
+    },
+    sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
+  },
+  serviceType: 'Technology Consulting',
+  category: 'AI Consulting',
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Charlotte',
+    },
+    {
+      '@type': 'AdministrativeArea',
+      name: 'Mecklenburg County',
+    },
+    {
+      '@type': 'State',
+      name: 'North Carolina',
+    },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'AI Consulting Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        name: 'AI Strategy Consultation',
+        description: 'Strategic planning for AI implementation in service businesses',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Custom AI Development',
+        description: 'Bespoke AI solution development and deployment',
+      },
+      {
+        '@type': 'Offer',
+        name: 'AI Training & Support',
+        description: 'Team training and ongoing technical support for AI systems',
+      },
+    ],
+  },
+};
+
+export const automationServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Business Process Automation',
+  description:
+    'AI-powered automation solutions that reduce stress and save hours daily for service business teams',
+  provider: {
+    '@type': 'Organization',
+    name: 'Piecewise',
+    foundingDate: '2025',
+    sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
+  },
+  serviceType: 'Business Automation',
+  category: 'Process Automation',
+  areaServed: {
+    '@type': 'Country',
+    name: 'United States',
+  },
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Contractors, Managers, Service Teams',
+  },
+};
+
+// Enhanced Contact Point Schema
+export const enhancedContactPointSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPoint',
+  contactType: 'customer service',
+  availableLanguage: ['English'],
+  areaServed: {
+    '@type': 'Country',
+    name: 'United States',
+  },
+  url: 'https://piecewiseai.com/contact',
+  contactOption: 'TollFree',
+  hoursAvailable: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '17:00',
+      validFrom: '2025-01-01',
+    },
+  ],
+};
+
+// WebPage Schemas for individual pages
+export const generateWebPageSchema = (pageName: string, pageUrl: string, description: string) => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: pageName,
+  url: pageUrl,
+  description: description,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Piecewise',
+    url: 'https://piecewiseai.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Piecewise',
+    foundingDate: '2025',
+    sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
+  },
+  inLanguage: 'en-US',
+  dateModified: new Date().toISOString().split('T')[0],
+});
+
+export const servicesPageSchema = generateWebPageSchema(
+  'AI Services for Service Businesses | Piecewise',
+  'https://piecewiseai.com/services',
+  'Custom AI development services including GPT creation, automation, and implementation for service businesses'
+);
+
+export const pricingPageSchema = generateWebPageSchema(
+  'AI Development Pricing | Piecewise',
+  'https://piecewiseai.com/pricing',
+  'Transparent pricing for custom AI development and consulting services for service businesses'
+);
+
+export const aboutPageSchema = generateWebPageSchema(
+  'About Piecewise | Charlotte AI Consultants',
+  'https://piecewiseai.com/about',
+  'Meet the Charlotte-based team behind Piecewise helping service business owners with custom AI solutions'
+);
+
+export const contactPageSchema = generateWebPageSchema(
+  'Contact Piecewise | AI Consulting Charlotte',
+  'https://piecewiseai.com/contact',
+  'Get in touch with our Charlotte-based AI consulting team for custom GPT and automation solutions'
+);
+
+export const howItWorksPageSchema = generateWebPageSchema(
+  'How Our AI Development Process Works | Piecewise',
+  'https://piecewiseai.com/how-it-works',
+  'Learn about our proven 4-phase process for developing custom AI solutions for service businesses'
+);
 
 // Helper function to generate schema script tag
 export function generateSchemaScript(schema: object) {
