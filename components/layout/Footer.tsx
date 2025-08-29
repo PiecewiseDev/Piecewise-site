@@ -14,7 +14,8 @@ const Footer = () => {
             </h3>
             <address className="mt-4 space-y-3 not-italic">
               <p className="text-sm text-navy-light">
-                436 East 36th Street<br />
+                436 East 36th Street
+                <br />
                 Charlotte, NC 28205
               </p>
               <p className="text-sm text-navy-light">

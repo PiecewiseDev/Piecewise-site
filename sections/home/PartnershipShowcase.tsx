@@ -165,19 +165,21 @@ const PartnershipShowcase: React.FC = () => {
                       }}
                     >
                       {/* Dark Overlay for Logo Visibility */}
-                      <div className={`absolute inset-0 ${
-                        client.logoAlt === 'Fresh Events Services Logo' 
-                          ? 'bg-black/20' 
-                          : 'bg-black/30'
-                      }`}></div>
+                      <div
+                        className={`absolute inset-0 ${
+                          client.logoAlt === 'Fresh Events Services Logo'
+                            ? 'bg-black/20'
+                            : 'bg-black/30'
+                        }`}
+                      ></div>
 
                       {/* Logo and Location Content */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                         {/* Logo Strip */}
                         <div
                           className={`w-full h-32 flex items-center justify-center mb-4 shadow-lg ${
-                            client.logoAlt === 'Trinity Logo' 
-                              ? 'bg-white/70' 
+                            client.logoAlt === 'Trinity Logo'
+                              ? 'bg-white/70'
                               : client.logoAlt === 'Fresh Events Services Logo'
                                 ? 'bg-white/80'
                                 : 'bg-white/75'
