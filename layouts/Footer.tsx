@@ -12,17 +12,16 @@ const Footer = () => {
               Contact Us
             </h3>
             <address className="mt-4 space-y-3 not-italic">
-              <p className="text-sm text-navy-light">4201 Park Road</p>
-              <p className="text-sm text-navy-light">Suite 305</p>
-              <p className="text-sm text-navy-light">Charlotte, NC 28209</p>
+              <p className="text-sm text-navy-light">436 East 36th Street</p>
+              <p className="text-sm text-navy-light">Charlotte, NC 28205</p>
               <p className="text-sm text-navy-light mt-4">
                 <a href="mailto:info@company.com" className="hover:text-accent">
                   info@company.com
                 </a>
               </p>
               <p className="text-sm text-navy-light">
-                <a href="tel:+11234567890" className="hover:text-accent">
-                  (123) 456-7890
+                <a href="tel:+19802180346" className="hover:text-accent">
+                  (980) 218-0346
                 </a>
               </p>
             </address>

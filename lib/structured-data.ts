@@ -19,6 +19,7 @@ export const organizationSchema = {
     '@type': 'ContactPoint',
     contactType: 'customer service',
     availableLanguage: 'English',
+    telephone: '+1-980-218-0346',
     url: 'https://piecewiseai.com/contact',
   },
   foundingDate: '2025',
@@ -76,14 +77,15 @@ export const localBusinessSchema = {
   description:
     'Custom AI development and implementation for service businesses based in Charlotte, NC',
   url: 'https://piecewiseai.com',
-  telephone: 'Contact via website',
+  telephone: '+1-980-218-0346',
   email: 'contact@piecewiseai.com',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '436 East 36th Street',
     addressCountry: 'US',
     addressRegion: 'NC',
     addressLocality: 'Charlotte',
-    postalCode: '28202',
+    postalCode: '28205',
   },
   geo: {
     '@type': 'GeoCoordinates',
@@ -378,9 +380,11 @@ export const aiConsultingServiceSchema = {
     foundingDate: '2025',
     address: {
       '@type': 'PostalAddress',
+      streetAddress: '436 East 36th Street',
       addressLocality: 'Charlotte',
       addressRegion: 'NC',
       addressCountry: 'US',
+      postalCode: '28205',
     },
     sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
   },
@@ -453,6 +457,7 @@ export const enhancedContactPointSchema = {
   '@type': 'ContactPoint',
   contactType: 'customer service',
   availableLanguage: ['English'],
+  telephone: '+1-980-218-0346',
   areaServed: {
     '@type': 'Country',
     name: 'United States',

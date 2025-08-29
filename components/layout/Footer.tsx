@@ -13,7 +13,19 @@ const Footer = () => {
               Contact Us
             </h3>
             <address className="mt-4 space-y-3 not-italic">
-              <p className="text-sm text-navy-light mt-4">
+              <p className="text-sm text-navy-light">
+                436 East 36th Street<br />
+                Charlotte, NC 28205
+              </p>
+              <p className="text-sm text-navy-light">
+                <a
+                  href="tel:+19802180346"
+                  className="hover:text-[#3daeff] transition-colors duration-200"
+                >
+                  (980) 218-0346
+                </a>
+              </p>
+              <p className="text-sm text-navy-light">
                 <a
                   href="mailto:kyle@piecewiseai.com"
                   className="hover:text-[#3daeff] transition-colors duration-200"

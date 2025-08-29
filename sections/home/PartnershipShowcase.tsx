@@ -52,7 +52,7 @@ const PartnershipShowcase: React.FC = () => {
   useEffect(() => {
     if (!isPaused && isVisible) {
       autoPlayRef.current = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % 3); // 3 slides total
+        setCurrentSlide((prev) => (prev + 1) % clients.length); // Dynamic slide count
       }, 4000); // Change slide every 4 seconds
     }
 
@@ -100,6 +100,15 @@ const PartnershipShowcase: React.FC = () => {
       logoAlt: 'LKNF Logo',
       location: 'Charlotte, NC',
       website: 'https://www.lakenormanfence.com/',
+    },
+    {
+      id: 4,
+      backgroundImage: '/images/fresheventsservicesflower1.png',
+      backgroundImageFallback: '/images/fresheventsservicesflower1.png',
+      logoSrc: '/logos/Fresheventsserviceslogo.png',
+      logoAlt: 'Fresh Events Services Logo',
+      location: 'Waterbury, CT',
+      website: 'https://www.fresheventservices.com/',
     },
   ];
 
@@ -156,14 +165,22 @@ const PartnershipShowcase: React.FC = () => {
                       }}
                     >
                       {/* Dark Overlay for Logo Visibility */}
-                      <div className="absolute inset-0 bg-black/30"></div>
+                      <div className={`absolute inset-0 ${
+                        client.logoAlt === 'Fresh Events Services Logo' 
+                          ? 'bg-black/20' 
+                          : 'bg-black/30'
+                      }`}></div>
 
                       {/* Logo and Location Content */}
                       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                         {/* Logo Strip */}
                         <div
                           className={`w-full h-32 flex items-center justify-center mb-4 shadow-lg ${
-                            client.logoAlt === 'Trinity Logo' ? 'bg-white/65' : 'bg-white/75'
+                            client.logoAlt === 'Trinity Logo' 
+                              ? 'bg-white/70' 
+                              : client.logoAlt === 'Fresh Events Services Logo'
+                                ? 'bg-white/80'
+                                : 'bg-white/75'
                           }`}
                         >
                           <Link
@@ -180,7 +197,9 @@ const PartnershipShowcase: React.FC = () => {
                                   ? 'h-12 drop-shadow-md filter contrast-110 saturate-110'
                                   : client.logoAlt === 'LKNF Logo'
                                     ? 'h-20'
-                                    : 'h-16'
+                                    : client.logoAlt === 'Fresh Events Services Logo'
+                                      ? 'h-16 drop-shadow-2xl'
+                                      : 'h-16'
                               }`}
                               style={
                                 client.logoAlt === 'Trinity Logo'
@@ -188,7 +207,12 @@ const PartnershipShowcase: React.FC = () => {
                                       filter:
                                         'drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15)) contrast(110%)',
                                     }
-                                  : undefined
+                                  : client.logoAlt === 'Fresh Events Services Logo'
+                                    ? {
+                                        filter:
+                                          'drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3))',
+                                      }
+                                    : undefined
                               }
                             />
                           </Link>
