@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactIntro, ContactOptions, ContactFAQ } from '@/sections/contact';
+import { ContactIntro, ContactOptions } from '@/sections/contact';
 import {
   generateSchemaScript,
   contactPageSchema,
@@ -21,8 +21,9 @@ export default function ContactPage() {
       {/* Contact Options Section */}
       <ContactOptions />
 
-      {/* FAQ Section */}
+      {/* Temporarily archived FAQ Section - moved to home page
       <ContactFAQ />
+      */}
     </>
   );
 }

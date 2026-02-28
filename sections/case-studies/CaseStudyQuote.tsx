@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { PageSection } from '@/components/layout';
 import { CaseStudyQuoteProps } from '@/lib/types';

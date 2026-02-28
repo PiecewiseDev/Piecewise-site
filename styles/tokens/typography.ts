@@ -1,7 +1,7 @@
 export const typography = {
   fontFamily: {
-    sans: ['Poppins', 'system-ui', 'sans-serif'],
-    poppins: ['Poppins', 'system-ui', 'sans-serif'],
+    sans: ['Inter', 'system-ui', 'sans-serif'],
+    inter: ['Inter', 'system-ui', 'sans-serif'],
   },
   fontSize: {
     xs: ['0.75rem', { lineHeight: '1rem' }],

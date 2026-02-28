@@ -1,28 +1,20 @@
-import React from 'react';
-import { redirect } from 'next/navigation';
-import { Metadata } from 'next';
-import { ButtonPrimary } from '@/components/ui';
-import {
-  CaseStudyHero,
-  CaseStudyProblemSolution,
-  CaseStudyResults,
-  CaseStudyQuote,
-  CaseStudyImplementation,
-  CaseStudyBackLink,
-} from '@/sections/case-studies';
-import { caseStudies } from '@/data/caseStudies';
-import { CallToAction } from '@/sections/shared';
-import { Result, ImplementationStep } from '@/types';
+'use client';
 
-export function generateMetadata(): Metadata {
-  // Return empty metadata since we're redirecting anyway
-  return {};
-}
+import { useEffect } from 'react';
+import { useRouter, useParams } from 'next/navigation';
 
-export default function CaseStudyPage() {
-  // Redirect to home page - case study pages temporarily archived
-  redirect('/');
+export default function CaseStudyRedirect() {
+  const router = useRouter();
+  const params = useParams();
 
-  // Case study pages temporarily archived
-  // Original implementation code removed
+  useEffect(() => {
+    const slug = params?.slug;
+    if (slug) {
+      router.replace(`/customer-stories/${slug}`);
+    } else {
+      router.replace('/customer-stories');
+    }
+  }, [router, params]);
+
+  return null;
 }

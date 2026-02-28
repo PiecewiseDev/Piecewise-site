@@ -44,7 +44,7 @@ type Story = StoryObj<typeof meta>;
 const ExampleIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6 text-accent"
+    className="h-6 w-6 text-primary"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -64,7 +64,7 @@ export const Default: Story = {
     description:
       'This is a brief description of the feature or service being offered. It explains the value proposition in a concise way.',
     icon: <ExampleIcon />,
-    iconBgColor: 'bg-accent/10',
+    iconBgColor: 'bg-primary/10',
   },
 };
 

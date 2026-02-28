@@ -48,7 +48,7 @@ const ContactFAQ: React.FC = () => {
   };
 
   return (
-    <div className="py-16 sm:py-24" style={{ backgroundColor: '#1a1a1d' }}>
+    <div className="py-16 sm:py-24 bg-neutral-darkest">
       {/* Invisible FAQ Schema Markup for SEO */}
       <script
         type="application/ld+json"
@@ -56,10 +56,7 @@ const ContactFAQ: React.FC = () => {
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h2
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
-          style={{ color: '#f1f1f1' }}
-        >
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
           Frequently Asked Questions
         </h2>
         <FAQAccordion faqs={faqs} />

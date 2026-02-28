@@ -14,13 +14,19 @@ module.exports = {
     './lib/**/*.{js,ts,jsx,tsx}',
     './styles/**/*.{js,ts,jsx,tsx,css}',
   ],
-  darkMode: 'class',
+  darkMode: ['class', 'class'],
   theme: {
     extend: {
-      colors,
-      fontFamily: typography.fontFamily,
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
+      },
       fontSize: typography.fontSize,
-      borderRadius: spacing.borderRadius,
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
       boxShadow: spacing.boxShadow,
       spacing: {
         card: spacing.card,
@@ -40,62 +46,98 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
+            color: theme('colors.neutral.dark'),
             a: {
-              color: theme('colors.accent.DEFAULT'),
+              color: theme('colors.primary.DEFAULT'),
               '&:hover': {
-                color: theme('colors.accent.dark'),
+                color: theme('colors.primary.hover'),
               },
             },
             h1: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.neutral.darkest'),
             },
             h2: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.neutral.darkest'),
             },
             h3: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.neutral.darkest'),
             },
             h4: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.neutral.darkest'),
             },
             'ol li:before': {
               fontWeight: '600',
-              color: theme('colors.gray.500'),
+              color: theme('colors.neutral.light'),
             },
             'ul li:before': {
-              backgroundColor: theme('colors.gray.400'),
+              backgroundColor: theme('colors.neutral.light'),
             },
             hr: {
-              borderColor: theme('colors.gray.200'),
+              borderColor: theme('colors.grey.200'),
             },
             blockquote: {
-              color: theme('colors.gray.900'),
-              borderLeftColor: theme('colors.accent.light'),
+              color: theme('colors.neutral.darkest'),
+              borderLeftColor: theme('colors.primary.DEFAULT'),
             },
             strong: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.neutral.darkest'),
             },
             code: {
-              color: theme('colors.accent.dark'),
+              color: theme('colors.primary.DEFAULT'),
             },
           },
         },
       }),
+      colors: {
+        ...colors, // Import all colors from colors.ts
+        // shadcn UI colors (these use CSS variables and aren't in colors.ts)
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        chart: {
+          1: 'hsl(var(--chart-1))',
+          2: 'hsl(var(--chart-2))',
+          3: 'hsl(var(--chart-3))',
+          4: 'hsl(var(--chart-4))',
+          5: 'hsl(var(--chart-5))',
+        },
+      },
     },
   },
   safelist: [
-    'text-blue-600',
-    'bg-accent',
-    'text-accent',
+    'text-primary',
+    'bg-primary',
+    'text-neutral-darkest',
+    'text-neutral-dark',
+    'text-neutral-light',
+    'text-neutral-lightest',
+    'bg-neutral-lightest',
     'bg-background',
-    'text-navy',
-    'bg-navy',
-    'text-emerald',
-    'bg-emerald',
     'prose',
     'prose-lg',
     'prose-xl',
   ],
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
 };

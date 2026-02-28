@@ -50,7 +50,7 @@ export default function PageSection({
   const bgClasses = {
     white: 'bg-white',
     light: 'bg-background',
-    accent: 'bg-accent/10',
+    accent: 'bg-primary/10',
     dark: 'bg-[#1a2e3b] text-white',
   };
 

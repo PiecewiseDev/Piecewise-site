@@ -2,216 +2,172 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
+import React, { useState } from 'react';
+import { useScrollThreshold } from '@/hooks';
 
 const navLinks = [
-  { name: 'About Us', href: '/about' },
-  // { name: 'Services', href: '/services' }, // Temporarily archived
-  // { name: 'How It Works', href: '/how-it-works' }, // Temporarily archived
-  // { name: 'Pricing', href: '/pricing' }, // Temporarily archived
-  // { name: 'Case Studies', href: '/case-studies' }, // Temporarily archived
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  // { name: 'Resources', href: '/resources' }, // Temporarily archived
+  // { name: 'Blog', href: '/blog' }, // Temporarily archived
+  // { name: 'Success Stories', href: '/customer-stories' }, // Temporarily archived
   { name: 'Contact', href: '/contact' },
 ];
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const scrolled = useScrollThreshold({ threshold: 50, throttleMs: 100 });
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Add scroll event listener
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
-
   return (
-    <>
-      <header
-        className={`fixed top-3 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-1' : 'py-2'}`}
-      >
-        <div
-          className={`transition-all duration-300 ${
-            scrolled
-              ? 'backdrop-blur-sm rounded-full shadow-md mx-4 sm:mx-auto px-6 max-w-3xl border border-gray-200/50'
-              : 'max-w-7xl mx-4 sm:mx-auto px-6 sm:px-8 rounded-2xl shadow-sm border border-gray-200/30'
-          }`}
-          style={{ backgroundColor: '#f1f1f1' }}
+    <header
+      className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
+        scrolled
+          ? 'border-neutral-200 bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/90'
+          : 'border-transparent bg-white'
+      }`}
+    >
+      <div className="mx-auto flex h-16 max-w-full items-center justify-between px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 hover:no-underline">
+          <Image
+            src="/logos/piecewiselogo6.png"
+            alt="Piecewise Logo"
+            width={36}
+            height={36}
+            className="h-7 w-auto object-contain"
+            priority
+          />
+          <span className="text-base font-semibold text-neutral-darkest">piecewise</span>
+        </Link>
+
+        {/* Navigation Links - Desktop */}
+        <nav
+          className="hidden md:flex md:items-center md:gap-7 lg:gap-8"
+          aria-label="Primary navigation"
         >
-          <div className="flex justify-between items-center h-12 py-1">
-            {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center gap-2 hover:no-underline">
-                <Image
-                  src="/logos/piecewiselogo6.png"
-                  alt="Piecewise Logo"
-                  width={36}
-                  height={36}
-                  className="h-7 w-auto object-contain"
-                  priority
-                />
-                <span className="text-lg font-semibold text-gray-900">piecewise</span>
-              </Link>
-            </div>
-
-            {/* Navigation Links - Desktop */}
-            <nav className="hidden md:ml-6 md:flex md:space-x-8 md:items-center">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  prefetch={
-                    link.href === '/contact' ||
-                    link.href === '/pricing' ||
-                    link.href === '/services'
-                  }
-                  className="inline-flex items-center text-navy-light hover:text-[#3daeff] hover:no-underline px-1 text-sm font-medium transition-colors duration-200"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </nav>
-
-            {/* CTA Button (Desktop) */}
-            <div className="hidden md:flex md:items-center">
-              <Link
-                href="/contact"
-                prefetch={true}
-                className="group bg-blue-600 text-white rounded-lg px-3 py-1 text-sm font-bold shadow-sm hover:text-gray-100 focus:ring-2 focus:ring-blue-500 hover:no-underline flex items-center gap-2 transition-all duration-200"
-              >
-                Book a Call
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </Link>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
-              <button
-                type="button"
-                className="text-navy inline-flex items-center justify-center p-2 rounded-md hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent"
-                aria-controls="mobile-menu"
-                aria-label="Toggle navigation menu"
-                onClick={toggleMenu}
-              >
-                <span className="sr-only">Open main menu</span>
-                {/* Hamburger or X icon based on menu state */}
-                {isMenuOpen ? (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Mobile Menu Dropdown - Positioned below the header */}
-      <div
-        className={`${
-          isMenuOpen ? 'block' : 'hidden'
-        } md:hidden fixed top-[calc(3rem+1rem+0.75rem)] left-4 right-4 bg-white border-t border-gray-100 shadow-lg z-40 transition-all duration-300 rounded-b-xl`}
-        id="mobile-menu"
-        aria-label="Mobile navigation menu"
-        style={{ backgroundColor: '#f1f1f1' }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="px-4 pt-2 pb-3 space-y-1">
-            {navLinks.map((link) => (
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
               <Link
                 key={link.name}
                 href={link.href}
-                prefetch={
-                  link.href === '/contact' || link.href === '/pricing' || link.href === '/services'
-                }
-                className="inline-block text-navy-light hover:text-[#3daeff] hover:no-underline block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
+                prefetch={link.href === '/contact'}
+                className={`text-sm transition-colors duration-200 hover:text-gray-900 hover:no-underline ${
+                  isActive ? 'font-semibold text-gray-900' : 'font-medium text-gray-500'
+                }`}
               >
                 {link.name}
               </Link>
-            ))}
-            <div className="mt-4 px-3 py-2">
-              <Link
-                href="/contact"
-                prefetch={true}
-                className="group bg-blue-600 text-white rounded-lg px-3 py-1.5 text-sm font-bold shadow-sm hover:text-gray-100 focus:ring-2 focus:ring-blue-500 w-full flex justify-center items-center gap-2 hover:no-underline transition-all duration-200"
-                onClick={() => setIsMenuOpen(false)}
+            );
+          })}
+        </nav>
+
+        {/* CTA Button (Desktop) */}
+        <div className="hidden md:flex md:items-center">
+          <Link
+            href="/contact"
+            prefetch={true}
+            className="inline-flex items-center rounded-lg bg-blue-900 hover:bg-blue-800 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:no-underline hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700"
+          >
+            Start for free today
+          </Link>
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden flex items-center">
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md p-2 text-neutral-dark transition-colors duration-200 hover:text-neutral-darkest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500"
+            aria-controls="mobile-menu"
+            aria-expanded={isMenuOpen ? 'true' : 'false'}
+            aria-label="Toggle navigation menu"
+            onClick={toggleMenu}
+          >
+            {isMenuOpen ? (
+              <svg
+                className="h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
               >
-                Book a Call
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      <div
+        id="mobile-menu"
+        className={`border-t border-neutral-200 bg-white shadow-sm md:hidden overflow-hidden transition-all duration-200 ease-in-out ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+        aria-label="Mobile navigation menu"
+      >
+        <div className="mx-auto max-w-full px-4 py-3 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
+          <div className="space-y-1">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  prefetch={link.href === '/contact'}
+                  className={`block rounded-md px-3 py-3 text-sm transition-colors duration-200 hover:bg-neutral-100 hover:text-gray-900 hover:no-underline ${
+                    isActive
+                      ? 'font-semibold text-gray-900 bg-neutral-100'
+                      : 'font-medium text-gray-500'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </Link>
-            </div>
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
+          <div className="mt-3">
+            <Link
+              href="/contact"
+              prefetch={true}
+              className="flex w-full items-center justify-center rounded-lg bg-blue-900 hover:bg-blue-800 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:no-underline hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-700"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Start for free today
+            </Link>
           </div>
         </div>
       </div>
-    </>
+    </header>
   );
 };
 

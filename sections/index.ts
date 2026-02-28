@@ -3,12 +3,17 @@
  * This file exports components from all section folders
  */
 
-// Export sections by page context
-export * from './shared';
-export * from './home';
+// Export shared sections
+export { Hero, CallToAction, ClientLogoStrip } from './shared';
+
+// Export home sections (rename home Testimonials to avoid conflict)
+export { ToolsPartnership, WhatWeOffer, OurWork, BlogPreview } from './home';
+
+// Export about sections
 export * from './about';
-export * from './services';
-export * from './pricing';
+
+// Export contact sections
 export * from './contact';
+
+// Export case study sections
 export * from './case-studies';
-export * from './how-it-works';

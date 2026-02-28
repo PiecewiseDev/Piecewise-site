@@ -11,18 +11,20 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { name, email, business, message } = body;
+    const { name, email, business, website, message } = body;
 
     // Validate required fields
     if (!name || !email) {
       return NextResponse.json({ error: 'Name and email are required' }, { status: 400 });
     }
 
+    const fullName = name;
+
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev', // Using Resend's default domain for now - change to contact@piecewiseai.com once domain is verified
       to: ['kyle@piecewiseai.com'],
-      subject: `New Contact Form Submission from ${name}`,
+      subject: `New Contact Form Submission from ${fullName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1a1a1d; border-bottom: 2px solid #2563eb; padding-bottom: 10px;">
@@ -31,9 +33,10 @@ export async function POST(request: NextRequest) {
           
           <div style="margin: 20px 0;">
             <h3 style="color: #2563eb; margin-bottom: 5px;">Contact Information</h3>
-            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Name:</strong> ${fullName}</p>
             <p><strong>Email:</strong> ${email}</p>
-            ${business ? `<p><strong>Business Type:</strong> ${business}</p>` : ''}
+            ${business ? `<p><strong>Business:</strong> ${business}</p>` : ''}
+            ${website ? `<p><strong>Website:</strong> ${website}</p>` : ''}
           </div>
 
           ${
@@ -51,7 +54,7 @@ export async function POST(request: NextRequest) {
 
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 14px;">
             <p>This email was sent from the contact form on your website.</p>
-            <p>Reply directly to this email to respond to ${name}.</p>
+            <p>Reply directly to this email to respond to ${fullName}.</p>
           </div>
         </div>
       `,

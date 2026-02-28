@@ -5,7 +5,6 @@ This document outlines the organization of our Next.js website project for clari
 ## Core Assets
 
 1. **`public/`** - Static assets like images, logos, and favicons
-
    - All site images, including hero backgrounds and testimonial photos
    - Favicon and site icons
    - Downloadable assets (if any)
@@ -18,13 +17,11 @@ This document outlines the organization of our Next.js website project for clari
 ## UI Components
 
 3. **`components/`** - Reusable UI building blocks
-
    - Buttons, form elements, cards, and other atomic components
    - UI utilities like modals, tooltips, and accordions
    - Shared components used across multiple pages
 
 4. **`sections/`** - Larger page sections organized by page
-
    - Home page sections (Hero, Benefits, Explainer, etc.)
    - Page-specific content blocks
    - Organized by page for easier maintenance
@@ -37,13 +34,11 @@ This document outlines the organization of our Next.js website project for clari
 ## Data and Configuration
 
 6. **`data/`** - Static marketing content and structured data
-
    - Page content organized by section
    - Testimonials, features, and other marketing content
    - Structured data for SEO
 
 7. **`icons/`** - SVG icons and icon components
-
    - Custom SVG icons
    - Icon wrapper components
    - Icon utilities and helpers
@@ -56,19 +51,16 @@ This document outlines the organization of our Next.js website project for clari
 ## Application Logic
 
 9. **`types/`** - TypeScript types and interfaces
-
    - Shared type definitions
    - Component prop interfaces
    - Data schema types
 
 10. **`lib/`** - Core functionality and API functions
-
     - API client functions
     - Core business logic
     - Utility libraries
 
 11. **`hooks/`** - Custom React hooks
-
     - Shared stateful logic
     - Data fetching hooks
     - UI behavior hooks

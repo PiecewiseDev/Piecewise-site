@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 
 export default function CaseWins() {
@@ -7,19 +5,19 @@ export default function CaseWins() {
     <section className="py-16 bg-[#FCFCFD]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-navy mb-4">How It Helped</h2>
-          <p className="text-lg text-navy-light max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-neutral-darkest mb-4">How It Helped</h2>
+          <p className="text-lg text-neutral-darkest-light max-w-2xl mx-auto">
             Through our partnership, the client experienced significant improvements in both
             operational efficiency and customer satisfaction.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Win 1 */}
-          <div className="bg-white p-6 rounded-xl shadow-card hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out">
-            <div className="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <div className="md:col-span-6 lg:col-span-3 bg-white p-6 rounded-xl shadow-card hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out">
+            <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <svg
-                className="w-6 h-6 text-accent"
+                className="w-6 h-6 text-primary"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -33,17 +31,17 @@ export default function CaseWins() {
                 ></path>
               </svg>
             </div>
-            <h3 className="text-lg font-bold text-navy mb-2">50% Less Time</h3>
-            <p className="text-navy-light">
+            <h3 className="text-lg font-bold text-neutral-darkest mb-2">50% Less Time</h3>
+            <p className="text-neutral-darkest-light">
               Customer service team now spends 50% less time on routine customer replies.
             </p>
           </div>
 
           {/* Win 2 */}
-          <div className="bg-white p-6 rounded-xl shadow-card hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out">
-            <div className="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <div className="md:col-span-6 lg:col-span-3 bg-white p-6 rounded-xl shadow-card hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out">
+            <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <svg
-                className="w-6 h-6 text-accent"
+                className="w-6 h-6 text-primary"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -57,17 +55,17 @@ export default function CaseWins() {
                 ></path>
               </svg>
             </div>
-            <h3 className="text-lg font-bold text-navy mb-2">95% Accuracy</h3>
-            <p className="text-navy-light">
+            <h3 className="text-lg font-bold text-neutral-darkest mb-2">95% Accuracy</h3>
+            <p className="text-neutral-darkest-light">
               Automated responses show 95% accuracy in addressing customer questions correctly.
             </p>
           </div>
 
           {/* Win 3 */}
-          <div className="bg-white p-6 rounded-xl shadow-card hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out">
-            <div className="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <div className="md:col-span-6 lg:col-span-3 bg-white p-6 rounded-xl shadow-card hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out">
+            <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <svg
-                className="w-6 h-6 text-accent"
+                className="w-6 h-6 text-primary"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -81,17 +79,17 @@ export default function CaseWins() {
                 ></path>
               </svg>
             </div>
-            <h3 className="text-lg font-bold text-navy mb-2">3.2× Increase</h3>
-            <p className="text-navy-light">
+            <h3 className="text-lg font-bold text-neutral-darkest mb-2">3.2× Increase</h3>
+            <p className="text-neutral-darkest-light">
               Customer satisfaction scores increased 3.2× compared to the previous system.
             </p>
           </div>
 
           {/* Win 4 */}
-          <div className="bg-white p-6 rounded-xl shadow-card hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out">
-            <div className="bg-accent/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <div className="md:col-span-6 lg:col-span-3 bg-white p-6 rounded-xl shadow-card hover:shadow-lg hover:scale-[1.02] transition-all duration-200 ease-in-out">
+            <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
               <svg
-                className="w-6 h-6 text-accent"
+                className="w-6 h-6 text-primary"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -105,8 +103,8 @@ export default function CaseWins() {
                 ></path>
               </svg>
             </div>
-            <h3 className="text-lg font-bold text-navy mb-2">Effortless Refunds</h3>
-            <p className="text-navy-light">
+            <h3 className="text-lg font-bold text-neutral-darkest mb-2">Effortless Refunds</h3>
+            <p className="text-neutral-darkest-light">
               Refund processing now handled with ease thanks to improved systems integration.
             </p>
           </div>

@@ -1,10 +1,14 @@
-import React from 'react';
-import { redirect } from 'next/navigation';
+'use client';
 
-export default function CaseStudiesPage() {
-  // Redirect to home page - case-studies page temporarily archived
-  redirect('/');
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-  // Case Studies page temporarily archived
-  // Original implementation code removed
+export default function CaseStudiesRedirect() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/customer-stories');
+  }, [router]);
+
+  return null;
 }

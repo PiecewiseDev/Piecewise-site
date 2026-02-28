@@ -120,7 +120,7 @@ const Button = ({
 };
 
 /**
- * ButtonPrimary - Primary action button with dark background and white text
+ * ButtonPrimary - Primary action button with brand blue background and white text
  *
  * Usage example:
  * ```tsx
@@ -133,9 +133,9 @@ export function ButtonPrimary(props: ButtonProps) {
   return (
     <Button
       {...props}
-      className={`bg-[#1a2e3b] text-white hover:opacity-90 hover:shadow-lg hover:brightness-105 
+      className={`bg-primary text-white hover:bg-primary-hover hover:shadow-lg 
       hover:-translate-y-0.5 active:opacity-90 active:shadow-sm active:translate-y-0.5
-      focus:ring-2 focus:ring-accent focus:outline-none shadow-sm ${props.className || ''}`}
+      focus:ring-2 focus:ring-primary focus:outline-none shadow-sm ${props.className || ''}`}
     />
   );
 }
@@ -153,29 +153,9 @@ export function ButtonSecondary(props: ButtonProps) {
   return (
     <Button
       {...props}
-      className={`border border-[#1a2e3b] text-[#1a2e3b] bg-white hover:bg-gray-100 
+      className={`border border-primary text-primary bg-white hover:bg-primary hover:text-white 
       hover:shadow-md hover:-translate-y-0.5 active:opacity-90 active:shadow-sm active:translate-y-0.5
-      focus:ring-2 focus:ring-accent focus:outline-none ${props.className || ''}`}
-    />
-  );
-}
-
-/**
- * ButtonAccent - Accent button with the brand's accent color (green)
- *
- * Usage example:
- * ```tsx
- * <ButtonAccent href="/signup">Sign Up</ButtonAccent>
- * <ButtonAccent onClick={handleAction}>Start Free Trial</ButtonAccent>
- * ```
- */
-export function ButtonAccent(props: ButtonProps) {
-  return (
-    <Button
-      {...props}
-      className={`bg-accent text-white hover:bg-accent-dark hover:shadow-lg hover:brightness-105 
-      hover:-translate-y-0.5 active:opacity-90 active:shadow-sm active:translate-y-0.5
-      focus:ring-2 focus:ring-accent focus:outline-none shadow-sm ${props.className || ''}`}
+      focus:ring-2 focus:ring-primary focus:outline-none ${props.className || ''}`}
     />
   );
 }

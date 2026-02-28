@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { PageSection } from '@/components/layout';
@@ -10,8 +8,8 @@ const CaseStudyBackLink: React.FC<CaseStudyBackLinkProps> = () => {
   return (
     <PageSection padding="small" width="wide">
       <Link
-        href="/case-studies"
-        className="inline-flex items-center text-navy font-medium hover:text-accent transition-colors"
+        href="/customer-stories"
+        className="inline-flex items-center text-neutral-darkest font-medium hover:text-primary transition-colors"
       >
         <svg
           className="w-5 h-5 mr-2"

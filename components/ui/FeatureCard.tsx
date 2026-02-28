@@ -45,7 +45,7 @@ export default function FeatureCard({
   title,
   description,
   icon,
-  iconBgColor = 'bg-accent/10',
+  iconBgColor = 'bg-primary/10',
   badge,
   footer,
   className = '',
@@ -56,7 +56,7 @@ export default function FeatureCard({
   // Base card styles
   const cardClasses = `
     card card-hover relative p-6 md:p-8 flex flex-col h-full
-    ${featured ? 'border-accent shadow-md' : 'border-gray-200'}
+    ${featured ? 'border-primary shadow-md' : 'border-gray-200'}
     ${className}
     ${onClick || href ? 'cursor-pointer' : ''}
   `;
@@ -67,7 +67,7 @@ export default function FeatureCard({
       {/* Badge (if provided) */}
       {badge && (
         <div className="absolute top-4 right-4">
-          <span className="inline-block bg-accent/20 text-accent text-xs font-medium px-2.5 py-1 rounded">
+          <span className="inline-block bg-primary/20 text-primary text-xs font-medium px-2.5 py-1 rounded">
             {badge}
           </span>
         </div>
@@ -84,7 +84,7 @@ export default function FeatureCard({
 
       {/* Title and Description */}
       <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-700 mb-4 flex-grow">{description}</p>
+      <p className="text-neutral-dark mb-4 flex-grow">{description}</p>
 
       {/* Footer (if provided) */}
       {footer && <div className="mt-auto">{footer}</div>}

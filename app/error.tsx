@@ -1,12 +1,13 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 export default function ErrorPage({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 py-12 px-4">
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8 text-center">
-        <div className="mb-6 text-accent">
+        <div className="mb-6 text-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-16 w-16 mx-auto"
@@ -23,9 +24,11 @@ export default function ErrorPage({ error, reset }: { error: Error; reset: () =>
           </svg>
         </div>
 
-        <h1 className="text-2xl md:text-3xl font-bold mb-4 text-navy">Something went wrong</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mb-4 text-neutral-darkest">
+          Something went wrong
+        </h1>
 
-        <p className="text-navy-light mb-6">
+        <p className="text-neutral-darkest-light mb-6">
           {error.message ||
             "An unexpected error occurred. We've been notified and are working to fix the issue."}
         </p>
@@ -33,17 +36,17 @@ export default function ErrorPage({ error, reset }: { error: Error; reset: () =>
         <div className="flex flex-col space-y-4">
           <button
             onClick={() => reset()}
-            className="px-5 py-3 bg-accent text-white font-medium rounded-md hover:bg-accent/90 transition-colors"
+            className="px-5 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary/90 transition-colors"
           >
             Try Again
           </button>
 
-          <a
+          <Link
             href="/"
-            className="px-5 py-3 border border-gray-300 text-navy font-medium rounded-md hover:bg-gray-50 transition-colors"
+            className="px-5 py-3 border border-gray-300 text-neutral-darkest font-medium rounded-md hover:bg-gray-50 transition-colors"
           >
             Return Home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

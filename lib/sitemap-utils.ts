@@ -32,6 +32,16 @@ export const DEFAULT_PAGE_CONFIGS: SitemapPageConfigs = {
     changeFrequency: 'monthly',
     lastModified: new Date(),
   },
+  '/blog': {
+    priority: 0.8,
+    changeFrequency: 'weekly',
+    lastModified: new Date(),
+  },
+  '/resources': {
+    priority: 0.8,
+    changeFrequency: 'weekly',
+    lastModified: new Date(),
+  },
   '/contact': {
     priority: 0.8,
     changeFrequency: 'monthly',
@@ -53,6 +63,11 @@ export const DEFAULT_PAGE_CONFIGS: SitemapPageConfigs = {
     lastModified: new Date(),
   },
   '/case-studies': {
+    priority: 0.7,
+    changeFrequency: 'weekly',
+    lastModified: new Date(),
+  },
+  '/customer-stories': {
     priority: 0.7,
     changeFrequency: 'weekly',
     lastModified: new Date(),

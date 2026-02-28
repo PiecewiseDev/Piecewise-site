@@ -1,92 +1,36 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
+import React from 'react';
+import { useIntersectionObserver } from '@/hooks';
 
 export default function OurMission() {
-  const [isVisible, setIsVisible] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // IntersectionObserver for fade-in animation
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2,
-      }
-    );
-
-    observer.observe(containerRef.current);
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
+  const { isVisible, ref: containerRef } = useIntersectionObserver({
+    threshold: 0.2,
+  });
 
   return (
-    <div className="py-16 md:py-24" style={{ backgroundColor: '#f1f1f1' }} ref={containerRef}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Mission Content */}
-          <div
-            className={`transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <h2
-              className="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-8 text-center md:text-left"
-              style={{ color: '#1a1a1d' }}
-            >
-              Our Mission
-            </h2>
+    <div
+      className="py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 2xl:py-20 bg-blue-900"
+      ref={containerRef}
+    >
+      <div className="max-w-full sm:max-w-full md:max-w-full lg:max-w-full xl:max-w-full 2xl:max-w-full mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
+        <div
+          className={`transition-all duration-700 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
+          <p className="text-sm font-medium text-slate-200 tracking-wider mb-4 md:mb-6 text-center uppercase">
+            Our Mission
+          </p>
 
-            <p
-              className="text-base md:text-lg leading-relaxed text-center md:text-left"
-              style={{ color: '#1a1a1d', opacity: 0.9 }}
-            >
-              To equip businesses with the tools and support they need to navigate emerging
-              technologies with confidence, so they can grow with purpose and serve their
-              communities faithfully.
-            </p>
-          </div>
+          <hr className="border-t border-slate-600 max-w-xs mx-auto mb-4 md:mb-6" />
 
-          {/* Right Column - Bible and Notebook Image */}
-          <div
-            className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <div
-              className="relative w-full max-w-md h-64 md:h-80 rounded-2xl overflow-hidden border-[0.5px] border-gray-300/20"
-              style={{
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.05)',
-              }}
-            >
-              <picture>
-                <source srcSet="/images/t-steele-x-mIAFbAL-o-unsplash.webp" type="image/webp" />
-                <Image
-                  src="/images/t-steele-x-mIAFbAL-o-unsplash.jpg"
-                  alt="Open Bible with notebook and pen - representing our faith-centered mission"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className="transition-transform duration-300 hover:scale-105"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
-          </div>
+          <p className="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold !leading-[1.5] text-center text-white max-w-4xl mx-auto">
+            <span className="text-white/85 font-normal">To help entrepreneurs</span> build better
+            businesses, <span className="text-white/85 font-normal">to</span> magnify their impact{' '}
+            <span className="text-white/85 font-normal">and</span> improve the communities they
+            serve.
+          </p>
         </div>
       </div>
     </div>

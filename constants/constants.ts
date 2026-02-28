@@ -14,7 +14,7 @@ export const NAV_LINKS = [
   { name: 'Services', href: '/services' },
   // { name: 'How It Works', href: '/how-it-works' }, // Temporarily archived
   // { name: 'Pricing', href: '/pricing' }, // Temporarily archived
-  // { name: 'Case Studies', href: '/case-studies' }, // Temporarily archived
+  // { name: 'Case Studies', href: '/customer-stories' }, // Temporarily archived
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -29,15 +29,4 @@ export const SOCIAL_LINKS = {
 export const PRIMARY_CTA = {
   text: 'Get Started',
   href: '/contact',
-};
-
-// Color theme constants
-export const COLORS = {
-  primary: '#1a2e3b', // navy
-  accent: '#3b82f6', // blue
-  background: '#f8f9fa',
-  text: {
-    primary: '#1a2e3b',
-    secondary: '#4b5563',
-  },
 };

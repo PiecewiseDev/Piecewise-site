@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { PageSection } from '@/components/layout';
 import { CaseStudyImplementationProps } from '@/lib/types';
@@ -14,7 +12,7 @@ const CaseStudyImplementation: React.FC<CaseStudyImplementationProps> = ({ steps
           <div key={index} className="flex flex-col md:flex-row items-start gap-6">
             {/* Step Number */}
             <div className="flex-shrink-0">
-              <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl">
                 {index + 1}
               </div>
             </div>
@@ -22,7 +20,7 @@ const CaseStudyImplementation: React.FC<CaseStudyImplementationProps> = ({ steps
             {/* Step Content */}
             <div>
               <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-              <p className="text-navy-light">{step.description}</p>
+              <p className="text-neutral-darkest-light">{step.description}</p>
             </div>
           </div>
         ))}

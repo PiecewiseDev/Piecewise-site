@@ -60,7 +60,7 @@ export default function CaseStudyQuotes() {
 
   return (
     <div className="mb-16 animate-fade-in animation-delay-600">
-      <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-navy">
+      <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-neutral-darkest">
         What Our Clients Say
       </h2>
 
@@ -68,7 +68,7 @@ export default function CaseStudyQuotes() {
         {/* Decorative large quote mark */}
         <div className="absolute top-4 left-6 md:top-6 md:left-10 opacity-10">
           <svg
-            className="w-20 h-20 text-accent"
+            className="w-20 h-20 text-primary"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -84,45 +84,45 @@ export default function CaseStudyQuotes() {
         >
           {/* Quote 1 */}
           <div className="flex-shrink-0 w-full md:w-80 lg:w-96 snap-center">
-            <div className="bg-blue-50/50 rounded-lg p-6 h-full relative">
-              <p className="text-navy-light italic mb-4 leading-relaxed text-lg">
+            <div className="bg-primary/5 rounded-lg p-6 h-full relative">
+              <p className="text-neutral-darkest-light italic mb-4 leading-relaxed text-lg">
                 "I didn't think AI could help with crew reminders—but it nailed our tone. Our team
                 actually likes using it."
               </p>
-              <p className="font-medium text-navy">Tom, Tree Service Owner</p>
+              <p className="font-medium text-neutral-darkest">Tom, Tree Service Owner</p>
             </div>
           </div>
 
           {/* Quote 2 */}
           <div className="flex-shrink-0 w-full md:w-80 lg:w-96 snap-center">
-            <div className="bg-blue-50/50 rounded-lg p-6 h-full relative">
-              <p className="text-navy-light italic mb-4 leading-relaxed text-lg">
+            <div className="bg-primary/5 rounded-lg p-6 h-full relative">
+              <p className="text-neutral-darkest-light italic mb-4 leading-relaxed text-lg">
                 "The Custom GPT handles billing questions better than most of my staff. Clients
                 can't tell they're talking to AI."
               </p>
-              <p className="font-medium text-navy">Sarah, Accounting Practice Manager</p>
+              <p className="font-medium text-neutral-darkest">Sarah, Accounting Practice Manager</p>
             </div>
           </div>
 
           {/* Quote 3 */}
           <div className="flex-shrink-0 w-full md:w-80 lg:w-96 snap-center">
-            <div className="bg-blue-50/50 rounded-lg p-6 h-full relative">
-              <p className="text-navy-light italic mb-4 leading-relaxed text-lg">
+            <div className="bg-primary/5 rounded-lg p-6 h-full relative">
+              <p className="text-neutral-darkest-light italic mb-4 leading-relaxed text-lg">
                 "Within a week of launching, our Custom GPT had already saved me from 15+ repetitive
                 calls about project timelines."
               </p>
-              <p className="font-medium text-navy">Miguel, Interior Designer</p>
+              <p className="font-medium text-neutral-darkest">Miguel, Interior Designer</p>
             </div>
           </div>
 
           {/* Quote 4 */}
           <div className="flex-shrink-0 w-full md:w-80 lg:w-96 snap-center">
-            <div className="bg-blue-50/50 rounded-lg p-6 h-full relative">
-              <p className="text-navy-light italic mb-4 leading-relaxed text-lg">
+            <div className="bg-primary/5 rounded-lg p-6 h-full relative">
+              <p className="text-neutral-darkest-light italic mb-4 leading-relaxed text-lg">
                 "My clients love getting immediate answers at 9 PM when I'm with my family. It's
                 like having an assistant who never sleeps."
               </p>
-              <p className="font-medium text-navy">Rachel, Real Estate Agent</p>
+              <p className="font-medium text-neutral-darkest">Rachel, Real Estate Agent</p>
             </div>
           </div>
         </div>
@@ -130,16 +130,16 @@ export default function CaseStudyQuotes() {
         {/* Mobile swipe indicator */}
         <div className="md:hidden flex justify-center mt-2">
           <div className="flex space-x-1">
-            <div className="w-2 h-2 rounded-full bg-accent/60"></div>
-            <div className="w-2 h-2 rounded-full bg-accent/30"></div>
-            <div className="w-2 h-2 rounded-full bg-accent/30"></div>
-            <div className="w-2 h-2 rounded-full bg-accent/30"></div>
+            <div className="w-2 h-2 rounded-full bg-primary/60"></div>
+            <div className="w-2 h-2 rounded-full bg-primary/30"></div>
+            <div className="w-2 h-2 rounded-full bg-primary/30"></div>
+            <div className="w-2 h-2 rounded-full bg-primary/30"></div>
           </div>
         </div>
 
         {/* Mobile hint text */}
         <div className="md:hidden text-center mt-3">
-          <p className="text-xs text-navy-light">Swipe for more</p>
+          <p className="text-xs text-neutral-darkest-light">Swipe for more</p>
         </div>
       </div>
     </div>

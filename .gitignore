@@ -35,6 +35,9 @@ dist/
 .DS_Store
 Thumbs.db
 
+# Lighthouse audit reports (generated files)
+lighthouse-*.html
+
 # Logs
 logs
 *.log

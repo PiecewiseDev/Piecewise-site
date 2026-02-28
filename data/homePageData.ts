@@ -167,7 +167,7 @@ export const testimonialData: TestimonialProps = {
   clientTestimonial:
     '"We\'ve reduced response time by 68% and our team has clear, consistent answers for customers."',
   linkText: 'View more success stories',
-  linkHref: '/case-studies',
+  linkHref: '/customer-stories',
 };
 
 // CTA section data

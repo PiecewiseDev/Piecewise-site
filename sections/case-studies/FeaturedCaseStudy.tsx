@@ -1,22 +1,20 @@
-'use client';
-
 import React from 'react';
 
 export default function FeaturedCaseStudy() {
   return (
     <div className="mb-16 animate-fade-in animation-delay-400">
-      <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-navy">
+      <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-neutral-darkest">
         Featured Success Story
       </h2>
 
       <div className="bg-white rounded-xl shadow-lg overflow-hidden">
         <div className="flex flex-col md:flex-row">
           {/* Left Column - Client Info & Quote */}
-          <div className="md:w-2/5 bg-accent/5 p-6 md:p-8">
+          <div className="md:w-2/5 bg-primary/5 p-6 md:p-8">
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
                 <svg
-                  className="h-6 w-6 text-accent"
+                  className="h-6 w-6 text-primary"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -31,24 +29,26 @@ export default function FeaturedCaseStudy() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-navy">GreenVista Landscaping</h3>
-                <p className="text-accent text-sm font-medium">Service Business</p>
+                <h3 className="text-xl font-bold text-neutral-darkest">GreenVista Landscaping</h3>
+                <p className="text-primary text-sm font-medium">Service Business</p>
               </div>
             </div>
 
-            <div className="mt-6 border-l-4 border-accent/30 pl-4 italic text-navy-light">
+            <div className="mt-6 border-l-4 border-primary/30 pl-4 italic text-neutral-darkest-light">
               <p className="text-lg">
                 "Our team was spending hours each day responding to the same customer questions. Now
                 our Custom GPT handles most of this automatically, giving us back time to focus on
                 growing the business."
               </p>
-              <p className="mt-4 font-medium text-navy not-italic">— Mike Benson, Owner</p>
+              <p className="mt-4 font-medium text-neutral-darkest not-italic">
+                — Mike Benson, Owner
+              </p>
             </div>
           </div>
 
           {/* Right Column - Before/Built/After */}
           <div className="md:w-3/5 p-6 md:p-8">
-            <h4 className="text-lg font-bold text-navy mb-6">The Transformation</h4>
+            <h4 className="text-lg font-bold text-neutral-darkest mb-6">The Transformation</h4>
 
             <div className="space-y-6">
               {/* Before */}
@@ -70,8 +70,8 @@ export default function FeaturedCaseStudy() {
                   </svg>
                 </div>
                 <div>
-                  <h5 className="font-bold text-navy mb-1">Before</h5>
-                  <p className="text-navy-light">
+                  <h5 className="font-bold text-neutral-darkest mb-1">Before</h5>
+                  <p className="text-neutral-darkest-light">
                     Hours spent writing customer emails and answering the same questions about
                     scheduling, pricing, and plant care advice.
                   </p>
@@ -82,7 +82,7 @@ export default function FeaturedCaseStudy() {
               <div className="flex items-start">
                 <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                   <svg
-                    className="h-5 w-5 text-accent"
+                    className="h-5 w-5 text-primary"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -97,8 +97,8 @@ export default function FeaturedCaseStudy() {
                   </svg>
                 </div>
                 <div>
-                  <h5 className="font-bold text-navy mb-1">What We Built</h5>
-                  <p className="text-navy-light">
+                  <h5 className="font-bold text-neutral-darkest mb-1">What We Built</h5>
+                  <p className="text-neutral-darkest-light">
                     Custom GPT trained on GreenVista's tone, pricing model, crew SOPs, and plant
                     care knowledge base.
                   </p>
@@ -124,8 +124,8 @@ export default function FeaturedCaseStudy() {
                   </svg>
                 </div>
                 <div>
-                  <h5 className="font-bold text-navy mb-1">After</h5>
-                  <p className="text-navy-light">
+                  <h5 className="font-bold text-neutral-darkest mb-1">After</h5>
+                  <p className="text-neutral-darkest-light">
                     Customer replies now take 30 seconds instead of 10 minutes. Team saves 12+ hours
                     weekly and client satisfaction has increased.
                   </p>

@@ -1,480 +1,180 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
-
-interface FormData {
-  name: string;
-  email: string;
-  business: string;
-  message: string;
-}
+import React from 'react';
+import Image from 'next/image';
+import { useContactForm, useIntersectionObserver } from '@/hooks';
+import { FormStatusMessages } from '@/components/ui';
 
 const ContactOptions: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    business: '',
-    message: '',
+  const { isVisible, ref: containerRef } = useIntersectionObserver({
+    threshold: 0.2,
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // IntersectionObserver for fade-in animation
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2,
-      }
-    );
-
-    observer.observe(containerRef.current);
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          business: '',
-          message: '',
-        });
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      // Handle form submission errors gracefully without exposing details
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const { formData, submitStatus, isSubmitting, handleInputChange, handleSubmit } =
+    useContactForm();
 
   return (
     <div
-      className="pt-6 pb-12 sm:pt-10 sm:pb-16"
-      style={{
-        background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%)',
-      }}
+      className="bg-slate-100 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28 2xl:pb-32"
       ref={containerRef}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left Side - Book a Discovery Call */}
-          <div
-            className={`bg-white rounded-xl p-8 shadow-md flex flex-col h-full transition-all duration-1000 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <div className="relative z-10 flex flex-col h-full">
-              <div className="mb-6">
-                <h2
-                  className="text-2xl md:text-3xl font-bold text-center md:text-left"
-                  style={{ color: '#1a1a1d' }}
-                >
-                  Book a Discovery Call
-                </h2>
-              </div>
+      <div className="w-full mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-7 md:gap-8 lg:gap-8 xl:gap-10 2xl:gap-12">
+          {/* Left Side - Contact Form (6/12 width) */}
+          <div className="lg:col-span-6">
+            {/* Status Messages */}
+            <FormStatusMessages status={submitStatus} />
 
-              <div className="flex-grow flex flex-col justify-between space-y-6 md:space-y-4">
-                <div className="bg-gray-50 rounded-lg p-8 flex items-center min-h-[120px] relative overflow-hidden border border-gray-200">
-                  {/* Blue tint overlay */}
-                  <div
-                    className="absolute inset-0 rounded-lg"
-                    style={{ backgroundColor: 'rgba(37, 99, 235, 0.01)' }}
-                  ></div>
-                  <div className="relative z-10 w-full">
-                    <p
-                      className="text-base leading-relaxed m-0"
-                      style={{ color: '#1a1a1d', opacity: 0.8 }}
-                    >
-                      Schedule a{' '}
-                      <span className="font-semibold" style={{ color: '#1a1a1d' }}>
-                        30-minute conversation
-                      </span>{' '}
-                      to explore how a Custom GPT could work for your business.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <h3
-                    className="text-base font-semibold text-center md:text-left"
-                    style={{ color: '#1a1a1d' }}
-                  >
-                    What you&apos;ll get:
-                  </h3>
-
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 mt-0.5">
-                      <div
-                        className="w-5 h-5 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: '#2563eb' }}
-                      >
-                        <svg
-                          className="w-2.5 h-2.5 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="leading-tight">
-                      <p className="text-sm font-medium" style={{ color: '#1a1a1d' }}>
-                        No pressure consultation
-                      </p>
-                      <p className="text-xs -mt-1" style={{ color: '#1a1a1d', opacity: 0.7 }}>
-                        Just a focused discussion about your specific needs
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 mt-0.5">
-                      <div
-                        className="w-5 h-5 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: '#2563eb' }}
-                      >
-                        <svg
-                          className="w-2.5 h-2.5 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="leading-tight">
-                      <p className="text-sm font-medium" style={{ color: '#1a1a1d' }}>
-                        Real business examples
-                      </p>
-                      <p className="text-xs -mt-1" style={{ color: '#1a1a1d', opacity: 0.7 }}>
-                        See how businesses like yours are using AI
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 mt-0.5">
-                      <div
-                        className="w-5 h-5 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: '#2563eb' }}
-                      >
-                        <svg
-                          className="w-2.5 h-2.5 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="leading-tight">
-                      <p className="text-sm font-medium" style={{ color: '#1a1a1d' }}>
-                        Clear next steps
-                      </p>
-                      <p className="text-xs -mt-1" style={{ color: '#1a1a1d', opacity: 0.7 }}>
-                        Walk away with a concrete plan forward
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 flex justify-center">
-                <a
-                  href="https://calendly.com/piecewiseai/discovery-call"
-                  className="group w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:text-white hover:opacity-90 hover:shadow-md hover:scale-105 transform hover:-translate-y-0.5 text-lg"
-                  style={{
-                    background: '#2563eb',
-                    boxShadow: '0 2px 8px rgba(37, 99, 235, 0.15)',
-                  }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Schedule Your Call
-                  <svg
-                    className="ml-3 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side - Send Us a Message Form */}
-          <div
-            className={`bg-white rounded-xl p-8 shadow-md flex flex-col h-full transition-all duration-1000 delay-300 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
-            <div className="mb-6">
-              <h2
-                className="text-2xl md:text-3xl font-bold text-center md:text-left"
-                style={{ color: '#1a1a1d' }}
-              >
-                Send Us a Message
-              </h2>
-            </div>
-
-            {/* Success Message */}
-            {submitStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                <div className="flex items-center">
-                  <svg
-                    className="w-5 h-5 text-green-600 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p className="text-green-800 font-medium">
-                    Thank you! Your message has been sent successfully.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* Error Message */}
-            {submitStatus === 'error' && (
-              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                <div className="flex items-center">
-                  <svg
-                    className="w-5 h-5 text-red-600 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <p className="text-red-800 font-medium">
-                    Sorry, there was an error sending your message. Please try again.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            <form className="space-y-4 flex-grow" onSubmit={handleSubmit}>
+            <form className="space-y-3 md:space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                  style={{ color: '#1a1a1d' }}
-                >
-                  Name *
+                <label htmlFor="name" className="sr-only">
+                  Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
+                  value={formData.name || ''}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="Your full name"
+                  placeholder="Full Name"
+                  className="w-full px-3 md:px-4 xl:px-5 py-2.5 md:py-3 xl:py-3.5 2xl:py-4 text-sm md:text-base 2xl:text-lg bg-white border border-slate-200 rounded-lg placeholder:text-slate-400 focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
                 />
               </div>
+
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                  style={{ color: '#1a1a1d' }}
-                >
-                  Email *
+                <label htmlFor="website" className="sr-only">
+                  Website
+                </label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  value={formData.website || ''}
+                  onChange={handleInputChange}
+                  placeholder="Company Website"
+                  className="w-full px-3 md:px-4 xl:px-5 py-2.5 md:py-3 xl:py-3.5 2xl:py-4 text-sm md:text-base 2xl:text-lg bg-white border border-slate-200 rounded-lg placeholder:text-slate-400 focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
+                />
+              </div>
+
+              {/* Email on full line */}
+              <div>
+                <label htmlFor="email" className="sr-only">
+                  Email
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
+                  value={formData.email || ''}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="your@email.com"
+                  placeholder="Email"
+                  className="w-full px-3 md:px-4 xl:px-5 py-2.5 md:py-3 xl:py-3.5 2xl:py-4 text-sm md:text-base 2xl:text-lg bg-white border border-slate-200 rounded-lg placeholder:text-slate-400 focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all"
                 />
               </div>
+
+              {/* Message */}
               <div>
-                <label
-                  htmlFor="business"
-                  className="block text-sm font-medium mb-2"
-                  style={{ color: '#1a1a1d' }}
-                >
-                  Business Type
-                </label>
-                <input
-                  type="text"
-                  id="business"
-                  name="business"
-                  value={formData.business}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="e.g., Plumbing, HVAC, Landscaping"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                  style={{ color: '#1a1a1d' }}
-                >
+                <label htmlFor="message" className="sr-only">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
+                  value={formData.message || ''}
                   onChange={handleInputChange}
-                  rows={3}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
-                  placeholder="Tell us about your business and what you're hoping to accomplish"
-                ></textarea>
+                  required
+                  rows={4}
+                  placeholder="Anything to add?"
+                  className="w-full px-3 md:px-4 xl:px-5 py-2.5 md:py-3 xl:py-3.5 2xl:py-4 text-sm md:text-base 2xl:text-lg bg-white border border-slate-200 rounded-lg placeholder:text-slate-400 focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all resize-none"
+                />
               </div>
-              <div className="mt-6 flex justify-center">
+
+              {/* Submit Button */}
+              <div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group w-full inline-flex items-center justify-center px-8 py-4 rounded-lg font-semibold transition-all duration-200 text-white hover:opacity-90 hover:shadow-md hover:scale-105 transform hover:-translate-y-0.5 text-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none"
-                  style={{
-                    background: '#2563eb',
-                    boxShadow: '0 2px 8px rgba(37, 99, 235, 0.15)',
-                  }}
+                  className="w-full inline-flex items-center justify-center px-6 md:px-7 lg:px-8 xl:px-9 2xl:px-10 py-2 md:py-2.5 xl:py-3 2xl:py-3.5 text-sm md:text-base bg-primary hover:bg-primary-hover rounded-lg font-semibold transition-colors duration-200 text-white disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <svg
-                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send Message
-                      <svg
-                        className="ml-3 w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                        />
-                      </svg>
-                    </>
-                  )}
+                  {isSubmitting ? 'Sending...' : 'Submit'}
                 </button>
               </div>
             </form>
-          </div>
-        </div>
 
-        {/* Direct Email Alternative */}
-        <div
-          className={`max-w-6xl mx-auto px-4 sm:px-6 text-center mt-16 transition-all duration-1000 delay-600 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="h-px w-24 bg-gray-400 mx-auto mb-8"></div>
-          <p style={{ color: '#1a1a1d', opacity: 0.8 }}>
-            Prefer to reach out directly? Email us at{' '}
-            <a
-              href="mailto:kyle@piecewiseai.com"
-              className="font-semibold hover:opacity-80 transition-opacity"
-              style={{ color: '#2563eb' }}
-            >
-              kyle@piecewiseai.com
-            </a>
-          </p>
+            {/* Direct Email Alternative */}
+            <div className="mt-4 md:mt-5">
+              <p className="text-xs md:text-sm 2xl:text-base text-slate-500 text-center md:text-left">
+                Prefer to reach out directly? Email us at{' '}
+                <a
+                  href="mailto:kyle@piecewiseai.com"
+                  className="font-medium text-primary no-underline hover:text-primary-hover transition-colors"
+                >
+                  kyle@piecewiseai.com
+                </a>
+              </p>
+            </div>
+          </div>
+
+          {/* Spacer Column */}
+          <div className="hidden lg:block lg:col-span-1" />
+
+          {/* Right Side - Testimonial Image Overlay (4/12 width) */}
+          <div className="lg:col-span-4 lg:-mt-32 xl:-mt-36 2xl:-mt-40">
+            <div className="relative h-72 sm:h-80 md:h-96 lg:h-full rounded-xl overflow-hidden">
+              {/* Background Image */}
+              <Image
+                src="/images/LegacyRR5.jpg"
+                alt="Legacy Repairs & Remodeling team at work"
+                fill
+                className="object-cover object-[30%_20%] grayscale"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+
+              {/* Green Tint Overlay */}
+              <div className="absolute inset-0 bg-blue-900/40 mix-blend-multiply"></div>
+
+              {/* Gradient Overlay for Text Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/30"></div>
+
+              {/* Content Overlay */}
+              <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-8 md:p-10 lg:p-8 xl:p-10 2xl:p-12">
+                {/* Logo at Top */}
+                <div>
+                  <Image
+                    src="/logos/Legacy+Logo+Black.webp"
+                    alt="Legacy Repairs & Remodeling"
+                    width={160}
+                    height={54}
+                    className="h-8 sm:h-9 md:h-10 lg:h-10 xl:h-11 2xl:h-12 w-auto brightness-0 invert"
+                  />
+                </div>
+
+                {/* Quote and Attribution at Bottom */}
+                <div className="mt-8 md:mt-12 lg:mt-16">
+                  <blockquote className="mt-4 mb-8 md:mb-10 lg:mb-12 xl:mb-14 2xl:mb-16">
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-normal text-white/80 leading-relaxed">
+                      &ldquo;Piecewise took my business from{' '}
+                      <strong className="font-bold text-white">potentially</strong> to{' '}
+                      <strong className="font-bold text-white">imminently</strong> scalable.&rdquo;
+                    </p>
+                  </blockquote>
+
+                  <div className="mt-4">
+                    <p className="font-semibold text-white/70 text-xs md:text-xs xl:text-sm 2xl:text-base leading-none">
+                      Luke Plescia
+                    </p>
+                    <p className="text-xs md:text-xs xl:text-xs 2xl:text-sm text-white/65 leading-none -mt-3 xl:whitespace-nowrap">
+                      Owner, Legacy Repairs &amp; Remodeling
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Trailing Spacer Column */}
+          <div className="hidden lg:block lg:col-span-1" />
         </div>
       </div>
     </div>

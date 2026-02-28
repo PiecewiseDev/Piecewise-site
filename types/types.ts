@@ -10,16 +10,31 @@ export interface CaseStudy {
   slug: string;
   client: string;
   title: string;
+  htmlTitle?: string;
   category: string;
+  services: string[];
   description: string;
   challenge: string;
   solution: string;
   results: string[];
+  image?: string;
+  imageAlt?: string;
+  imageObjectPosition?: string;
   quote?: {
     text: string;
     author: string;
   };
   implementationSteps?: string[];
+  // Company sidebar information
+  companyInfo?: {
+    about: string;
+    companySize?: string;
+    headquarters?: string;
+    founded?: string;
+    website?: string;
+  };
+  // Full story content for narrative section
+  story?: string;
 }
 
 export interface Result {

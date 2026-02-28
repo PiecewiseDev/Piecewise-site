@@ -25,8 +25,8 @@ export function Section({
   const backgroundClasses = {
     white: 'bg-white',
     light: 'bg-gray-50',
-    accent: 'bg-accent-light',
-    dark: 'bg-navy',
+    accent: 'bg-primary-light',
+    dark: 'bg-neutral-darkest',
     none: '',
   };
 

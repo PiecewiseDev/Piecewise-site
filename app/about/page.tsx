@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  AboutIntro,
-  AboutUsSection,
-  MissionVision,
-  CoreValues,
-  FounderNote,
-  OurTeam,
-  OurMission,
-  OurValues,
-} from '@/sections/about';
-import { PageLabel } from '@/components/ui';
+import { AboutUsSection, OurCustomers, OurTeam, OurMission, OurValues } from '@/sections/about';
 import { CallToAction } from '@/sections/shared';
 import {
   generateSchemaScript,
@@ -22,16 +12,17 @@ import {
 export default function AboutPage() {
   // CTA section data
   const ctaData = {
-    title: "Curious what's possible?",
+    title: 'Want to meet?',
+    subtitle: 'Book a free 15-minute call to see if Piecewise is a fit.',
     primaryButton: {
-      text: "Let's talk",
+      text: 'Get in touch',
       link: '/contact',
-      description: 'Schedule a discovery call to discuss your specific needs',
+      description: '',
     },
     secondaryButton: {
       text: 'Back to home',
       link: '/',
-      description: 'Return to our main page to learn more',
+      description: '',
     },
   };
 
@@ -43,36 +34,34 @@ export default function AboutPage() {
       <script {...generateSchemaScript(aboutPageSchema)} />
 
       {/* Hero Section with Charlotte Skyline Background */}
-      <div className="relative h-[75vh] -mt-20 flex items-center justify-center overflow-hidden">
-        {/* Charlotte Skyline Background - Only for hero + navbar area */}
+      <div className="relative -mt-20 flex items-center justify-center overflow-hidden">
+        {/* Charlotte Skyline Background - Balanced visibility */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-70"
+          className="absolute inset-0 bg-cover bg-[center_40%] bg-no-repeat opacity-80"
           style={{
             backgroundImage:
               'url(/images/Charlotteskyline.webp), url(/images/Charlotteskyline.png)',
-            filter: 'blur(1px)',
+            filter: 'grayscale(100%)',
           }}
         />
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-white/85" />
+        {/* Blue tint overlay */}
+        <div className="absolute inset-0 bg-blue-900/75" />
 
         {/* Hero Content */}
-        <div className="relative z-20 pt-20 pb-16 h-full flex items-center">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 w-full">
-            <PageLabel label="About Us" />
-            <h1
-              className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-center animate-fade-in"
-              style={{ color: '#1a1a1d' }}
-            >
-              Why We&apos;re Here
-            </h1>
-            <p
-              className="text-lg md:text-xl mb-8 text-center max-w-3xl mx-auto animate-fade-in animation-delay-200"
-              style={{ color: '#1a1a1d' }}
-            >
-              Learn about our mission to help service business owners work smarter.
-            </p>
+        <div className="relative z-20 pt-52 md:pt-44 xl:pt-52 pb-32 md:pb-28 xl:pb-36 w-full">
+          <div className="max-w-full sm:max-w-full md:max-w-full lg:max-w-full xl:max-w-full 2xl:max-w-full mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32 w-full">
+            <div className="grid grid-cols-12 gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8 2xl:gap-10">
+              <div className="col-span-12 sm:col-span-12 md:col-span-12 lg:col-span-7 xl:col-span-7 2xl:col-span-7">
+                <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold tracking-tight mb-6 sm:mb-7 md:mb-8 lg:mb-9 xl:mb-10 2xl:mb-12 text-center lg:text-left animate-fade-in text-white">
+                  Why We&apos;re Here
+                </h1>
+                <p className="text-lg md:text-xl xl:text-2xl text-center lg:text-left max-w-[54ch] leading-relaxed animate-fade-in animation-delay-200 text-white/90 mx-auto lg:mx-0">
+                  Learn about our mission to help business owners take the first step in their AI
+                  journey.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -80,33 +69,19 @@ export default function AboutPage() {
       {/* Main Content Sections - Clean backgrounds */}
       <AboutUsSection />
 
-      <OurTeam />
-
       <OurMission />
 
+      <OurCustomers />
+
+      <OurTeam />
+
       <OurValues />
-
-      {/* Temporarily archived Core Values Section
-      <CoreValues />
-      */}
-
-      {/* Temporarily archived Mission and Vision Section
-      <MissionVision />
-      */}
-
-      {/* Temporarily archived Why This Exists Section
-      <AboutIntro />
-      */}
 
       {/* Comparison Section - Temporarily archived
       <Comparison />
       */}
 
-      {/* Temporarily archived Founder Note Section
-      <FounderNote />
-      */}
-
-      <CallToAction {...ctaData} titleSize="small" />
+      <CallToAction {...ctaData} />
     </>
   );
 }

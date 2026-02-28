@@ -32,9 +32,9 @@ const StyledLink: React.FC<StyledLinkProps> = ({
 }) => {
   // Variant styles
   const variantClasses = {
-    default: 'text-navy hover:text-accent',
-    bold: 'text-navy font-medium hover:text-accent',
-    subtle: 'text-gray-600 hover:text-navy',
+    default: 'text-neutral-darkest hover:text-primary',
+    bold: 'text-neutral-darkest font-medium hover:text-primary',
+    subtle: 'text-gray-600 hover:text-neutral-darkest',
   };
 
   // External link attributes

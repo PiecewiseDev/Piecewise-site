@@ -36,8 +36,8 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
               onMouseLeave={() => setHoverIndex(null)}
               className="w-full text-left px-6 py-5 rounded-full flex justify-between items-center transition-all duration-300 shadow-sm relative z-10 overflow-hidden"
               style={{
-                backgroundColor: '#1a1a1d',
-                color: isOpen ? '#3a66f7' : 'white',
+                backgroundColor: '#000000',
+                color: isOpen ? '#0059B3' : 'white',
               }}
               aria-expanded={ariaExpanded}
               aria-controls={ariaControls}
@@ -72,7 +72,7 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
                   }}
                   transition={{ duration: 0.2 }}
                   className="absolute inset-0 rounded-md -m-1"
-                  style={{ backgroundColor: '#3a66f7' }}
+                  style={{ backgroundColor: '#0059B3' }}
                 />
                 <svg
                   width="20"
@@ -82,7 +82,7 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
                   xmlns="http://www.w3.org/2000/svg"
                   className="relative z-10"
                   style={{
-                    color: isOpen ? '#3a66f7' : 'white',
+                    color: isOpen ? '#0059B3' : 'white',
                   }}
                 >
                   <path
@@ -120,7 +120,7 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqs, className = ''
                     className="rounded-2xl shadow-sm"
                     style={{
                       backgroundColor: 'rgba(220, 220, 220, 0.7)',
-                      color: '#3a66f7',
+                      color: '#0059B3',
                       padding: '3.25rem 1.5rem 1rem 1.5rem', // Extra top padding to account for overlap
                     }}
                   >

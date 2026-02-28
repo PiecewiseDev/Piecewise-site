@@ -15,6 +15,9 @@ export interface CaseStudy {
   challenge: string;
   solution: string;
   results: string[];
+  image?: string;
+  imageAlt?: string;
+  imageObjectPosition?: string;
   quote?: {
     text: string;
     author: string;
@@ -64,6 +67,7 @@ export interface CaseStudyProblemSolutionProps {
 // Shared UI Component Props
 export interface CallToActionProps {
   title: string;
+  subtitle?: string;
   primaryButton: {
     text: string;
     link: string;
@@ -78,8 +82,8 @@ export interface CallToActionProps {
 }
 
 export interface HeroProps {
-  title?: string;
-  subtitle: string;
+  title?: string | React.ReactNode;
+  subtitle: string | React.ReactNode;
   ctaText: string;
   ctaLink: string;
   imageSrc: string;

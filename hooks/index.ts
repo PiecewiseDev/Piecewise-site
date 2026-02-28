@@ -5,11 +5,18 @@
  * Import hooks like:
  *
  * ```tsx
- * import { useWindowSize, useScrollPosition } from "@/hooks";
+ * import { useContactForm } from "@/hooks";
  * ```
  */
 
-// Example exports (uncomment and use when you add hooks)
-// export { default as useWindowSize } from './useWindowSize';
-// export { default as useScrollPosition } from './useScrollPosition';
-// export { default as useLocalStorage } from './useLocalStorage';
+export { useContactForm } from './useContactForm';
+export type { ContactFormData, SubmitStatus, UseContactFormReturn } from './useContactForm';
+
+export { useIntersectionObserver } from './useIntersectionObserver';
+export type {
+  UseIntersectionObserverOptions,
+  UseIntersectionObserverReturn,
+} from './useIntersectionObserver';
+
+export { useScrollThreshold } from './useScrollThreshold';
+export type { UseScrollThresholdOptions } from './useScrollThreshold';

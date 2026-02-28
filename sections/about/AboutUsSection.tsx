@@ -1,84 +1,80 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
+import Image from 'next/image';
+import { useIntersectionObserver } from '@/hooks';
 
 export default function AboutUsSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // IntersectionObserver for fade-in animation
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2,
-      }
-    );
-
-    observer.observe(containerRef.current);
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
+  const { isVisible, ref: containerRef } = useIntersectionObserver({
+    threshold: 0.2,
+  });
 
   return (
-    <div className="py-16 md:py-24" style={{ backgroundColor: '#f1f1f1' }} ref={containerRef}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <h2
-          className={`text-3xl md:text-4xl lg:text-4xl font-bold leading-tight mb-8 text-center md:text-left transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-          style={{ color: '#1a1a1d' }}
-        >
-          About Us
-        </h2>
+    <div
+      className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-slate-100"
+      ref={containerRef}
+    >
+      <div className="max-w-full sm:max-w-full md:max-w-full lg:max-w-full xl:max-w-full 2xl:max-w-full mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-12 xl:grid-cols-12 2xl:grid-cols-12 gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16 2xl:gap-20 items-center">
+          {/* Left Column - Text Content */}
+          <div className="lg:col-span-7 xl:col-span-7 2xl:col-span-7">
+            <h2
+              className={`text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold leading-snug mb-8 sm:mb-9 md:mb-10 lg:mb-11 xl:mb-12 2xl:mb-14 text-center lg:text-left text-slate-900 transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+            >
+              Our Purpose
+            </h2>
 
-        <div className="space-y-4">
-          <p
-            className={`text-base md:text-lg leading-relaxed text-left transition-all duration-1000 delay-300 ${
+            <div className="space-y-5 sm:space-y-5 md:space-y-6 lg:space-y-6 xl:space-y-7 2xl:space-y-8 max-w-full sm:max-w-full md:max-w-prose lg:max-w-prose xl:max-w-prose 2xl:max-w-prose">
+              <p
+                className={`text-sm sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-xl leading-relaxed text-left text-slate-600 transition-all duration-700 delay-300 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
+                Piecewise helps business owners use AI to build stronger, more organized companies.
+                We believe AI should be practical and accessible, something that helps owners get
+                out of day-to-day chaos and focus on the work that actually grows the business.
+              </p>
+
+              <p
+                className={`text-sm sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-xl leading-relaxed text-left text-slate-600 transition-all duration-700 delay-500 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
+                Our mission is to help you create a business with real structure, stability, and
+                long-term value, whether you&apos;re scaling operations or planning for an eventual
+                exit.
+              </p>
+
+              <p
+                className={`text-sm sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-xl leading-relaxed text-left text-slate-600 transition-all duration-700 delay-700 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+              >
+                Based in Charlotte, NC, we&apos;re committed to helping local businesses work
+                smarter and build a foundation that lasts.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - Charlotte Image */}
+          <div
+            className={`lg:col-span-5 xl:col-span-5 2xl:col-span-5 flex justify-center lg:justify-end xl:justify-end 2xl:justify-end transition-all duration-700 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
-            style={{ color: '#1a1a1d', opacity: 0.9 }}
           >
-            At Piecewise, we specialize in building custom AI solutions that help service businesses
-            work smarter, not harder. We understand that every business has unique challenges, which
-            is why we take a personalized approach to each project.
-          </p>
-
-          <p
-            className={`text-base md:text-lg leading-relaxed text-left transition-all duration-1000 delay-500 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ color: '#1a1a1d', opacity: 0.9 }}
-          >
-            Our team combines deep technical expertise with real-world business experience to create
-            AI tools that actually solve problems. From automating repetitive tasks to improving
-            customer interactions, we help you leverage technology to grow your business.
-          </p>
-
-          <p
-            className={`text-base md:text-lg leading-relaxed text-left transition-all duration-1000 delay-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ color: '#1a1a1d', opacity: 0.9 }}
-          >
-            Based in Charlotte, NC, we&apos;re passionate about helping local and national service
-            businesses discover how AI can transform their operations while maintaining the personal
-            touch that sets them apart.
-          </p>
+            <div className="relative w-full max-w-full sm:max-w-full md:max-w-md lg:max-w-md xl:max-w-lg 2xl:max-w-xl aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
+              <Image
+                src="/images/Charlotteimage2.jpg"
+                alt="Charlotte, NC cityscape"
+                fill
+                style={{ objectFit: 'cover' }}
+                className="transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

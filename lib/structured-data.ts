@@ -527,6 +527,24 @@ export const howItWorksPageSchema = generateWebPageSchema(
   'Learn about our proven 4-phase process for developing custom AI solutions for service businesses'
 );
 
+export const caseStudiesPageSchema = generateWebPageSchema(
+  'Customer Stories | Piecewise - Real Results from Custom AI Solutions',
+  'https://piecewiseai.com/customer-stories',
+  'See how service businesses are using custom AI solutions to save time, reduce stress, and scale operations. Real stories, real results.'
+);
+
+export const blogPageSchema = generateWebPageSchema(
+  'Blog | Piecewise - AI Insights & Business Growth',
+  'https://piecewiseai.com/blog',
+  'Insights on AI automation, Custom GPTs, and scaling service businesses. Learn how to transform operations and reclaim your time with intelligent solutions.'
+);
+
+export const resourcesPageSchema = generateWebPageSchema(
+  'AI Tools & Resources | Piecewise - Comprehensive AI Tool Directory',
+  'https://piecewiseai.com/resources',
+  'Comprehensive directory of AI tools for business. Browse LLMs, image generation, automation, transcription, and more. Find the right AI tool for your needs.'
+);
+
 // Helper function to generate schema script tag
 export function generateSchemaScript(schema: object) {
   return {

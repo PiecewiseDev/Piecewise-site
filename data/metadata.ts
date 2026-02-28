@@ -1,44 +1,28 @@
-import { Metadata, Viewport } from 'next/types';
+/**
+ * @deprecated This file is deprecated. Use @/lib/metadata instead.
+ *
+ * All metadata utilities have been moved to @/lib/metadata for better
+ * organization and to follow Next.js best practices.
+ *
+ * Import from @/lib/metadata:
+ * - defaultMetadata
+ * - defaultViewport
+ * - generatePageMetadata
+ * - SITE_CONFIG
+ * - organizationSchema
+ * - generateWebsiteSchema
+ * - generateArticleSchema
+ * - generateBreadcrumbSchema
+ */
 
-// Default metadata for the site
-export const defaultMetadata: Metadata = {
-  title: {
-    default: 'Piecewise | Custom GPTs for Service Businesses',
-    template: '%s | Piecewise',
-  },
-  description: 'We build private Custom GPTs that think like your business, not like a chatbot.',
-  keywords: ['custom gpt', 'ai assistant', 'service business', 'business automation'],
-  authors: [{ name: 'Piecewise' }],
-  creator: 'Piecewise',
-  publisher: 'Piecewise',
-  formatDetection: {
-    email: false,
-    telephone: false,
-    address: false,
-  },
-};
-
-// Default viewport configuration
-export const defaultViewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,
-};
-
-// Generate metadata for specific pages
-export function generateMetadata({
-  title,
-  description,
-  ...rest
-}: {
-  title?: string;
-  description?: string;
-  [key: string]: any;
-}): Metadata {
-  return {
-    ...defaultMetadata,
-    ...(title && { title }),
-    ...(description && { description }),
-    ...rest,
-  };
-}
+// Re-export from lib/metadata for backwards compatibility
+export {
+  defaultMetadata,
+  defaultViewport,
+  SITE_CONFIG,
+  generatePageMetadata,
+  organizationSchema,
+  generateWebsiteSchema,
+  generateArticleSchema,
+  generateBreadcrumbSchema,
+} from '@/lib/metadata';

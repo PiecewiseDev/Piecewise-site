@@ -1,36 +1,19 @@
 import React from 'react';
-import { PageLabel } from '@/components/ui';
 
 const ContactIntro: React.FC = () => {
   return (
-    <div className="relative h-[60vh] -mt-20 flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: 'url(/images/deskimage1.webp), url(/images/deskimage1.jpg)',
-          filter: 'blur(4px)',
-        }}
-      />
-
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gray-50/45" />
-      {/* Additional gradient overlay for enhanced readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-100/15 via-gray-100/25 to-gray-100/35" />
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-20">
-        <PageLabel label="Contact" />
-        <h1
-          className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-center animate-fade-in"
-          style={{ color: '#1a1a1d' }}
-        >
-          Let&apos;s Talk
-        </h1>
-        <p
-          className="text-lg md:text-xl mb-6 text-center max-w-3xl mx-auto animate-fade-in animation-delay-200"
-          style={{ color: '#1a1a1d' }}
-        >
-          We&apos;ll walk you through what this could look like for your business.
-        </p>
+    <div className="bg-slate-100 -mt-20">
+      {/* Hero Section - Minimalistic Refactoring UI approach */}
+      <div className="w-full mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32 pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-44 2xl:pt-48 pb-6 sm:pb-7 md:pb-8 lg:pb-9 xl:pb-10 2xl:pb-12">
+        {/* Header */}
+        <div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-gray-900 leading-[1.08] tracking-tight mb-5 sm:mb-6 md:mb-7 lg:mb-8 xl:mb-9 2xl:mb-10 text-center lg:text-left">
+            Let&apos;s Work Together
+          </h1>
+          <p className="text-lg md:text-xl xl:text-2xl text-gray-600 leading-[1.6] font-normal max-w-[54ch] text-center lg:text-left mx-auto lg:mx-0">
+            Tell us about your business to see if we&apos;re a good fit.
+          </p>
+        </div>
       </div>
     </div>
   );

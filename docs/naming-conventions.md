@@ -23,7 +23,6 @@ This document outlines the standardized naming conventions used throughout the p
 ### Components
 
 - **Component Files**: Use **PascalCase** for all component files
-
   - `Button.tsx`
   - `Navbar.tsx`
   - `HeroSection.tsx`
@@ -66,7 +65,6 @@ This document outlines the standardized naming conventions used throughout the p
 ## CSS and Styling
 
 - **CSS Classes**: Use **kebab-case** for CSS class names
-
   - `hero-section`
   - `nav-item`
   - `card-container`
@@ -77,17 +75,14 @@ This document outlines the standardized naming conventions used throughout the p
 ## JavaScript/TypeScript Conventions
 
 - **Variables**: Use **camelCase**
-
   - `const userName = 'John';`
   - `let isVisible = true;`
 
 - **Constants**: Use **UPPER_SNAKE_CASE** for true constants
-
   - `const MAX_ITEMS = 10;`
   - `const API_KEY = 'abc123';`
 
 - **Functions**: Use **camelCase** with verb prefixes when applicable
-
   - `function getUserData()`
   - `const handleSubmit = () => {}`
   - `const formatPrice = (num) => {}`
