@@ -5,6 +5,7 @@ import { useIntersectionObserver } from '@/hooks';
 
 const metrics = [
   {
+    eyebrow: 'INVEST',
     value: '2-4',
     unit: 'hrs',
     label: 'Your total time to get started',
@@ -26,6 +27,7 @@ const metrics = [
     ),
   },
   {
+    eyebrow: 'SAVE',
     value: '20+',
     unit: 'hrs/week',
     label: 'Avg owner time reclaimed',
@@ -50,6 +52,7 @@ const metrics = [
     ),
   },
   {
+    eyebrow: 'RETURN',
     value: '$100k+',
     unit: '/year',
     label: 'Value of owner time at $100/hr',
@@ -81,7 +84,7 @@ export default function KeyMetricsStrip() {
   return (
     <section
       ref={ref}
-      className="w-full bg-slate-900 py-8 md:py-10"
+      className="w-full bg-slate-900 py-8 md:py-10 relative z-10 shadow-[0_-1px_2px_rgba(15,23,42,0.04),0_-2px_6px_rgba(15,23,42,0.06),0_1px_2px_rgba(15,23,42,0.04),0_2px_6px_rgba(15,23,42,0.06)]"
       aria-label="Key business metrics"
     >
       <div className="mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
@@ -105,6 +108,9 @@ export default function KeyMetricsStrip() {
                 </span>
               </div>
               */}
+              <p className="text-[10px] sm:text-xs font-semibold tracking-widest text-slate-500 uppercase mb-3">
+                {metric.eyebrow}
+              </p>
               <p className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight [font-variant-numeric:tabular-nums]">
                 <span>{metric.value}</span>{' '}
                 <span className="text-sm sm:text-base lg:text-lg font-normal text-white">

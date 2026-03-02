@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
+      from: 'Piecewise <noreply@piecewiseai.com>',
       to: ['kyle@piecewiseai.com'],
       subject: `New Free Trial Interest from ${email}`,
       html: `

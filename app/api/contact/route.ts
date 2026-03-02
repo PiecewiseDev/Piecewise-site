@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'onboarding@resend.dev', // Using Resend's default domain for now - change to contact@piecewiseai.com once domain is verified
+      from: 'Piecewise <noreply@piecewiseai.com>',
       to: ['kyle@piecewiseai.com'],
       subject: `New Contact Form Submission from ${fullName}`,
       html: `

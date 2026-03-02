@@ -22,7 +22,7 @@ const problems: GridCard[] = [
       </svg>
     ),
     title: 'Too much runs through you',
-    description: 'Too many decisions come back to you, creating key-man risk.',
+    description: 'Too many decisions come back to you, creating key-person risk.',
   },
   {
     icon: (

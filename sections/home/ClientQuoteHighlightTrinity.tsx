@@ -13,7 +13,7 @@ export default function ClientQuoteHighlightTrinity() {
   return (
     <section
       ref={ref}
-      className="w-full bg-blue-900 py-8 md:py-12 xl:py-14"
+      className="w-full bg-blue-900 py-8 md:py-12 xl:py-14 relative z-10 shadow-[0_-1px_2px_rgba(15,23,42,0.04),0_-2px_6px_rgba(15,23,42,0.06),0_1px_2px_rgba(15,23,42,0.04),0_2px_6px_rgba(15,23,42,0.06)]"
       aria-label="Client testimonial"
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 md:px-12 lg:px-16">

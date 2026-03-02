@@ -143,7 +143,7 @@ const Footer = () => {
               Our Mission
             </h3>
             <p className="mt-3 sm:mt-3 md:mt-4 lg:mt-4 xl:mt-5 2xl:mt-5 text-xs sm:text-xs md:text-sm lg:text-sm xl:text-sm 2xl:text-base text-gray-600 leading-relaxed">
-              To help entreprenuers build better businesses, to magnify their impact and improve the
+              To help entrepreneurs build better businesses, to magnify their impact and improve the
               communities they serve.
             </p>
           </div>

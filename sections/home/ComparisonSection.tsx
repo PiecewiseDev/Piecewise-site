@@ -55,7 +55,7 @@ export default function ComparisonSection() {
   return (
     <section
       ref={ref}
-      className="w-full bg-white py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 2xl:py-36 relative"
+      className="w-full bg-white py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32 2xl:py-36 relative z-10 shadow-[0_2px_4px_rgba(0,0,0,0.015),0_6px_14px_rgba(0,0,0,0.015)]"
       aria-labelledby="comparison-heading"
     >
       <div className="relative mx-auto max-w-full px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
