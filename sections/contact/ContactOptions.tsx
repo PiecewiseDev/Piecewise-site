@@ -13,7 +13,8 @@ const ContactOptions: React.FC = () => {
     useContactForm();
 
   return (
-    <div
+    <section
+      aria-label="Contact form and client testimonial"
       className="bg-slate-100 pb-12 sm:pb-16 md:pb-20 lg:pb-24 xl:pb-28 2xl:pb-32"
       ref={containerRef}
     >
@@ -33,6 +34,7 @@ const ContactOptions: React.FC = () => {
                   type="text"
                   id="name"
                   name="name"
+                  autoComplete="name"
                   value={formData.name || ''}
                   onChange={handleInputChange}
                   required
@@ -49,6 +51,7 @@ const ContactOptions: React.FC = () => {
                   type="text"
                   id="website"
                   name="website"
+                  autoComplete="url"
                   value={formData.website || ''}
                   onChange={handleInputChange}
                   placeholder="Company Website"
@@ -65,6 +68,7 @@ const ContactOptions: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
+                  autoComplete="email"
                   value={formData.email || ''}
                   onChange={handleInputChange}
                   required
@@ -81,6 +85,7 @@ const ContactOptions: React.FC = () => {
                 <textarea
                   id="message"
                   name="message"
+                  autoComplete="off"
                   value={formData.message || ''}
                   onChange={handleInputChange}
                   required
@@ -160,14 +165,14 @@ const ContactOptions: React.FC = () => {
                     </p>
                   </blockquote>
 
-                  <div className="mt-4">
+                  <cite className="not-italic mt-4 block">
                     <p className="font-semibold text-white/70 text-xs md:text-xs xl:text-sm 2xl:text-base leading-none">
                       Luke Plescia
                     </p>
                     <p className="text-xs md:text-xs xl:text-xs 2xl:text-sm text-white/65 leading-none -mt-3 xl:whitespace-nowrap">
                       Owner, Legacy Repairs &amp; Remodeling
                     </p>
-                  </div>
+                  </cite>
                 </div>
               </div>
             </div>
@@ -177,7 +182,7 @@ const ContactOptions: React.FC = () => {
           <div className="hidden lg:block lg:col-span-1" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

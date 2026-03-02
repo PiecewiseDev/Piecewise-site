@@ -172,7 +172,7 @@ export default function ProblemSolutionGrid() {
                 className="px-2 md:px-4"
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
-                <span className="text-slate-500 flex justify-center mb-3">{problem.icon}</span>
+                <span aria-hidden="true" className="text-slate-500 flex justify-center mb-3">{problem.icon}</span>
                 <h4 className="text-base md:text-lg xl:text-xl font-semibold text-gray-700 leading-tight text-center mb-2">
                   {problem.title}
                 </h4>
@@ -214,7 +214,7 @@ export default function ProblemSolutionGrid() {
                 className="px-2 md:px-4"
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
-                <span className="text-blue-500 flex justify-center mb-3">{solution.icon}</span>
+                <span aria-hidden="true" className="text-blue-500 flex justify-center mb-3">{solution.icon}</span>
                 <h4 className="text-base md:text-lg xl:text-xl font-semibold text-slate-800 leading-tight text-center mb-2">
                   {solution.title}
                 </h4>

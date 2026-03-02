@@ -51,7 +51,10 @@ const ContactFAQSimple: React.FC = () => {
   };
 
   return (
-    <div className="py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 bg-slate-100">
+    <section
+      aria-labelledby="faq-heading"
+      className="py-10 sm:py-12 md:py-14 lg:py-16 xl:py-20 2xl:py-24 bg-slate-100"
+    >
       {/* Invisible FAQ Schema Markup for SEO */}
       <script
         type="application/ld+json"
@@ -65,7 +68,7 @@ const ContactFAQSimple: React.FC = () => {
             <p className="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 md:mb-4 2xl:mb-5">
               Frequently Asked Questions
             </p>
-            <h2 className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-neutral-darkest">
+            <h2 id="faq-heading" className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-neutral-darkest">
               Need more info?
             </h2>
           </div>
@@ -75,6 +78,7 @@ const ContactFAQSimple: React.FC = () => {
             <div className="divide-y divide-gray-200">
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
+                const answerId = `faq-answer-${index}`;
 
                 return (
                   <div key={index} className="py-3 md:py-4 xl:py-5 2xl:py-6">
@@ -83,6 +87,7 @@ const ContactFAQSimple: React.FC = () => {
                       onClick={() => toggleFAQ(index)}
                       className="w-full flex justify-between items-start text-left group"
                       aria-expanded={isOpen ? 'true' : 'false'}
+                      aria-controls={answerId}
                     >
                       <h3
                         className={`text-base md:text-lg lg:text-xl 2xl:text-2xl font-medium group-hover:text-gray-900 transition-colors duration-150 pr-6 md:pr-8 xl:pr-10 ${isOpen ? 'text-gray-900' : 'text-gray-700'}`}
@@ -91,6 +96,7 @@ const ContactFAQSimple: React.FC = () => {
                       </h3>
 
                       <svg
+                        aria-hidden="true"
                         className={`flex-shrink-0 w-5 h-5 md:w-6 md:h-6 mt-1 group-hover:text-gray-900 transition-all duration-200 ${isOpen ? 'text-gray-900' : 'text-gray-700'}`}
                         style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
                         fill="none"
@@ -108,6 +114,9 @@ const ContactFAQSimple: React.FC = () => {
 
                     {/* Answer - Collapsible with smooth animation */}
                     <div
+                      id={answerId}
+                      role="region"
+                      aria-labelledby={`faq-question-${index}`}
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${
                         isOpen
                           ? 'max-h-96 opacity-100 mt-3 md:mt-4 xl:mt-5'
@@ -126,7 +135,7 @@ const ContactFAQSimple: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

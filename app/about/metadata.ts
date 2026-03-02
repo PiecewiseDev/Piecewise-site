@@ -9,8 +9,8 @@ export const metadata: Metadata = generatePageMetadata({
   images: [
     {
       url: '/images/kyle-profile.webp',
-      width: 1200,
-      height: 630,
+      width: 300,
+      height: 300,
       alt: 'Kyle Larsen, Founder & CEO of Piecewise - Custom AI Solutions for Service Businesses',
     },
   ],

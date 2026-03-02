@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   url: 'https://piecewiseai.com',
   description: 'We build private Custom GPTs that think like your business, not like a chatbot.',
   ogImage: '/logos/piecewiselogo7.png',
-  twitterHandle: '@piecewiseai',
+  twitterHandle: '',
   locale: 'en_US',
   type: 'website',
 } as const;
@@ -37,7 +37,7 @@ export const organizationSchema = {
     url: `${SITE_CONFIG.url}/contact`,
     availableLanguage: 'English',
   },
-  sameAs: ['https://twitter.com/piecewiseai', 'https://linkedin.com/company/piecewiseai'],
+  sameAs: ['https://www.linkedin.com/company/piecewiseai'],
 };
 
 // Website structured data
@@ -99,17 +99,15 @@ export const defaultMetadata: Metadata = {
     images: [
       {
         url: SITE_CONFIG.ogImage,
-        width: 1200,
-        height: 630,
+        width: 300,
+        height: 300,
         alt: `${SITE_CONFIG.name} - Custom AI Solutions`,
         type: 'image/png',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: SITE_CONFIG.twitterHandle,
-    creator: SITE_CONFIG.twitterHandle,
+    card: 'summary',
     title: 'Piecewise | Custom AI Development, Implementation, and Support',
     description: SITE_CONFIG.description,
     images: [SITE_CONFIG.ogImage],
@@ -159,8 +157,8 @@ export function generatePageMetadata({
   const ogImages = images || [
     {
       url: SITE_CONFIG.ogImage,
-      width: 1200,
-      height: 630,
+      width: 300,
+      height: 300,
       alt: `${title} | ${SITE_CONFIG.name}`,
     },
   ];
@@ -190,9 +188,7 @@ export function generatePageMetadata({
       ...(type === 'article' && authors && { authors }),
     },
     twitter: {
-      card: 'summary_large_image',
-      site: SITE_CONFIG.twitterHandle,
-      creator: SITE_CONFIG.twitterHandle,
+      card: 'summary',
       title,
       description,
       images: ogImages.map((img) => img.url),

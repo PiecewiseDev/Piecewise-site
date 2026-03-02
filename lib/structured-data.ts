@@ -153,7 +153,7 @@ export const founderSchema = {
   name: 'Kyle Larsen',
   jobTitle: 'Founder & CEO',
   description:
-    'Founder and CEO of Piecewise, helping service business owners reduce stress and save time with custom AI assistants.',
+    'Founder and CEO of Piecewise, helping service business owners systemize operations, reduce key-person dependency, and scale using custom AI tools built around their business.',
   image: 'https://piecewiseai.com/images/kyle-profile.webp',
   url: 'https://piecewiseai.com/about',
   worksFor: {
@@ -162,13 +162,37 @@ export const founderSchema = {
     name: 'Piecewise',
     url: 'https://piecewiseai.com',
   },
+  homeLocation: {
+    '@type': 'City',
+    name: 'Charlotte',
+    containedInPlace: {
+      '@type': 'State',
+      name: 'North Carolina',
+    },
+  },
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'AI Consultant',
+    occupationLocation: {
+      '@type': 'City',
+      name: 'Charlotte',
+    },
+    description:
+      'Designs and builds custom AI assistants and automation systems for service businesses',
+    skills: 'Custom GPT Development, AI Automation, Business Systems, Service Business Operations',
+  },
   sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
   knowsAbout: [
     'Artificial Intelligence',
     'Custom GPT Development',
-    'Business Automation',
+    'Business Process Automation',
     'Service Business Operations',
-    'AI Implementation',
+    'AI Implementation for Small Business',
+    'Standard Operating Procedures',
+    'Business Systems Design',
+    'ChatGPT and OpenAI API',
+    'Workflow Automation',
+    'Entrepreneur Productivity',
   ],
 };
 
@@ -363,11 +387,25 @@ export const customGPTServiceSchema = {
   },
   offers: {
     '@type': 'Offer',
-    name: 'Custom GPT Development Package',
-    description: 'Complete custom AI assistant development with training and support',
-    priceRange: '$$',
+    name: 'Free 14-Day Trial',
+    description:
+      'We build your custom AI assistant first. You test it free for 14 days. Pay only if you love it — no risk, no upfront cost.',
+    price: '0',
+    priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
-    validFrom: '2025-01-01',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      price: '0',
+      priceCurrency: 'USD',
+      description: 'Free 14-day trial — no payment required until you approve',
+    },
+    eligibleDuration: {
+      '@type': 'QuantitativeValue',
+      value: 14,
+      unitCode: 'DAY',
+    },
+    validFrom: '2025-03-01',
+    url: 'https://piecewiseai.com/contact',
   },
 };
 
@@ -452,6 +490,28 @@ export const automationServiceSchema = {
     '@type': 'Audience',
     audienceType: 'Contractors, Managers, Service Teams',
   },
+  offers: {
+    '@type': 'Offer',
+    name: 'Free 14-Day Trial',
+    description:
+      'We build your automation solution first. You test it free for 14 days. Pay only if you love it.',
+    price: '0',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      price: '0',
+      priceCurrency: 'USD',
+      description: 'Free 14-day trial — no payment required until you approve',
+    },
+    eligibleDuration: {
+      '@type': 'QuantitativeValue',
+      value: 14,
+      unitCode: 'DAY',
+    },
+    validFrom: '2025-03-01',
+    url: 'https://piecewiseai.com/contact',
+  },
 };
 
 // Enhanced Contact Point Schema
@@ -479,26 +539,39 @@ export const enhancedContactPointSchema = {
 };
 
 // WebPage Schemas for individual pages
-export const generateWebPageSchema = (pageName: string, pageUrl: string, description: string) => ({
+export const generateWebPageSchema = (
+  pageName: string,
+  pageUrl: string,
+  description: string,
+  dateModified: string = '2025-03-01',
+  datePublished: string = '2025-03-01'
+) => ({
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: pageName,
   url: pageUrl,
   description: description,
   isPartOf: {
+    '@id': 'https://piecewiseai.com/#website',
     '@type': 'WebSite',
     name: 'Piecewise',
     url: 'https://piecewiseai.com',
   },
   publisher: {
+    '@id': 'https://piecewiseai.com/#organization',
     '@type': 'Organization',
     name: 'Piecewise',
-    foundingDate: '2025',
-    sameAs: ['https://www.linkedin.com/company/piecewiseai'],
   },
   inLanguage: 'en-US',
-  dateModified: new Date().toISOString().split('T')[0],
+  datePublished: datePublished,
+  dateModified: dateModified,
 });
+
+export const homePageSchema = generateWebPageSchema(
+  'Piecewise | Custom AI for Service Business Owners',
+  'https://piecewiseai.com',
+  'Custom AI tools and automation solutions that help service business owners systemize operations, delegate confidently, and scale without adding headcount'
+);
 
 export const servicesPageSchema = generateWebPageSchema(
   'AI Services for Service Businesses | Piecewise',

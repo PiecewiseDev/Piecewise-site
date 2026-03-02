@@ -30,6 +30,7 @@ import {
   localBusinessSchema,
   customGPTServiceSchema,
   automationServiceSchema,
+  homePageSchema,
   generateSchemaScript,
 } from '@/lib/structured-data';
 
@@ -68,6 +69,7 @@ export default function HomePage() {
   return (
     <>
       {/* Enhanced Structured Data for SEO */}
+      <script {...generateSchemaScript(homePageSchema)} />
       <script {...generateSchemaScript(localBusinessSchema)} />
       <script {...generateSchemaScript(customGPTServiceSchema)} />
       <script {...generateSchemaScript(automationServiceSchema)} />

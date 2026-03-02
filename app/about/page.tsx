@@ -1,7 +1,12 @@
 import React from 'react';
 import { AboutUsSection, OurCustomers, OurTeam, OurMission, OurValues } from '@/sections/about';
 import { CallToAction } from '@/sections/shared';
-import { generateSchemaScript, founderSchema, aboutPageSchema } from '@/lib/structured-data';
+import {
+  generateSchemaScript,
+  founderSchema,
+  aboutPageSchema,
+  generateBreadcrumbSchema,
+} from '@/lib/structured-data';
 // import { Comparison } from '@/sections/shared'; // Temporarily archived
 
 export default function AboutPage() {
@@ -26,6 +31,14 @@ export default function AboutPage() {
       {/* Enhanced Structured Data for About Page SEO */}
       <script {...generateSchemaScript(founderSchema)} />
       <script {...generateSchemaScript(aboutPageSchema)} />
+      <script
+        {...generateSchemaScript(
+          generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://piecewiseai.com' },
+            { name: 'About', url: 'https://piecewiseai.com/about' },
+          ])
+        )}
+      />
 
       {/* Hero Section with Charlotte Skyline Background */}
       <div className="relative -mt-20 flex items-center justify-center overflow-hidden">

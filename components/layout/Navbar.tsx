@@ -127,12 +127,12 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      <div
+      <nav
         id="mobile-menu"
+        aria-label="Mobile navigation"
         className={`border-t border-neutral-200 bg-white shadow-sm md:hidden overflow-hidden transition-all duration-200 ease-in-out ${
           isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
-        aria-label="Mobile navigation menu"
       >
         <div className="mx-auto max-w-full px-4 py-3 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
           <div className="space-y-1">
@@ -166,7 +166,7 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 };

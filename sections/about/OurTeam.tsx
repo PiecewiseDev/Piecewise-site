@@ -11,11 +11,14 @@ export default function OurTeam() {
 
   return (
     <div
+      role="region"
+      aria-labelledby="our-people-heading"
       className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-[rgb(26,26,29)]"
       ref={containerRef}
     >
       <div className="max-w-full sm:max-w-full md:max-w-full lg:max-w-full xl:max-w-full 2xl:max-w-full mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
         <h2
+          id="our-people-heading"
           className={`text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-5xl font-bold leading-snug mb-12 sm:mb-14 md:mb-16 lg:mb-20 xl:mb-20 2xl:mb-24 text-center lg:text-left text-white transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
@@ -70,6 +73,7 @@ export default function OurTeam() {
                   aria-label="LinkedIn"
                 >
                   <svg
+                    aria-hidden="true"
                     className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-6 2xl:h-6"
                     fill="currentColor"
                     viewBox="0 0 24 24"
@@ -84,6 +88,7 @@ export default function OurTeam() {
                   aria-label="Email"
                 >
                   <svg
+                    aria-hidden="true"
                     className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-6 2xl:h-6"
                     fill="currentColor"
                     viewBox="0 0 20 20"

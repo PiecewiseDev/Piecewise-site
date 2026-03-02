@@ -147,11 +147,14 @@ export default function OurValues() {
 
   return (
     <div
+      role="region"
+      aria-labelledby="our-values-heading"
       className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-slate-100"
       ref={containerRef}
     >
       <div className="max-w-full sm:max-w-full md:max-w-full lg:max-w-full xl:max-w-full 2xl:max-w-full mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
         <h2
+          id="our-values-heading"
           className={`text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold leading-tight mb-12 sm:mb-14 md:mb-16 lg:mb-18 xl:mb-20 2xl:mb-24 text-center md:text-left lg:text-left xl:text-left 2xl:text-left text-slate-900 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}

@@ -10,6 +10,8 @@ export default function OurMission() {
 
   return (
     <div
+      role="region"
+      aria-labelledby="our-mission-heading"
       className="py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 2xl:py-20 bg-blue-900"
       ref={containerRef}
     >
@@ -19,9 +21,9 @@ export default function OurMission() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <p className="text-sm font-medium text-slate-200 tracking-wider mb-4 md:mb-6 text-center uppercase">
+          <h2 id="our-mission-heading" className="text-sm font-medium text-slate-200 tracking-wider mb-4 md:mb-6 text-center uppercase">
             Our Mission
-          </p>
+          </h2>
 
           <hr className="border-t border-slate-600 max-w-xs mx-auto mb-4 md:mb-6" />
 

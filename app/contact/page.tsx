@@ -5,6 +5,7 @@ import {
   contactPageSchema,
   enhancedContactPointSchema,
   aiConsultingServiceSchema,
+  generateBreadcrumbSchema,
 } from '@/lib/structured-data';
 
 export default function ContactPage() {
@@ -14,6 +15,14 @@ export default function ContactPage() {
       <script {...generateSchemaScript(contactPageSchema)} />
       <script {...generateSchemaScript(enhancedContactPointSchema)} />
       <script {...generateSchemaScript(aiConsultingServiceSchema)} />
+      <script
+        {...generateSchemaScript(
+          generateBreadcrumbSchema([
+            { name: 'Home', url: 'https://piecewiseai.com' },
+            { name: 'Contact', url: 'https://piecewiseai.com/contact' },
+          ])
+        )}
+      />
 
       {/* Page Intro Section */}
       <ContactIntro />

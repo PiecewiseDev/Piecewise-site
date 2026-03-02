@@ -9,13 +9,11 @@ export const metadata: Metadata = generatePageMetadata({
   images: [
     {
       url: '/logos/piecewiselogo7.png',
-      width: 1200,
-      height: 630,
+      width: 300,
+      height: 300,
       alt: 'Contact Piecewise - Schedule Your Custom AI Discovery Call',
     },
   ],
 });
 
 export const viewport = defaultViewport;
-
-export default metadata;
