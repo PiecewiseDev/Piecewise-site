@@ -21,7 +21,10 @@ export default function OurMission() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 id="our-mission-heading" className="text-sm font-medium text-slate-200 tracking-wider mb-4 md:mb-6 text-center uppercase">
+          <h2
+            id="our-mission-heading"
+            className="text-sm font-medium text-slate-200 tracking-wider mb-4 md:mb-6 text-center uppercase"
+          >
             Our Mission
           </h2>
 

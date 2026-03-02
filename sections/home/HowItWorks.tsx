@@ -92,7 +92,10 @@ export default function HowItWorks() {
           <p className="text-sm font-semibold text-blue-500 tracking-wider mb-3">
             THE PIECEWISE PROCESS
           </p>
-          <h2 id="how-it-works-heading" className="text-3xl md:text-4xl xl:text-5xl font-bold text-neutral-darkest leading-tight tracking-tight">
+          <h2
+            id="how-it-works-heading"
+            className="text-3xl md:text-4xl xl:text-5xl font-bold text-neutral-darkest leading-tight tracking-tight"
+          >
             How it works
           </h2>
         </div>

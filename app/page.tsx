@@ -1,31 +1,16 @@
 import React from 'react';
 import { Hero, CallToAction } from '@/sections/shared';
 import {
-  ToolsPartnership,
-  WhatWeOffer,
   OurWork,
-  MissionStatement,
-  BlogPreview,
-  CustomGPTIntro2,
   HowItWorks,
-  ClientQuotesSimple,
-  ClientQuotesSimple2,
-  IsThisForMe,
-  InlineCTA,
   ClientLogoStrip,
-  ProblemSection,
-  SolutionSection,
-  // SolutionSectionAlt,
-  WhoWeServe,
   ClientQuoteHighlight,
   ClientQuoteHighlightTrinity,
   KeyMetricsStrip,
   ComparisonSection,
-  ProblemSolution,
   ProblemSolutionGrid,
 } from '@/sections/home';
-import { ContactFAQ, ContactFAQSimple } from '@/sections/contact';
-import { PageSection } from '@/components/layout';
+import { ContactFAQSimple } from '@/sections/contact';
 import {
   localBusinessSchema,
   customGPTServiceSchema,

@@ -37,7 +37,10 @@ export const organizationSchema = {
     url: `${SITE_CONFIG.url}/contact`,
     availableLanguage: 'English',
   },
-  sameAs: ['https://www.linkedin.com/company/piecewiseai'],
+  sameAs: [
+    'https://www.linkedin.com/company/piecewiseai',
+    'https://directory.charlotteareachamber.com/memberdirectory/Details/piecewise-4356204',
+  ],
 };
 
 // Website structured data

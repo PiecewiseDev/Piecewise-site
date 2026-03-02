@@ -134,6 +134,7 @@ export default function ComparisonSection() {
                   <li key={i} className="flex items-start gap-3">
                     {option.highlighted ? (
                       <svg
+                        aria-hidden="true"
                         className="w-4 h-4 text-emerald-300 flex-shrink-0 mt-0.5"
                         fill="none"
                         stroke="currentColor"
@@ -148,6 +149,7 @@ export default function ComparisonSection() {
                       </svg>
                     ) : (
                       <svg
+                        aria-hidden="true"
                         className="w-4 h-4 text-red-400 flex-shrink-0 mt-0.5"
                         fill="none"
                         stroke="currentColor"

@@ -132,6 +132,7 @@ const ContactOptions: React.FC = () => {
                 src="/images/LegacyRR5.jpg"
                 alt="Legacy Repairs & Remodeling team at work"
                 fill
+                priority
                 className="object-cover object-[30%_20%] grayscale"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />

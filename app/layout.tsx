@@ -4,12 +4,8 @@ import { Inter } from 'next/font/google';
 import { Navbar, Footer } from '@/components/layout';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import {
-  defaultMetadata,
-  defaultViewport,
-  organizationSchema,
-  generateWebsiteSchema,
-} from '@/lib/metadata';
+import { defaultMetadata, defaultViewport, generateWebsiteSchema } from '@/lib/metadata';
+import { organizationSchema } from '@/lib/structured-data';
 
 const inter = Inter({
   weight: ['400', '500', '700'],
@@ -51,12 +47,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Resource hints for better performance */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-
-        {/* Security headers via meta tags */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       </head>
       <body className={`${inter.className} flex flex-col min-h-screen antialiased`}>
         <a

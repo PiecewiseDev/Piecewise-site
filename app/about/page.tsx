@@ -28,6 +28,9 @@ export default function AboutPage() {
 
   return (
     <>
+      {/* Preload LCP hero image for Core Web Vitals */}
+      <link rel="preload" as="image" href="/images/Charlotteskyline.webp" type="image/webp" />
+
       {/* Enhanced Structured Data for About Page SEO */}
       <script {...generateSchemaScript(founderSchema)} />
       <script {...generateSchemaScript(aboutPageSchema)} />

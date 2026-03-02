@@ -68,7 +68,10 @@ const ContactFAQSimple: React.FC = () => {
             <p className="text-xs md:text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3 md:mb-4 2xl:mb-5">
               Frequently Asked Questions
             </p>
-            <h2 id="faq-heading" className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-neutral-darkest">
+            <h2
+              id="faq-heading"
+              className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-neutral-darkest"
+            >
               Need more info?
             </h2>
           </div>

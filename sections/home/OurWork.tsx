@@ -11,14 +11,20 @@ const businessTypes: Record<string, string> = {
 
 export default function OurWork() {
   return (
-    <section aria-labelledby="success-stories-heading" className="relative bg-slate-100 py-16 sm:py-18 md:py-20 lg:py-22 xl:py-24 2xl:py-28">
+    <section
+      aria-labelledby="success-stories-heading"
+      className="relative bg-slate-100 py-16 sm:py-18 md:py-20 lg:py-22 xl:py-24 2xl:py-28"
+    >
       <div className="relative z-10 max-w-full sm:max-w-full md:max-w-full lg:max-w-full xl:max-w-full 2xl:max-w-full mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
         {/* Section Header with Title */}
         <div className="text-center mb-12 sm:mb-14 md:mb-16 lg:mb-20">
           <p className="text-sm font-semibold text-gray-400 tracking-wider mb-3">
             CHANGING THE OWNER EXPERIENCE
           </p>
-          <h2 id="success-stories-heading" className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-neutral-darkest leading-tight tracking-tight">
+          <h2
+            id="success-stories-heading"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-neutral-darkest leading-tight tracking-tight"
+          >
             Success Stories
           </h2>
         </div>

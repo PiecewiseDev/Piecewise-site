@@ -32,7 +32,10 @@ export const organizationSchema = {
     image: 'https://piecewiseai.com/images/kyle-profile.webp',
     sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
   },
-  sameAs: ['https://www.linkedin.com/company/piecewiseai'],
+  sameAs: [
+    'https://www.linkedin.com/company/piecewiseai',
+    'https://directory.charlotteareachamber.com/memberdirectory/Details/piecewise-4356204',
+  ],
   serviceArea: {
     '@type': 'Country',
     name: 'United States',
@@ -195,147 +198,6 @@ export const founderSchema = {
     'Entrepreneur Productivity',
   ],
 };
-
-// FAQ Schema for common questions
-export const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What is a Custom GPT?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A Custom GPT is a specialized AI assistant trained specifically for your business processes, industry knowledge, and communication style. Unlike generic chatbots, it understands your specific needs and can handle complex business tasks.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How long does it take to build a Custom GPT?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Our typical implementation process takes 2-4 weeks, depending on complexity. We follow a 4-phase approach: Discovery, Design, Development, and Deployment with ongoing support.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Do I need technical knowledge to use a Custom GPT?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'No technical knowledge required! We design our Custom GPTs to be user-friendly for business owners and their teams. We provide full training and ongoing support.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What types of businesses benefit from Custom GPTs?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Service businesses including contractors, consultants, healthcare providers, legal firms, and any business that handles repetitive inquiries or complex processes benefit most from Custom GPT solutions.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Is my business data secure with Custom GPTs?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Yes, we prioritize data security. Our Custom GPTs are built with enterprise-grade security measures, and we can implement additional privacy controls based on your specific requirements.',
-      },
-    },
-  ],
-};
-
-// Service Schema for main services
-export const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Custom AI Development',
-  description: 'Professional custom AI and GPT development services for service businesses',
-  provider: {
-    '@type': 'Organization',
-    name: 'Piecewise',
-    url: 'https://piecewiseai.com',
-  },
-  serviceType: 'AI Development',
-  audience: {
-    '@type': 'Audience',
-    audienceType: 'Service Businesses',
-  },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'AI Development Services',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        name: 'Custom GPT Development',
-        description: 'Build custom AI assistants tailored to your business needs',
-      },
-      {
-        '@type': 'Offer',
-        name: 'AI Implementation',
-        description: 'Professional implementation and integration of AI solutions',
-      },
-      {
-        '@type': 'Offer',
-        name: 'AI Support & Maintenance',
-        description: 'Ongoing support and optimization for your AI systems',
-      },
-    ],
-  },
-  areaServed: {
-    '@type': 'Country',
-    name: 'United States',
-  },
-};
-
-// WebSite Schema
-export const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Piecewise',
-  alternateName: 'Piecewise',
-  url: 'https://piecewiseai.com',
-  description: 'Custom AI solutions for service businesses',
-  publisher: {
-    '@type': 'Organization',
-    name: 'Piecewise',
-  },
-};
-
-// Review Schema for testimonials (for future use with real reviews)
-export const generateReviewSchema = (
-  reviews: Array<{
-    author: string;
-    rating: number;
-    reviewBody: string;
-    datePublished: string;
-  }>
-) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Piecewise',
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length,
-    reviewCount: reviews.length,
-    bestRating: 5,
-    worstRating: 1,
-  },
-  review: reviews.map((review) => ({
-    '@type': 'Review',
-    author: {
-      '@type': 'Person',
-      name: review.author,
-    },
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: review.rating,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    reviewBody: review.reviewBody,
-    datePublished: review.datePublished,
-  })),
-});
 
 // Breadcrumb Schema generator
 export function generateBreadcrumbSchema(breadcrumbs: Array<{ name: string; url: string }>) {
@@ -573,18 +435,6 @@ export const homePageSchema = generateWebPageSchema(
   'Custom AI tools and automation solutions that help service business owners systemize operations, delegate confidently, and scale without adding headcount'
 );
 
-export const servicesPageSchema = generateWebPageSchema(
-  'AI Services for Service Businesses | Piecewise',
-  'https://piecewiseai.com/services',
-  'Custom AI development services including GPT creation, automation, and implementation for service businesses'
-);
-
-export const pricingPageSchema = generateWebPageSchema(
-  'AI Development Pricing | Piecewise',
-  'https://piecewiseai.com/pricing',
-  'Transparent pricing for custom AI development and consulting services for service businesses'
-);
-
 export const aboutPageSchema = generateWebPageSchema(
   'About Piecewise | Charlotte AI Consultants',
   'https://piecewiseai.com/about',
@@ -595,30 +445,6 @@ export const contactPageSchema = generateWebPageSchema(
   'Contact Piecewise | AI Consulting Charlotte',
   'https://piecewiseai.com/contact',
   'Get in touch with our Charlotte-based AI consulting team for custom GPT and automation solutions'
-);
-
-export const howItWorksPageSchema = generateWebPageSchema(
-  'How Our AI Development Process Works | Piecewise',
-  'https://piecewiseai.com/how-it-works',
-  'Learn about our proven 4-phase process for developing custom AI solutions for service businesses'
-);
-
-export const caseStudiesPageSchema = generateWebPageSchema(
-  'Customer Stories | Piecewise - Real Results from Custom AI Solutions',
-  'https://piecewiseai.com/customer-stories',
-  'See how service businesses are using custom AI solutions to save time, reduce stress, and scale operations. Real stories, real results.'
-);
-
-export const blogPageSchema = generateWebPageSchema(
-  'Blog | Piecewise - AI Insights & Business Growth',
-  'https://piecewiseai.com/blog',
-  'Insights on AI automation, Custom GPTs, and scaling service businesses. Learn how to transform operations and reclaim your time with intelligent solutions.'
-);
-
-export const resourcesPageSchema = generateWebPageSchema(
-  'AI Tools & Resources | Piecewise - Comprehensive AI Tool Directory',
-  'https://piecewiseai.com/resources',
-  'Comprehensive directory of AI tools for business. Browse LLMs, image generation, automation, transcription, and more. Find the right AI tool for your needs.'
 );
 
 // Helper function to generate schema script tag

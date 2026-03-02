@@ -4,7 +4,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { aiToolsData } from '@/data/aiTools';
-import { resourcesPageSchema, organizationSchema } from '@/lib/structured-data';
+import { generateWebPageSchema, organizationSchema } from '@/lib/structured-data';
+
+const resourcesPageSchema = generateWebPageSchema(
+  'AI Tools & Resources | Piecewise - Comprehensive AI Tool Directory',
+  'https://piecewiseai.com/resources',
+  'Comprehensive directory of AI tools for business. Browse LLMs, image generation, automation, transcription, and more. Find the right AI tool for your needs.'
+);
 
 export default function ResourcesPage() {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);

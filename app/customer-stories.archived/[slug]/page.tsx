@@ -378,9 +378,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </>
       ) : caseStudy.slug === 'trinity-parking' ||
         caseStudy.slug === 'fresh-events-services' ||
-        caseStudy.slug ===
-          'lake-norman-fence' ? // Trinity, Fresh Events, and Lake Norman Fence have their own custom hero sections below
-      null : (
+        caseStudy.slug === 'lake-norman-fence' ? null : ( // Trinity, Fresh Events, and Lake Norman Fence have their own custom hero sections below
         <section className="relative -mt-20 pt-36 pb-16 md:pt-44 md:pb-24 lg:pt-52 lg:pb-32 bg-gradient-to-b from-slate-50 via-white to-slate-50/50 overflow-hidden">
           {/* Background with subtle pattern - matching home page */}
           <div className="absolute inset-0 z-0">
