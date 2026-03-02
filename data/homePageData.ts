@@ -28,7 +28,7 @@ export interface BenefitsProps {
 export const benefitsData: BenefitsProps = {
   title: 'How Our Custom GPTs Help You',
   subtitle:
-    'Built for service businesses. Designed to support clarity, consistency, and calm inside your operation.s3',
+    'Built for service businesses. Designed to support clarity, consistency, and calm inside your operations.',
   benefits: [
     {
       icon: 'clock',

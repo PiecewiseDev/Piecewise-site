@@ -4,7 +4,7 @@ import { generatePageMetadata, defaultViewport } from '@/lib/metadata';
 export const metadata: Metadata = generatePageMetadata({
   title: 'Contact Piecewise | Book a Free AI Discovery Call',
   description:
-    'Ready to transform your service business with custom AI? Schedule a free discovery call to learn how our custom AI assistants can save you time, reduce stress, and streamline operations. Get started with Piecewise today.',
+    'Book a free discovery call with Piecewise. We build custom AI assistants for service businesses — try free for 14 days, no payment until you approve.',
   path: '/contact',
   images: [
     {

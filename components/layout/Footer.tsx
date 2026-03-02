@@ -156,6 +156,28 @@ const Footer = () => {
             </Link>
           </div>
         </div>
+
+        {/* Copyright & Legal */}
+        <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-7 md:pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs md:text-sm text-gray-400">
+            &copy; {new Date().getFullYear()} Piecewise. All rights reserved.
+          </p>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <Link
+              href="/privacy"
+              className="text-xs md:text-sm text-gray-400 hover:text-gray-600 transition-colors duration-200"
+            >
+              Privacy Policy
+            </Link>
+            <span className="text-gray-300">·</span>
+            <Link
+              href="/terms"
+              className="text-xs md:text-sm text-gray-400 hover:text-gray-600 transition-colors duration-200"
+            >
+              Terms of Service
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );

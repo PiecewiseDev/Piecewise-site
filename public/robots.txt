@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 
-# Block internal API routes
-Disallow: /api/internal/
+# Block API routes from crawling
+Disallow: /api/
 
 # Sitemap location
 Sitemap: https://piecewiseai.com/sitemap.xml

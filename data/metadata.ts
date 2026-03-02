@@ -21,8 +21,10 @@ export {
   defaultViewport,
   SITE_CONFIG,
   generatePageMetadata,
-  organizationSchema,
   generateWebsiteSchema,
   generateArticleSchema,
   generateBreadcrumbSchema,
 } from '@/lib/metadata';
+
+// organizationSchema is now only in @/lib/structured-data
+export { organizationSchema } from '@/lib/structured-data';

@@ -266,7 +266,7 @@ export const customGPTServiceSchema = {
       value: 14,
       unitCode: 'DAY',
     },
-    validFrom: '2025-03-01',
+    validFrom: '2026-01-01',
     url: 'https://piecewiseai.com/contact',
   },
 };
@@ -371,7 +371,7 @@ export const automationServiceSchema = {
       value: 14,
       unitCode: 'DAY',
     },
-    validFrom: '2025-03-01',
+    validFrom: '2026-01-01',
     url: 'https://piecewiseai.com/contact',
   },
 };
@@ -394,7 +394,7 @@ export const enhancedContactPointSchema = {
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '09:00',
       closes: '17:00',
-      validFrom: '2025-01-01',
+      validFrom: '2026-01-01',
     },
   ],
 };
@@ -404,7 +404,7 @@ export const generateWebPageSchema = (
   pageName: string,
   pageUrl: string,
   description: string,
-  dateModified: string = '2025-03-01',
+  dateModified: string = '2026-03-01',
   datePublished: string = '2025-03-01'
 ) => ({
   '@context': 'https://schema.org',
@@ -445,6 +445,44 @@ export const contactPageSchema = generateWebPageSchema(
   'https://piecewiseai.com/contact',
   'Get in touch with our Charlotte-based AI consulting team for custom GPT and automation solutions'
 );
+
+// SoftwareApplication Schema for the Custom GPT product
+export const customGPTApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Piecewise Custom GPT',
+  description:
+    'A private, custom-built AI assistant trained on your business processes, communication style, and decision-making frameworks. Built for service business owners to systemize operations and scale.',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web-based',
+  url: 'https://piecewiseai.com',
+  provider: {
+    '@id': 'https://piecewiseai.com/#organization',
+    '@type': 'Organization',
+    name: 'Piecewise',
+  },
+  offers: {
+    '@type': 'Offer',
+    name: 'Free 14-Day Trial',
+    price: '0',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    description:
+      'We build your custom AI assistant first. You test it free for 14 days. Pay only if you love it.',
+    url: 'https://piecewiseai.com/contact',
+  },
+  featureList: [
+    'Custom-trained on your business knowledge',
+    'SOP and document generation',
+    'Email and communication drafting',
+    'Team training and onboarding support',
+    'Process documentation automation',
+  ],
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Service Business Owners, Contractors, Managers',
+  },
+};
 
 // Helper function to generate schema script tag
 export function generateSchemaScript(schema: object) {

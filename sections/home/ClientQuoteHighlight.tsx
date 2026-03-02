@@ -76,7 +76,7 @@ export default function ClientQuoteHighlight() {
               alt="Luke Plescia, Founder of Legacy Repairs & Remodeling"
               fill
               className="object-cover object-[50%_25%]"
-              sizes="96px"
+              sizes="(max-width: 640px) 96px, (max-width: 768px) 112px, 160px"
             />
           </div>
         </blockquote>

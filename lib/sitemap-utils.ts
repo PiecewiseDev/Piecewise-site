@@ -25,17 +25,27 @@ export const DEFAULT_PAGE_CONFIGS: SitemapPageConfigs = {
   '/': {
     priority: 1.0,
     changeFrequency: 'weekly',
-    lastModified: new Date('2025-03-01'),
+    lastModified: new Date('2026-03-02'),
   },
   '/about': {
     priority: 0.9,
     changeFrequency: 'monthly',
-    lastModified: new Date('2025-03-01'),
+    lastModified: new Date('2026-03-02'),
   },
   '/contact': {
     priority: 0.8,
     changeFrequency: 'monthly',
-    lastModified: new Date('2025-03-01'),
+    lastModified: new Date('2026-03-02'),
+  },
+  '/privacy': {
+    priority: 0.3,
+    changeFrequency: 'yearly',
+    lastModified: new Date('2026-03-02'),
+  },
+  '/terms': {
+    priority: 0.3,
+    changeFrequency: 'yearly',
+    lastModified: new Date('2026-03-02'),
   },
 
   // --- Not yet launched — uncomment when ready ---

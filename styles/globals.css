@@ -381,6 +381,39 @@ body {
   .bg-primary\/20 {
     background-color: rgba(var(--color-primary-rgb), 0.2);
   }
+
+  /* Legal/policy page typography — overrides global base heading sizes */
+  .legal-content h2 {
+    @apply !text-xl !mt-10 !mb-4 !leading-tight !font-bold !tracking-tight;
+  }
+
+  @screen sm {
+    .legal-content h2 {
+      @apply !text-2xl;
+    }
+  }
+
+  .legal-content h3 {
+    @apply !text-lg !mt-7 !mb-3 !leading-tight !font-semibold !tracking-tight;
+  }
+
+  @screen sm {
+    .legal-content h3 {
+      @apply !text-xl;
+    }
+  }
+
+  .legal-content p {
+    @apply !text-base !leading-relaxed;
+  }
+
+  .legal-content li {
+    @apply !text-base !leading-relaxed;
+  }
+
+  .legal-content a {
+    @apply !text-primary hover:!text-primary-hover;
+  }
 }
 
 /* Animations */

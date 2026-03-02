@@ -39,15 +39,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
 
-        {/* Preload critical assets for better Core Web Vitals */}
-        <link rel="preload" href="/logos/piecewiselogo7.png" as="image" type="image/png" />
-
         {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//vercel.live" />
         <link rel="dns-prefetch" href="//vitals.vercel-analytics.com" />
-
-        {/* Resource hints for better performance */}
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
       <body className={`${inter.className} flex flex-col min-h-screen antialiased`}>
         <a

@@ -4,7 +4,7 @@ import { generatePageMetadata, defaultViewport } from '@/lib/metadata';
 export const metadata: Metadata = generatePageMetadata({
   title: 'About Piecewise | Custom AI for Service Business Owners',
   description:
-    'Meet the Charlotte-based team behind Piecewise. We help service business owners reduce stress and save time with custom AI assistants. Learn our mission to empower businesses through simple, effective AI automation. Schedule your discovery call today.',
+    'Meet the Charlotte-based team behind Piecewise. We build custom AI assistants that help service business owners reduce stress, save time, and scale operations.',
   path: '/about',
   images: [
     {

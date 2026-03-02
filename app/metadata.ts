@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   ...generatePageMetadata({
     title: 'Piecewise | Custom AI for Service Business Owners',
     description:
-      'Transform your service business with custom AI assistants that reduce stress and save hours daily. We build private Custom GPTs for contractors, managers, and service teams to automate operations while maintaining your unique voice. Get started today.',
+      'Custom AI assistants for service businesses. We build private GPTs that save owners 20+ hours/week. Free 14-day trial — we build it first, you only pay if you love it.',
     path: '/',
     images: [
       {

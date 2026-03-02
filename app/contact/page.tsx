@@ -8,6 +8,8 @@ import {
   generateBreadcrumbSchema,
 } from '@/lib/structured-data';
 
+export { metadata, viewport } from './metadata';
+
 export default function ContactPage() {
   return (
     <>

@@ -20,28 +20,8 @@ export const defaultViewport: Viewport = {
   themeColor: '#1a1a1d',
 };
 
-// Organization structured data for SEO
-export const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': `${SITE_CONFIG.url}/#organization`,
-  name: SITE_CONFIG.name,
-  url: SITE_CONFIG.url,
-  logo: `${SITE_CONFIG.url}/logos/piecewiselogo7.png`,
-  description: SITE_CONFIG.description,
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'Customer Service',
-    telephone: '+1-980-218-0346',
-    email: 'kyle@piecewiseai.com',
-    url: `${SITE_CONFIG.url}/contact`,
-    availableLanguage: 'English',
-  },
-  sameAs: [
-    'https://www.linkedin.com/company/piecewiseai',
-    'https://directory.charlotteareachamber.com/memberdirectory/Details/piecewise-4356204',
-  ],
-};
+// Organization schema is defined in @/lib/structured-data to avoid duplication.
+// Import from there: import { organizationSchema } from '@/lib/structured-data';
 
 // Website structured data
 export function generateWebsiteSchema() {
@@ -102,15 +82,15 @@ export const defaultMetadata: Metadata = {
     images: [
       {
         url: SITE_CONFIG.ogImage,
-        width: 300,
-        height: 300,
-        alt: `${SITE_CONFIG.name} - Custom AI Solutions`,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_CONFIG.name} - Custom AI Solutions for Service Businesses`,
         type: 'image/png',
       },
     ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Piecewise | Custom AI Development, Implementation, and Support',
     description: SITE_CONFIG.description,
     images: [SITE_CONFIG.ogImage],
@@ -160,8 +140,8 @@ export function generatePageMetadata({
   const ogImages = images || [
     {
       url: SITE_CONFIG.ogImage,
-      width: 300,
-      height: 300,
+      width: 1200,
+      height: 630,
       alt: `${title} | ${SITE_CONFIG.name}`,
     },
   ];
@@ -191,7 +171,7 @@ export function generatePageMetadata({
       ...(type === 'article' && authors && { authors }),
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title,
       description,
       images: ogImages.map((img) => img.url),

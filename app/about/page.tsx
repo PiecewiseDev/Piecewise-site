@@ -9,6 +9,8 @@ import {
 } from '@/lib/structured-data';
 // import { Comparison } from '@/sections/shared'; // Temporarily archived
 
+export { metadata, viewport } from './metadata';
+
 export default function AboutPage() {
   // CTA section data
   const ctaData = {
