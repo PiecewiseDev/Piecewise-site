@@ -6,6 +6,7 @@ export const metadata: Metadata = generatePageMetadata({
   description:
     'Comprehensive directory of 100+ AI tools for business. Browse LLMs, automation, design, sales, SEO, voice generation, and more. Find the perfect AI tool with pricing and direct links.',
   path: '/resources',
+  noIndex: true,
   images: [
     {
       url: '/images/og-resources.png',

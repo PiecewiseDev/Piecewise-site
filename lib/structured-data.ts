@@ -388,7 +388,6 @@ export const enhancedContactPointSchema = {
     name: 'United States',
   },
   url: 'https://piecewiseai.com/contact',
-  contactOption: 'TollFree',
   hoursAvailable: [
     {
       '@type': 'OpeningHoursSpecification',

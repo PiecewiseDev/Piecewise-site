@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { Turnstile } from '@marsidev/react-turnstile';
 import { HeroProps } from '@/lib/types';
 
 const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, ctaLink, imageAlt }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [turnstileToken, setTurnstileToken] = useState('');
 
   const words = ['Lead.', 'Serve.', 'Grow.'];
   const staticText = title || 'Custom AI Tools Built to Help You ';
@@ -19,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, ctaLink, imageAlt
       const response = await fetch('/api/trial', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken }),
       });
 
       if (response.ok) {
@@ -138,6 +140,14 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, ctaText, ctaLink, imageAlt
                   onSubmit={handleTrialSubmit}
                   className="flex flex-col sm:flex-row w-full gap-0"
                 >
+                  {/* Cloudflare Turnstile - invisible bot protection */}
+                  <Turnstile
+                    siteKey={
+                      process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'
+                    }
+                    onSuccess={(token) => setTurnstileToken(token)}
+                    options={{ size: 'invisible' }}
+                  />
                   <label htmlFor="hero-email" className="sr-only">
                     Email address
                   </label>

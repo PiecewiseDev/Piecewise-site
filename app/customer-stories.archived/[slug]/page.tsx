@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: caseStudy.description,
     path: `/case-studies/${slug}`,
     type: 'article',
+    noIndex: true,
     images: [
       {
         url: ogImage,

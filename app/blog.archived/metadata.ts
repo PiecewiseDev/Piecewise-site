@@ -6,6 +6,7 @@ export const metadata: Metadata = generatePageMetadata({
   description:
     'Insights on AI automation, Custom GPTs, and scaling service businesses. Learn how to transform operations and reclaim your time with intelligent solutions.',
   path: '/blog',
+  noIndex: true,
   images: [
     {
       url: '/images/og-blog.png',

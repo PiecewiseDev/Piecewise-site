@@ -6,6 +6,7 @@ export const metadata: Metadata = generatePageMetadata({
   description:
     'See how service businesses like yours are using custom AI solutions to save time, reduce stress, and scale operations. Real stories, real results from contractors, service teams, and small business owners.',
   path: '/customer-stories',
+  noIndex: true,
   images: [
     {
       url: '/logos/piecewiselogo7.png',

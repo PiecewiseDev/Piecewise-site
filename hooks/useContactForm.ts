@@ -15,7 +15,7 @@ export interface UseContactFormReturn {
   submitStatus: SubmitStatus;
   isSubmitting: boolean;
   handleInputChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  handleSubmit: (e: FormEvent) => Promise<void>;
+  handleSubmit: (e: FormEvent, extras?: Record<string, string>) => Promise<void>;
   resetForm: () => void;
 }
 
@@ -39,7 +39,7 @@ export function useContactForm(): UseContactFormReturn {
     }));
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent, extras?: Record<string, string>) => {
     e.preventDefault();
     setSubmitStatus('submitting');
 
@@ -49,7 +49,7 @@ export function useContactForm(): UseContactFormReturn {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, ...extras }),
       });
 
       if (response.ok) {

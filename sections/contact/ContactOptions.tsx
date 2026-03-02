@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import { Turnstile } from '@marsidev/react-turnstile';
 import { useContactForm, useIntersectionObserver } from '@/hooks';
 import { FormStatusMessages } from '@/components/ui';
 
@@ -11,6 +12,7 @@ const ContactOptions: React.FC = () => {
   });
   const { formData, submitStatus, isSubmitting, handleInputChange, handleSubmit } =
     useContactForm();
+  const [turnstileToken, setTurnstileToken] = useState('');
 
   return (
     <section
@@ -25,7 +27,10 @@ const ContactOptions: React.FC = () => {
             {/* Status Messages */}
             <FormStatusMessages status={submitStatus} />
 
-            <form className="space-y-3 md:space-y-4" onSubmit={handleSubmit}>
+            <form
+              className="space-y-3 md:space-y-4"
+              onSubmit={(e) => handleSubmit(e, { turnstileToken })}
+            >
               <div>
                 <label htmlFor="name" className="sr-only">
                   Name
@@ -94,6 +99,15 @@ const ContactOptions: React.FC = () => {
                   className="w-full px-3 md:px-4 xl:px-5 py-2.5 md:py-3 xl:py-3.5 2xl:py-4 text-sm md:text-base 2xl:text-lg bg-white border border-slate-200 rounded-lg placeholder:text-slate-400 focus:ring-2 focus:ring-gray-400 focus:border-transparent transition-all resize-none"
                 />
               </div>
+
+              {/* Cloudflare Turnstile - invisible bot protection */}
+              <Turnstile
+                siteKey={
+                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'
+                }
+                onSuccess={(token) => setTurnstileToken(token)}
+                options={{ size: 'invisible' }}
+              />
 
               {/* Submit Button */}
               <div>
