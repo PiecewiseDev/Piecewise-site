@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+}
+
+/* Use smooth scrolling only for anchor links, not programmatic navigation */
+@media (prefers-reduced-motion: no-preference) {
+  :target {
+    scroll-behavior: smooth;
+  }
 }
 
 :root {

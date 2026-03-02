@@ -78,6 +78,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/about"
+                    prefetch={true}
                     className="text-gray-600 hover:text-gray-900 text-xs md:text-sm 2xl:text-base transition-colors duration-200"
                   >
                     About
@@ -148,6 +149,7 @@ const Footer = () => {
             </p>
             <Link
               href="/about"
+              prefetch={true}
               className="inline-block mt-3 text-xs md:text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200"
             >
               Learn more about us →

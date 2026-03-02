@@ -57,7 +57,7 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                prefetch={link.href === '/contact'}
+                prefetch={link.href === '/contact' || link.href === '/about'}
                 className={`text-sm transition-colors duration-200 hover:text-gray-900 hover:no-underline ${
                   isActive ? 'font-semibold text-gray-900' : 'font-medium text-gray-500'
                 }`}
@@ -142,7 +142,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  prefetch={link.href === '/contact'}
+                  prefetch={link.href === '/contact' || link.href === '/about'}
                   className={`block rounded-md px-3 py-3 text-sm transition-colors duration-200 hover:bg-neutral-100 hover:text-gray-900 hover:no-underline ${
                     isActive
                       ? 'font-semibold text-gray-900 bg-neutral-100'

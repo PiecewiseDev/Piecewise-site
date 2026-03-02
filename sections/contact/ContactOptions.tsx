@@ -102,9 +102,7 @@ const ContactOptions: React.FC = () => {
 
               {/* Cloudflare Turnstile - invisible bot protection */}
               <Turnstile
-                siteKey={
-                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'
-                }
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA'}
                 onSuccess={(token) => setTurnstileToken(token)}
                 options={{ size: 'invisible' }}
               />

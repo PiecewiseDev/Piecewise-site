@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import React from 'react';
 import { Inter } from 'next/font/google';
 import { Navbar, Footer } from '@/components/layout';
+import { ScrollToTop } from '@/components/layout/ScrollToTop';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { defaultMetadata, defaultViewport, generateWebsiteSchema } from '@/lib/metadata';
@@ -22,7 +23,7 @@ export const metadata = defaultMetadata;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en">
       <head>
         {/* Structured Data for SEO */}
         <script
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to main content
         </a>
+        <ScrollToTop />
         <Navbar />
         <main id="main-content" className="flex-grow bg-background">
           {children}
