@@ -20,6 +20,12 @@ function escapeHtml(str: string): string {
 
 export async function POST(request: NextRequest) {
   try {
+    // CORS — only accept requests from the live site in production
+    const origin = request.headers.get('origin');
+    if (process.env.NODE_ENV === 'production' && origin !== 'https://piecewiseai.com') {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    }
+
     if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 'dummy-key-for-build') {
       return NextResponse.json({ error: 'Email service not configured' }, { status: 500 });
     }
