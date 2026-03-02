@@ -46,6 +46,27 @@ const steps: Step[] = [
   },
 ];
 
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How Piecewise Builds Custom AI Systems for Your Service Business',
+  description:
+    'Our 4-step process to capture your business knowledge and turn it into AI-powered systems your team can follow without you.',
+  totalTime: 'P2W',
+  estimatedCost: {
+    '@type': 'MonetaryAmount',
+    currency: 'USD',
+    value: '0',
+  },
+  step: steps.map((step) => ({
+    '@type': 'HowToStep',
+    position: step.number,
+    name: step.title,
+    text: step.description,
+    image: `https://piecewiseai.com${step.image}`,
+  })),
+};
+
 export default function HowItWorks() {
   const { isVisible, ref: sectionRef } = useIntersectionObserver({
     threshold: 0.1,
@@ -54,8 +75,13 @@ export default function HowItWorks() {
   return (
     <section
       ref={sectionRef}
+      aria-labelledby="how-it-works-heading"
       className="relative bg-slate-100 py-16 md:py-20 xl:py-28 overflow-hidden"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
       <div className="relative mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
         {/* Section Header */}
         <div
@@ -66,7 +92,7 @@ export default function HowItWorks() {
           <p className="text-sm font-semibold text-blue-500 tracking-wider mb-3">
             THE PIECEWISE PROCESS
           </p>
-          <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-neutral-darkest leading-tight tracking-tight">
+          <h2 id="how-it-works-heading" className="text-3xl md:text-4xl xl:text-5xl font-bold text-neutral-darkest leading-tight tracking-tight">
             How it works
           </h2>
         </div>

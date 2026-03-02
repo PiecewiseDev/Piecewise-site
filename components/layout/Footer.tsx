@@ -146,6 +146,12 @@ const Footer = () => {
               To help entrepreneurs build better businesses, to magnify their impact and improve the
               communities they serve.
             </p>
+            <Link
+              href="/about"
+              className="inline-block mt-3 text-xs md:text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200"
+            >
+              Learn more about us →
+            </Link>
           </div>
         </div>
       </div>

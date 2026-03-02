@@ -88,9 +88,9 @@ export default function KeyMetricsStrip() {
       aria-label="Key business metrics"
     >
       <div className="mx-auto px-4 sm:px-6 md:px-14 lg:px-24 xl:px-28 2xl:px-32">
-        <p className="text-xs md:text-sm font-semibold tracking-widest text-slate-400 uppercase text-center mb-6 md:mb-8">
+        <h2 className="text-xs md:text-sm font-semibold tracking-widest text-slate-400 uppercase text-center mb-6 md:mb-8">
           By the Numbers
-        </p>
+        </h2>
         <div
           className={`grid grid-cols-3 divide-x divide-slate-800 transition-all duration-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'

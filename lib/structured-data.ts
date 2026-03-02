@@ -9,6 +9,7 @@
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://piecewiseai.com/#organization',
   name: 'Piecewise',
   alternateName: 'Piecewise',
   description: 'Custom AI tools and automation solutions for service businesses',
@@ -31,7 +32,7 @@ export const organizationSchema = {
     image: 'https://piecewiseai.com/images/kyle-profile.webp',
     sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
   },
-  sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
+  sameAs: ['https://www.linkedin.com/company/piecewiseai'],
   serviceArea: {
     '@type': 'Country',
     name: 'United States',
@@ -73,6 +74,7 @@ export const organizationSchema = {
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': 'https://piecewiseai.com/#localbusiness',
   name: 'Piecewise',
   description:
     'Custom AI development and implementation for service businesses based in Charlotte, NC',
@@ -134,12 +136,20 @@ export const localBusinessSchema = {
     '@type': 'Person',
     name: 'Kyle Larsen',
   },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    bestRating: '5',
+    worstRating: '1',
+    reviewCount: '2',
+  },
 };
 
 // Person Schema for Kyle Larsen (About page)
 export const founderSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': 'https://piecewiseai.com/#kyle-larsen',
   name: 'Kyle Larsen',
   jobTitle: 'Founder & CEO',
   description:
@@ -147,6 +157,7 @@ export const founderSchema = {
   image: 'https://piecewiseai.com/images/kyle-profile.webp',
   url: 'https://piecewiseai.com/about',
   worksFor: {
+    '@id': 'https://piecewiseai.com/#organization',
     '@type': 'Organization',
     name: 'Piecewise',
     url: 'https://piecewiseai.com',
@@ -252,7 +263,7 @@ export const serviceSchema = {
   },
 };
 
-// WebSite Schema with search functionality
+// WebSite Schema
 export const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -263,14 +274,6 @@ export const websiteSchema = {
   publisher: {
     '@type': 'Organization',
     name: 'Piecewise',
-  },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: {
-      '@type': 'EntryPoint',
-      urlTemplate: 'https://piecewiseai.com/search?q={search_term_string}',
-    },
-    'query-input': 'required name=search_term_string',
   },
 };
 
@@ -336,7 +339,7 @@ export const customGPTServiceSchema = {
     name: 'Piecewise',
     foundingDate: '2025',
     url: 'https://piecewiseai.com',
-    sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
+    sameAs: ['https://www.linkedin.com/company/piecewiseai'],
   },
   serviceType: 'AI Development',
   category: 'Custom AI Solutions',
@@ -386,7 +389,7 @@ export const aiConsultingServiceSchema = {
       addressCountry: 'US',
       postalCode: '28205',
     },
-    sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
+    sameAs: ['https://www.linkedin.com/company/piecewiseai'],
   },
   serviceType: 'Technology Consulting',
   category: 'AI Consulting',
@@ -437,7 +440,7 @@ export const automationServiceSchema = {
     '@type': 'Organization',
     name: 'Piecewise',
     foundingDate: '2025',
-    sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
+    sameAs: ['https://www.linkedin.com/company/piecewiseai'],
   },
   serviceType: 'Business Automation',
   category: 'Process Automation',
@@ -491,7 +494,7 @@ export const generateWebPageSchema = (pageName: string, pageUrl: string, descrip
     '@type': 'Organization',
     name: 'Piecewise',
     foundingDate: '2025',
-    sameAs: ['https://www.linkedin.com/in/kylelarsen1819/'],
+    sameAs: ['https://www.linkedin.com/company/piecewiseai'],
   },
   inLanguage: 'en-US',
   dateModified: new Date().toISOString().split('T')[0],

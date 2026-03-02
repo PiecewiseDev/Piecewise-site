@@ -43,7 +43,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
 
         {/* Preload critical assets for better Core Web Vitals */}
-        <link rel="preload" href="/images/ChatGPTScreenshot.webp" as="image" type="image/webp" />
         <link rel="preload" href="/logos/piecewiselogo7.png" as="image" type="image/png" />
 
         {/* DNS prefetch for external domains */}

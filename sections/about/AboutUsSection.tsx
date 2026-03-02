@@ -11,6 +11,8 @@ export default function AboutUsSection() {
 
   return (
     <div
+      role="region"
+      aria-labelledby="our-purpose-heading"
       className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 2xl:py-32 bg-slate-100"
       ref={containerRef}
     >
@@ -19,6 +21,7 @@ export default function AboutUsSection() {
           {/* Left Column - Text Content */}
           <div className="lg:col-span-7 xl:col-span-7 2xl:col-span-7">
             <h2
+              id="our-purpose-heading"
               className={`text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-5xl font-bold leading-snug mb-8 sm:mb-9 md:mb-10 lg:mb-11 xl:mb-12 2xl:mb-14 text-center lg:text-left text-slate-900 transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}

@@ -79,7 +79,7 @@ export default function OurTeam() {
                 </a>
 
                 <a
-                  href="mailto:kyle@piecewise.ai"
+                  href="mailto:kyle@piecewiseai.com"
                   className="p-1 sm:p-1 md:p-1.5 lg:p-1.5 xl:p-2 2xl:p-2 text-white hover:text-white/70 transition-colors duration-200 flex-shrink-0"
                   aria-label="Email"
                 >

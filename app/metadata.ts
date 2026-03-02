@@ -3,7 +3,7 @@ import { generatePageMetadata, defaultViewport } from '@/lib/metadata';
 
 export const metadata: Metadata = {
   ...generatePageMetadata({
-    title: 'Piecewise | Custom GPT Solutions That Save Time for Service Business Owners',
+    title: 'Piecewise | Custom AI for Service Business Owners',
     description:
       'Transform your service business with custom AI assistants that reduce stress and save hours daily. We build private Custom GPTs for contractors, managers, and service teams to automate operations while maintaining your unique voice. Get started today.',
     path: '/',

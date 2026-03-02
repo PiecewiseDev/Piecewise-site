@@ -1,21 +1,8 @@
 User-agent: *
 Allow: /
 
-# Allow access to static assets
-Allow: /*.css
-Allow: /*.js
-Allow: /images/
-Allow: /logos/
-Allow: /favicon.ico
-
-# Allow important files
-Allow: /sitemap.xml
-Allow: /robots.txt
-
-# Block admin and development paths (if any exist in future)
-Disallow: /admin/
-Disallow: /_next/
+# Block internal API routes
 Disallow: /api/internal/
 
 # Sitemap location
-Sitemap: https://piecewiseai.com/sitemap.xml 
+Sitemap: https://piecewiseai.com/sitemap.xml

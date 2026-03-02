@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useIntersectionObserver } from '@/hooks';
 
 interface Client {
@@ -93,7 +94,7 @@ export default function OurCustomers() {
               ))}
 
               {/* CTA card */}
-              <a
+              <Link
                 href="/contact"
                 className={`group flex items-center justify-center bg-blue-50 border-2 border-dashed border-blue-100 rounded-2xl p-6 sm:p-7 md:p-8 lg:p-7 xl:p-8 2xl:p-9 aspect-[4/3] transition-all duration-700 hover:shadow-lg ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -103,7 +104,7 @@ export default function OurCustomers() {
                 }}
               >
                 <span className="text-3xl sm:text-4xl md:text-5xl font-light text-blue-500">+</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

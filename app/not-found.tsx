@@ -1,8 +1,14 @@
-'use client';
-
+import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import { StyledLink } from '@/components/ui';
+
+export const metadata: Metadata = {
+  title: 'Page Not Found | Piecewise',
+  description:
+    'The page you were looking for could not be found. Return to the Piecewise homepage to learn about our custom AI solutions for service businesses.',
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   // Helpful links for users who land on 404 pages

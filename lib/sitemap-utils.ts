@@ -25,53 +25,55 @@ export const DEFAULT_PAGE_CONFIGS: SitemapPageConfigs = {
   '/': {
     priority: 1.0,
     changeFrequency: 'weekly',
-    lastModified: new Date(),
+    lastModified: new Date('2025-03-01'),
   },
   '/about': {
     priority: 0.9,
     changeFrequency: 'monthly',
-    lastModified: new Date(),
-  },
-  '/blog': {
-    priority: 0.8,
-    changeFrequency: 'weekly',
-    lastModified: new Date(),
-  },
-  '/resources': {
-    priority: 0.8,
-    changeFrequency: 'weekly',
-    lastModified: new Date(),
+    lastModified: new Date('2025-03-01'),
   },
   '/contact': {
     priority: 0.8,
     changeFrequency: 'monthly',
-    lastModified: new Date(),
+    lastModified: new Date('2025-03-01'),
   },
-  '/services': {
-    priority: 0.8,
-    changeFrequency: 'weekly',
-    lastModified: new Date(),
-  },
-  '/pricing': {
-    priority: 0.7,
-    changeFrequency: 'monthly',
-    lastModified: new Date(),
-  },
-  '/how-it-works': {
-    priority: 0.6,
-    changeFrequency: 'monthly',
-    lastModified: new Date(),
-  },
-  '/case-studies': {
-    priority: 0.7,
-    changeFrequency: 'weekly',
-    lastModified: new Date(),
-  },
-  '/customer-stories': {
-    priority: 0.7,
-    changeFrequency: 'weekly',
-    lastModified: new Date(),
-  },
+
+  // --- Not yet launched — uncomment when ready ---
+  // '/blog': {
+  //   priority: 0.8,
+  //   changeFrequency: 'weekly',
+  //   lastModified: new Date('2025-03-01'),
+  // },
+  // '/resources': {
+  //   priority: 0.8,
+  //   changeFrequency: 'weekly',
+  //   lastModified: new Date('2025-03-01'),
+  // },
+  // '/services': {
+  //   priority: 0.8,
+  //   changeFrequency: 'weekly',
+  //   lastModified: new Date('2025-03-01'),
+  // },
+  // '/pricing': {
+  //   priority: 0.7,
+  //   changeFrequency: 'monthly',
+  //   lastModified: new Date('2025-03-01'),
+  // },
+  // '/how-it-works': {
+  //   priority: 0.6,
+  //   changeFrequency: 'monthly',
+  //   lastModified: new Date('2025-03-01'),
+  // },
+  // '/case-studies': {
+  //   priority: 0.7,
+  //   changeFrequency: 'weekly',
+  //   lastModified: new Date('2025-03-01'),
+  // },
+  // '/customer-stories': {
+  //   priority: 0.7,
+  //   changeFrequency: 'weekly',
+  //   lastModified: new Date('2025-03-01'),
+  // },
 };
 
 /**

@@ -24,6 +24,7 @@ export const defaultViewport: Viewport = {
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${SITE_CONFIG.url}/#organization`,
   name: SITE_CONFIG.name,
   url: SITE_CONFIG.url,
   logo: `${SITE_CONFIG.url}/logos/piecewiselogo7.png`,
@@ -31,8 +32,10 @@ export const organizationSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'Customer Service',
+    telephone: '+1-980-218-0346',
     email: 'kyle@piecewiseai.com',
     url: `${SITE_CONFIG.url}/contact`,
+    availableLanguage: 'English',
   },
   sameAs: ['https://twitter.com/piecewiseai', 'https://linkedin.com/company/piecewiseai'],
 };
@@ -42,10 +45,12 @@ export function generateWebsiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${SITE_CONFIG.url}/#website`,
     name: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
     description: SITE_CONFIG.description,
     publisher: {
+      '@id': `${SITE_CONFIG.url}/#organization`,
       '@type': 'Organization',
       name: SITE_CONFIG.name,
       logo: {

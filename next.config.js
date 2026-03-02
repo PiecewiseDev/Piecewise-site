@@ -89,6 +89,17 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      // --- Not yet launched — remove when ready to go live ---
+      {
+        source: '/case-studies',
+        destination: '/',
+        permanent: false,
+      },
+      {
+        source: '/case-studies/:slug',
+        destination: '/',
+        permanent: false,
+      },
     ];
   },
 };

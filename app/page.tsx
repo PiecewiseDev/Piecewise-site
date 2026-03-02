@@ -27,8 +27,6 @@ import {
 import { ContactFAQ, ContactFAQSimple } from '@/sections/contact';
 import { PageSection } from '@/components/layout';
 import {
-  organizationSchema,
-  websiteSchema,
   localBusinessSchema,
   customGPTServiceSchema,
   automationServiceSchema,
@@ -70,8 +68,6 @@ export default function HomePage() {
   return (
     <>
       {/* Enhanced Structured Data for SEO */}
-      <script {...generateSchemaScript(organizationSchema)} />
-      <script {...generateSchemaScript(websiteSchema)} />
       <script {...generateSchemaScript(localBusinessSchema)} />
       <script {...generateSchemaScript(customGPTServiceSchema)} />
       <script {...generateSchemaScript(automationServiceSchema)} />

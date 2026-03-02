@@ -4,6 +4,33 @@ import React from 'react';
 import Image from 'next/image';
 import { useIntersectionObserver } from '@/hooks';
 
+const lukeReviewSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  reviewBody:
+    'When my daughter was born, I was able to step away from the business for the first time ever. My team knew exactly what to do without me.',
+  author: {
+    '@type': 'Person',
+    name: 'Luke Plescia',
+    jobTitle: 'Founder',
+  },
+  itemReviewed: {
+    '@id': 'https://piecewiseai.com/#localbusiness',
+    '@type': 'LocalBusiness',
+    name: 'Piecewise',
+    url: 'https://piecewiseai.com',
+  },
+  reviewRating: {
+    '@type': 'Rating',
+    ratingValue: '5',
+    bestRating: '5',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Legacy Repairs & Remodeling',
+  },
+};
+
 export default function ClientQuoteHighlight() {
   const { isVisible, ref } = useIntersectionObserver({
     threshold: 0.1,
@@ -16,6 +43,10 @@ export default function ClientQuoteHighlight() {
       className="w-full bg-blue-900 py-8 md:py-12 xl:py-14 relative z-10 shadow-[0_-1px_2px_rgba(15,23,42,0.04),0_-2px_6px_rgba(15,23,42,0.06),0_1px_2px_rgba(15,23,42,0.04),0_2px_6px_rgba(15,23,42,0.06)]"
       aria-label="Client testimonial"
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(lukeReviewSchema) }}
+      />
       <div className="mx-auto max-w-6xl px-6 sm:px-8 md:px-12 lg:px-16">
         <blockquote
           className={`flex flex-row items-center gap-6 md:gap-10 transition-all duration-700 ${
@@ -42,7 +73,7 @@ export default function ClientQuoteHighlight() {
           <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-40 md:h-40 rounded-lg overflow-hidden flex-shrink-0">
             <Image
               src="/images/LukePHeadshot.jpg"
-              alt="Luke Plescia"
+              alt="Luke Plescia, Founder of Legacy Repairs & Remodeling"
               fill
               className="object-cover object-[50%_25%]"
               sizes="96px"
