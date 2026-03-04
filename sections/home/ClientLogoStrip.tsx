@@ -7,28 +7,34 @@ import { useIntersectionObserver } from '@/hooks';
 interface Client {
   name: string;
   logo: string;
+  url: string;
 }
 
 const clients: Client[] = [
   {
     name: 'Legacy Repairs & Remodeling',
     logo: '/logos/Legacy+Logo+Black.png',
+    url: 'https://www.legacy-remodeling.com/',
   },
   {
     name: 'Fresh Event Services',
     logo: '/logos/Fresheventsserviceslogo.png',
+    url: 'https://www.fresheventservices.com/',
   },
   {
     name: 'Trinity Parking',
     logo: '/logos/Trinity+Logo+Wordmark.png',
+    url: 'https://www.trinity-parking.com/',
   },
   {
     name: 'Lake Norman Fence',
     logo: '/logos/LKNF-Logo-2022-06.png',
+    url: 'https://www.lakenormanfence.com/',
   },
   {
     name: 'Albemarle Paper Supply',
     logo: '/logos/APSfulllogo.png',
+    url: 'https://albemarlepaper.com',
   },
 ];
 
@@ -68,17 +74,24 @@ export function ClientLogoStrip() {
                 }`}
                 style={{ transitionDelay: `${100 + index * 75}ms` }}
               >
-                <Image
-                  src={client.logo}
-                  alt={`${client.name} logo`}
-                  width={150}
-                  height={60}
-                  className={`h-auto w-auto max-h-8 md:max-h-9 xl:max-h-11 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${
-                    client.name === 'Lake Norman Fence' ? 'scale-110' : ''
-                  }`}
-                  loading="lazy"
-                  title={client.name}
-                />
+                <a
+                  href={client.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${client.name}`}
+                >
+                  <Image
+                    src={client.logo}
+                    alt={`${client.name} logo`}
+                    width={150}
+                    height={60}
+                    className={`h-auto w-auto max-h-8 md:max-h-9 xl:max-h-11 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 ${
+                      client.name === 'Lake Norman Fence' ? 'scale-110' : ''
+                    }`}
+                    loading="lazy"
+                    title={client.name}
+                  />
+                </a>
               </div>
             ))}
           </div>
