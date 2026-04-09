@@ -22,8 +22,8 @@ const hunterReviewSchema = {
   },
   reviewRating: {
     '@type': 'Rating',
-    ratingValue: '5',
-    bestRating: '5',
+    ratingValue: 5,
+    bestRating: 5,
   },
   publisher: {
     '@type': 'Organization',

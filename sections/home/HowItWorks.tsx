@@ -60,7 +60,7 @@ const howToSchema = {
   },
   step: steps.map((step) => ({
     '@type': 'HowToStep',
-    position: step.number,
+    position: parseInt(step.number, 10),
     name: step.title,
     text: step.description,
     image: `https://piecewiseai.com${step.image}`,

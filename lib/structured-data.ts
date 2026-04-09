@@ -94,8 +94,8 @@ export const localBusinessSchema = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '35.2271',
-    longitude: '-80.8431',
+    latitude: 35.2271,
+    longitude: -80.8431,
   },
   areaServed: [
     {
@@ -121,8 +121,8 @@ export const localBusinessSchema = {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: '35.2271',
-        longitude: '-80.8431',
+        latitude: 35.2271,
+        longitude: -80.8431,
       },
       geoRadius: '50 miles',
     },
@@ -138,13 +138,6 @@ export const localBusinessSchema = {
   founder: {
     '@type': 'Person',
     name: 'Kyle Larsen',
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    bestRating: '5',
-    worstRating: '1',
-    reviewCount: '2',
   },
 };
 
@@ -227,8 +220,6 @@ export const customGPTServiceSchema = {
     url: 'https://piecewiseai.com',
     sameAs: ['https://www.linkedin.com/company/piecewiseai'],
   },
-  serviceType: 'AI Development',
-  category: 'Custom AI Solutions',
   areaServed: [
     {
       '@type': 'City',
@@ -277,22 +268,16 @@ export const aiConsultingServiceSchema = {
   name: 'AI Consulting Services',
   description:
     'Professional AI consulting and implementation for service businesses based in Charlotte, NC',
-  provider: {
-    '@type': 'Organization',
-    name: 'Piecewise',
-    foundingDate: '2025',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '436 East 36th Street',
-      addressLocality: 'Charlotte',
-      addressRegion: 'NC',
-      addressCountry: 'US',
-      postalCode: '28205',
-    },
-    sameAs: ['https://www.linkedin.com/company/piecewiseai'],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '436 East 36th Street',
+    addressLocality: 'Charlotte',
+    addressRegion: 'NC',
+    addressCountry: 'US',
+    postalCode: '28205',
   },
-  serviceType: 'Technology Consulting',
-  category: 'AI Consulting',
+  telephone: '+1-980-218-0346',
+  url: 'https://piecewiseai.com',
   areaServed: [
     {
       '@type': 'City',
@@ -342,8 +327,6 @@ export const automationServiceSchema = {
     foundingDate: '2025',
     sameAs: ['https://www.linkedin.com/company/piecewiseai'],
   },
-  serviceType: 'Business Automation',
-  category: 'Process Automation',
   areaServed: {
     '@type': 'Country',
     name: 'United States',
@@ -435,15 +418,15 @@ export const homePageSchema = generateWebPageSchema(
 );
 
 export const aboutPageSchema = generateWebPageSchema(
-  'About Piecewise | Charlotte AI Consultants',
+  'About Piecewise | Custom AI for Service Business Owners',
   'https://piecewiseai.com/about',
-  'Meet the Charlotte-based team behind Piecewise helping service business owners with custom AI solutions'
+  'Meet the Charlotte-based team behind Piecewise. We build custom AI assistants that help service business owners reduce stress, save time, and scale operations.'
 );
 
 export const contactPageSchema = generateWebPageSchema(
-  'Contact Piecewise | AI Consulting Charlotte',
+  'Contact Piecewise | Book a Free AI Discovery Call',
   'https://piecewiseai.com/contact',
-  'Get in touch with our Charlotte-based AI consulting team for custom GPT and automation solutions'
+  'Book a free discovery call with Piecewise. We build custom AI assistants for service businesses — try free for 14 days, no payment until you approve.'
 );
 
 // SoftwareApplication Schema for the Custom GPT product
@@ -456,7 +439,7 @@ export const customGPTApplicationSchema = {
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web-based',
   url: 'https://piecewiseai.com',
-  provider: {
+  author: {
     '@id': 'https://piecewiseai.com/#organization',
     '@type': 'Organization',
     name: 'Piecewise',

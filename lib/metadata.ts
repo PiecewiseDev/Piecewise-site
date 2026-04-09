@@ -164,7 +164,11 @@ export function generatePageMetadata({
         width: img.width || 1200,
         height: img.height || 630,
         alt: img.alt || title,
-        type: 'image/png',
+        type: img.url.endsWith('.webp')
+          ? 'image/webp'
+          : img.url.endsWith('.jpg') || img.url.endsWith('.jpeg')
+            ? 'image/jpeg'
+            : 'image/png',
       })),
       ...(type === 'article' && publishedTime && { publishedTime }),
       ...(type === 'article' && modifiedTime && { modifiedTime }),

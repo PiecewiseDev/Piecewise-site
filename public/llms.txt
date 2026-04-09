@@ -1,0 +1,21 @@
+# Piecewise
+
+> Piecewise is an AI consulting company that builds custom GPT tools for small service businesses, trained on each client's own documents, policies, and communication style.
+
+Piecewise was founded by Kyle Larsen. The core product is a private, internal-facing Custom GPT — built on OpenAI's ChatGPT platform — designed for business owners and their staff, not for customer-facing use. Target clients are small service businesses: contractors, remodelers, valet operators, event planners, fence companies, and similar trades.
+
+A typical engagement takes 2 weeks from discovery call to launch. No technical knowledge is required. Most clients see ROI within the first month, with teams saving 10–20 hours per week on repetitive tasks, document creation, and internal communications. Past client results include: a construction CEO reducing his workweek from 70 to 30–40 hours and scaling from 6 to 9 employees in 6 months; a valet company president halving his hours and doubling recurring accounts; a solo event planner saving 10–15 hours per week; a fence company sales manager reclaiming 2+ hours per week on document creation.
+
+## About
+
+- [Home](https://piecewiseai.com/): What Piecewise does, how a custom GPT works as an internal tool, real-world prompt examples, and how to get started.
+- [About](https://piecewiseai.com/about): Company mission, vision, and values. Founder's note from Kyle Larsen.
+
+## Contact
+
+- [Contact](https://piecewiseai.com/contact): Book a discovery call or send a message to explore a custom GPT for your business.
+
+## Optional
+
+- [Privacy Policy](https://piecewiseai.com/privacy): How Piecewise handles user and client data.
+- [Terms of Service](https://piecewiseai.com/terms): Terms governing use of Piecewise services and website.

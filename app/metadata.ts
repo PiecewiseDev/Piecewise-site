@@ -16,10 +16,7 @@ export const metadata: Metadata = {
       },
     ],
   }),
-  // Add Google Search Console verification when ready
-  verification: {
-    google: '', // Add your Google Search Console verification code here
-  },
+  // verification: { google: 'YOUR_CODE_HERE' }, // Uncomment and add code when verifying Search Console
 };
 
 export const viewport = defaultViewport;
