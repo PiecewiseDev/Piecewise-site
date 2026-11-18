@@ -1,61 +1,52 @@
-import '@/styles/globals.css';
-import React from 'react';
-import { Inter } from 'next/font/google';
-import { Navbar, Footer } from '@/components/layout';
-import { ScrollToTop } from '@/components/layout/ScrollToTop';
+import './globals.css';
+import type { Metadata, Viewport } from 'next';
+import localFont from 'next/font/local';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { defaultMetadata, defaultViewport, generateWebsiteSchema } from '@/lib/metadata';
-import { organizationSchema } from '@/lib/structured-data';
+import { site } from '@/site';
 
-const inter = Inter({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
+// Public Sans descends from Franklin Gothic, the typeface long used for
+// newspaper financial tables. Plain, sturdy, with even-width numbers.
+// Self-hosted (SIL Open Font License, see assets/fonts/OFL.txt) so the build
+// doesn't depend on Google Fonts and visitors' browsers don't contact Google.
+const publicSans = localFont({
+  src: '../assets/fonts/PublicSans-latin-wght.woff2',
+  weight: '100 900',
+  style: 'normal',
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-sans',
 });
 
-// Use centralized viewport configuration
-export const viewport = defaultViewport;
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  title: site.title,
+  description: site.description,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: site.url,
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+    locale: 'en_US',
+  },
+  formatDetection: { telephone: false },
+};
 
-// Use centralized metadata configuration
-export const metadata = defaultMetadata;
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#ffffff',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <head>
-        {/* Structured Data for SEO */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateWebsiteSchema()),
-          }}
-        />
-
-        {/* DNS prefetch for external domains */}
-        <link rel="dns-prefetch" href="//vercel.live" />
-        <link rel="dns-prefetch" href="//vitals.vercel-analytics.com" />
-      </head>
-      <body className={`${inter.className} flex flex-col min-h-screen antialiased`}>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-white px-4 py-2 text-neutral-darkest"
-        >
+    <html lang="en" className={publicSans.variable}>
+      <body>
+        <a className="skip-link" href="#main">
           Skip to main content
         </a>
-        <ScrollToTop />
-        <Navbar />
-        <main id="main-content" className="flex-grow bg-background">
-          {children}
-        </main>
-        <Footer />
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>

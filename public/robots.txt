@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /api/
 
 # Block OpenAI training crawler
 User-agent: GPTBot
@@ -26,4 +25,4 @@ Disallow: /
 User-agent: meta-externalagent
 Disallow: /
 
-Sitemap: https://piecewiseai.com/sitemap.xml
+Sitemap: https://www.piecewisellc.com/sitemap.xml
