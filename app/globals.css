@@ -1,21 +1,36 @@
 /*
-  Piecewise: "statement" design.
-  Looks like a well-kept financial statement: black on white, one typeface,
-  left-aligned text, thin rules between sections, and one accent taken from
-  bookkeeping itself (the red tick mark beside a reconciled line).
+  Piecewise website styles.
+
+  Design choices, each with a reason:
+  - Hero split in two: the promise on the left, an example of the monthly
+    deliverable on the right. Shows the work instead of a stock photo.
+  - Sections alternate between white and a light stone band, so space and
+    background color do the separating, not lines (Refactoring UI: use fewer borders).
+  - Headings in Source Serif 4 for character; body in Public Sans for
+    plain, readable text and even-width numbers.
+  - One accent color, brick red: the red pen a bookkeeper ticks lines with,
+    and brick from the trades. Used sparingly: buttons, ticks, small labels.
+  - No animation, no gradients, no stock photos.
 */
 
 :root {
   --paper: #ffffff;
-  --ink: #141414;
-  --ink-2: #333333; /* 12.6:1 on white */
-  --muted: #595959; /* 7:1 on white */
-  --rule: #dcdcdc;
-  --tick: #b42318; /* auditor's red pen; 6.5:1 on white */
+  --stone: #f3f2ef;
+  --ink: #16181b;
+  --ink-2: #3a3d42; /* 9.7:1 on stone */
+  --muted: #5c6066; /* 5.6:1 on stone */
+  --rule: #dfddd8;
+  --brick: #a3301f; /* 7:1 with white */
+  --brick-dark: #85271a;
+  --on-ink: #ffffff;
+  --on-ink-muted: #c9cbcf; /* 11:1 on ink */
 
   --font-sans: system-ui, sans-serif;
-  --measure: 38rem; /* about 70 characters at body size */
+  --font-serif: Georgia, serif;
+  --measure: 38rem;
   --gutter: clamp(1.25rem, 5vw, 3rem);
+  --band-pad: clamp(3.5rem, 2rem + 5vw, 6rem);
+  --radius: 6px;
 }
 
 *,
@@ -34,9 +49,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 1.125rem; /* 18px */
-  line-height: 1.45;
-  font-variant-numeric: lining-nums;
+  font-size: 1.125rem;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -45,10 +59,30 @@ h2,
 h3,
 p,
 ul,
+ol,
 dl,
 dd,
 figure {
   margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 1.35rem + 1.5vw, 2.5rem);
+  line-height: 1.12;
+}
+
+p,
+dd,
+li {
+  text-wrap: pretty;
 }
 
 img {
@@ -73,13 +107,22 @@ a:hover {
   outline-offset: 3px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .skip-link {
   position: absolute;
   left: var(--gutter);
   top: -4rem;
   padding: 0.5rem 0.75rem;
   background: var(--ink);
-  color: var(--paper);
+  color: var(--on-ink);
   z-index: 10;
 }
 
@@ -88,72 +131,22 @@ a:hover {
 }
 
 .container {
-  max-width: 68rem;
+  max-width: 72rem;
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
 
-/* Header */
-
-.site-header {
-  border-bottom: 1px solid var(--rule);
+.band {
+  padding-block: var(--band-pad);
 }
 
-.site-header-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.25rem 1.5rem;
-  padding-block: 1.25rem;
+.band-stone {
+  background: var(--stone);
 }
 
-.wordmark {
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.01em;
-  text-decoration: none;
-}
-
-.header-contact,
-.footer-items {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.5rem;
-}
-
-.header-contact {
-  font-size: 1rem;
-}
-
-/* Hero */
-
-.hero {
-  padding-block: 3rem 3rem;
-}
-
-.hero h1 {
-  font-size: clamp(2.25rem, 1.4rem + 3.4vw, 3.75rem);
-  line-height: 1.06;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  max-width: 20ch;
-  text-wrap: balance;
-}
-
-p,
-dd {
-  text-wrap: pretty;
-}
-
-.lede {
-  margin-top: 1.25rem;
-  max-width: 34rem;
-  font-size: 1.25rem;
-  line-height: 1.4;
-  color: var(--ink-2);
+.band-ink {
+  background: var(--ink);
+  color: var(--on-ink);
 }
 
 /* Buttons */
@@ -162,108 +155,465 @@ dd {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 2rem;
 }
 
 .button {
   display: inline-block;
-  padding: 0.8rem 1.4rem;
-  border: 1.5px solid var(--ink);
-  border-radius: 2px;
+  padding: 0.85rem 1.5rem;
+  border: 1.5px solid transparent;
+  border-radius: 4px;
   font-weight: 600;
   font-size: 1.0625rem;
   line-height: 1.2;
   text-decoration: none;
+  white-space: nowrap;
+}
+
+.button-small {
+  padding: 0.55rem 1rem;
+  font-size: 0.9375rem;
 }
 
 .button-primary {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--brick);
+  color: var(--on-ink);
 }
 
 .button-primary:hover {
-  background: #333333;
-  border-color: #333333;
+  background: var(--brick-dark);
 }
 
-.button-secondary {
-  background: transparent;
+.button-outline {
+  border-color: var(--ink);
   color: var(--ink);
 }
 
-.button-secondary:hover {
-  background: #f2f2f2;
+.button-outline:hover {
+  background: var(--ink);
+  color: var(--on-ink);
 }
 
-/* Sections: label on the left, content on the right, like line items */
+.button-light {
+  background: var(--paper);
+  color: var(--ink);
+}
 
-.section {
-  display: grid;
+.button-light:hover {
+  background: var(--stone);
+}
+
+.button-outline-light {
+  border-color: var(--on-ink);
+  color: var(--on-ink);
+}
+
+/* Header */
+
+.site-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 1rem;
-  padding-block: 2.5rem;
-  border-top: 1px solid var(--rule);
+  padding-block: 1rem;
 }
 
-.section h2 {
-  font-size: 1.125rem;
+.wordmark {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.header-contact {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-link {
+  font-size: 1rem;
+  color: var(--ink-2);
+}
+
+/* Hero */
+
+.hero-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.eyebrow {
+  color: var(--brick);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin-top: 1rem;
+  font-size: clamp(2.5rem, 1.5rem + 3.8vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  margin-top: 1.5rem;
+  max-width: 32rem;
+  font-size: 1.25rem;
   line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.hero .actions {
+  margin-top: 2rem;
+}
+
+.hero-note {
+  margin-top: 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* Example monthly close (hero illustration) */
+
+.sample {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow:
+    0 1px 2px rgb(22 24 27 / 0.04),
+    0 18px 40px -18px rgb(22 24 27 / 0.28);
+  padding: 1.5rem;
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.sample-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.sample-kicker {
+  color: var(--brick);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sample-title {
+  margin-top: 0.25rem;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.sample-sub,
+.sample-date {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.sample-date {
+  text-align: right;
+  line-height: 1.3;
+}
+
+.sample-accounts {
+  list-style: none;
+  padding: 0;
+  margin-block: 0.5rem 1.25rem;
+}
+
+.sample-accounts li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px dotted var(--rule);
+}
+
+.sample-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.sample-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sample-table th,
+.sample-table td {
+  padding: 0.45rem 0;
+  text-align: right;
+  font-weight: 400;
+}
+
+.sample-table th:first-child {
+  text-align: left;
+  padding-left: 0;
+}
+
+.sample-table th + th,
+.sample-table td {
+  padding-left: 0.75rem;
+}
+
+.sample-table thead th {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sample-table td:last-child {
   font-weight: 700;
 }
 
-.section-body {
-  max-width: var(--measure);
+.sample-table tbody tr:last-child th,
+.sample-table tbody tr:last-child td {
+  border-top: 1px solid var(--ink);
+  font-weight: 700;
 }
 
-.section-body > p + p {
-  margin-top: 1em;
+.sample-caption {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
 }
 
-/* Monthly work, styled as ticked statement lines */
-
-.ledger {
-  list-style: none;
-  padding: 0;
-  border-top: 1px solid var(--rule);
-}
-
-.ledger li {
-  display: grid;
-  grid-template-columns: 1.5rem 1fr;
-  gap: 0.75rem;
-  padding-block: 0.8rem;
-  border-bottom: 1px solid var(--rule);
-}
+/* Tick marks */
 
 .tick {
   width: 1rem;
   height: 0.875rem;
-  margin-top: 0.3em;
+  flex: none;
   fill: none;
-  stroke: var(--tick);
+  stroke: var(--brick);
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.tick-small {
+  width: 0.8125rem;
+  height: 0.75rem;
+}
+
+/* Software strip */
+
+.tools {
+  border-bottom: 1px solid var(--rule);
+}
+
+.tools-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem 2.5rem;
+  padding-block: 1.5rem;
+}
+
+.tools-label {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tools-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+/* Heading on the left, content on the right */
+
+.split {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.split-body {
+  max-width: var(--measure);
+}
+
+.split-body > p + p {
+  margin-top: 1em;
+}
+
+.callout {
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--brick);
+  font-size: 1.1875rem;
+  font-weight: 500;
+}
+
+/* Monthly work, as numbered statement lines with ticks */
+
+.ledger {
+  list-style: none;
+  padding: 0;
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow:
+    0 1px 2px rgb(22 24 27 / 0.05),
+    0 8px 24px -16px rgb(22 24 27 / 0.2);
+}
+
+.ledger li {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr 1rem;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 1.25rem;
+}
+
+.ledger li + li {
+  border-top: 1px solid var(--rule);
+}
+
+.ledger-num {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.2em;
+}
+
+.ledger .tick {
+  margin-top: 0.35em;
+}
+
+.not-included {
+  margin-top: 1.25rem;
+  color: var(--ink-2);
+  font-size: 1rem;
+}
+
+.not-included strong {
+  color: var(--ink);
 }
 
 /* About */
 
 .about {
   display: grid;
-  grid-template-columns: 6rem 1fr;
-  gap: 1.25rem;
-  align-items: start;
+  gap: 2.5rem;
+  align-items: center;
 }
 
-.portrait {
-  width: 6rem;
-  height: 6rem;
+.about-photo {
+  max-width: 16rem;
+}
+
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  border-radius: 4px;
+}
+
+.about-lead {
+  margin-top: 1rem;
+  max-width: var(--measure);
+  font-size: 1.25rem;
+  line-height: 1.45;
+}
+
+.facts {
+  margin-top: 2rem;
+  max-width: var(--measure);
+}
+
+.facts > div {
+  display: grid;
+  gap: 0.25rem;
+  padding-block: 0.85rem;
+  border-top: 1px solid var(--rule);
+}
+
+.facts dt {
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* How it starts */
+
+.section-title {
+  margin-bottom: 2.5rem;
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.steps li {
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--ink);
+}
+
+.step-num {
+  display: block;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--brick);
+}
+
+.steps h3 {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.steps p {
+  margin-top: 0.4rem;
+  color: var(--ink-2);
+  font-size: 1rem;
 }
 
 /* Questions */
 
-.faq > div + div {
-  margin-top: 1.5rem;
+.faq > div {
+  padding-block: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.faq > div:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
 .faq dt {
@@ -271,35 +621,70 @@ dd {
 }
 
 .faq dd {
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
+  color: var(--ink-2);
+}
+
+/* Closing call to action */
+
+.cta-inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.cta p {
+  margin-top: 0.75rem;
+  color: var(--on-ink-muted);
 }
 
 /* Footer */
 
 .site-footer {
-  margin-top: 2rem;
-  border-top: 1px solid var(--rule);
-  padding-block: 1.75rem 3rem;
+  background: var(--ink);
+  color: var(--on-ink-muted);
   font-size: 0.9375rem;
-  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-block: 2rem 2.5rem;
+  border-top: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.footer-mark {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--on-ink);
+}
+
+.footer-items {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
 }
 
 /* Simple text pages (privacy, not found) */
 
 .prose {
   max-width: var(--measure);
-  padding-block: 3rem 2rem;
+  padding-block: 3.5rem 4rem;
 }
 
 .prose h1 {
-  font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.25rem, 1.6rem + 2.4vw, 3.25rem);
+  line-height: 1.08;
 }
 
 .prose h2 {
-  margin-top: 2rem;
-  font-size: 1.25rem;
+  margin-top: 2.25rem;
+  font-size: 1.5rem;
 }
 
 .prose p {
@@ -311,33 +696,68 @@ dd {
   font-size: 1rem;
 }
 
-/* Wider screens */
+/* Small screens: hide the header email text, keep the button; tighten the example */
 
-@media (min-width: 52rem) {
-  .hero {
-    padding-block: 5rem 4rem;
+@media (max-width: 40rem) {
+  .header-link {
+    display: none;
   }
 
-  .section {
-    grid-template-columns: 14rem minmax(0, var(--measure));
-    column-gap: 3rem;
-    padding-block: 3.25rem;
+  .sample {
+    padding: 1.125rem;
+    font-size: 0.875rem;
+  }
+
+  .sample-table thead th {
+    font-size: 0.6875rem;
+    letter-spacing: 0.03em;
+  }
+}
+
+/* Tablet and up */
+
+@media (min-width: 40rem) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 60rem) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 4.5rem;
+  }
+
+  .split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 4rem;
   }
 
   .about {
-    grid-template-columns: 9rem 1fr;
-    gap: 1.75rem;
+    grid-template-columns: 22rem minmax(0, 1fr);
+    gap: 5rem;
   }
 
-  .portrait {
-    width: 9rem;
-    height: 9rem;
+  .about-photo {
+    max-width: none;
+  }
+
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cta-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
   }
 }
 
 @media print {
   .actions,
-  .skip-link {
+  .skip-link,
+  .header-contact {
     display: none;
   }
 }

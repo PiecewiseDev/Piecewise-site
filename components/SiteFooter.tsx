@@ -4,7 +4,8 @@ import { site, mailto, phoneHref, phoneDisplay } from '@/site';
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="container">
+      <div className="container footer-inner">
+        <p className="footer-mark">{site.name}</p>
         <ul className="footer-items">
           <li>{site.legalName}</li>
           <li>

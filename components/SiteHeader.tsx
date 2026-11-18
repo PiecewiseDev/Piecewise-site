@@ -8,16 +8,19 @@ export function SiteHeader() {
         <Link href="/" className="wordmark">
           {site.name}
         </Link>
-        <ul className="header-contact">
-          <li>
-            <a href={mailto}>{site.email}</a>
-          </li>
+        <div className="header-contact">
+          <a className="header-link" href={mailto}>
+            {site.email}
+          </a>
           {site.phone && (
-            <li>
-              <a href={phoneHref(site.phone)}>{phoneDisplay(site.phone)}</a>
-            </li>
+            <a className="header-link" href={phoneHref(site.phone)}>
+              {phoneDisplay(site.phone)}
+            </a>
           )}
-        </ul>
+          <a className="button button-small button-outline" href={mailto}>
+            Email me
+          </a>
+        </div>
       </div>
     </header>
   );
