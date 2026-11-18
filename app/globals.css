@@ -1,0 +1,343 @@
+/*
+  Piecewise: "statement" design.
+  Looks like a well-kept financial statement: black on white, one typeface,
+  left-aligned text, thin rules between sections, and one accent taken from
+  bookkeeping itself (the red tick mark beside a reconciled line).
+*/
+
+:root {
+  --paper: #ffffff;
+  --ink: #141414;
+  --ink-2: #333333; /* 12.6:1 on white */
+  --muted: #595959; /* 7:1 on white */
+  --rule: #dcdcdc;
+  --tick: #b42318; /* auditor's red pen; 6.5:1 on white */
+
+  --font-sans: system-ui, sans-serif;
+  --measure: 38rem; /* about 70 characters at body size */
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.45;
+  font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -4rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: var(--paper);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.container {
+  max-width: 68rem;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Header */
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding-block: 1.25rem;
+}
+
+.wordmark {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.header-contact,
+.footer-items {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+}
+
+.header-contact {
+  font-size: 1rem;
+}
+
+/* Hero */
+
+.hero {
+  padding-block: 3rem 3rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.25rem, 1.4rem + 3.4vw, 3.75rem);
+  line-height: 1.06;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+p,
+dd {
+  text-wrap: pretty;
+}
+
+.lede {
+  margin-top: 1.25rem;
+  max-width: 34rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+
+/* Buttons */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.button-primary:hover {
+  background: #333333;
+  border-color: #333333;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--ink);
+}
+
+.button-secondary:hover {
+  background: #f2f2f2;
+}
+
+/* Sections: label on the left, content on the right, like line items */
+
+.section {
+  display: grid;
+  gap: 1rem;
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.section h2 {
+  font-size: 1.125rem;
+  line-height: 1.45;
+  font-weight: 700;
+}
+
+.section-body {
+  max-width: var(--measure);
+}
+
+.section-body > p + p {
+  margin-top: 1em;
+}
+
+/* Monthly work, styled as ticked statement lines */
+
+.ledger {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.ledger li {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: 0.75rem;
+  padding-block: 0.8rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.tick {
+  width: 1rem;
+  height: 0.875rem;
+  margin-top: 0.3em;
+  fill: none;
+  stroke: var(--tick);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* About */
+
+.about {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.portrait {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+}
+
+/* Questions */
+
+.faq > div + div {
+  margin-top: 1.5rem;
+}
+
+.faq dt {
+  font-weight: 700;
+}
+
+.faq dd {
+  margin-top: 0.25rem;
+}
+
+/* Footer */
+
+.site-footer {
+  margin-top: 2rem;
+  border-top: 1px solid var(--rule);
+  padding-block: 1.75rem 3rem;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* Simple text pages (privacy, not found) */
+
+.prose {
+  max-width: var(--measure);
+  padding-block: 3rem 2rem;
+}
+
+.prose h1 {
+  font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+}
+
+.prose p {
+  margin-top: 0.75rem;
+}
+
+.prose .meta {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Wider screens */
+
+@media (min-width: 52rem) {
+  .hero {
+    padding-block: 5rem 4rem;
+  }
+
+  .section {
+    grid-template-columns: 14rem minmax(0, var(--measure));
+    column-gap: 3rem;
+    padding-block: 3.25rem;
+  }
+
+  .about {
+    grid-template-columns: 9rem 1fr;
+    gap: 1.75rem;
+  }
+
+  .portrait {
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
+@media print {
+  .actions,
+  .skip-link {
+    display: none;
+  }
+}

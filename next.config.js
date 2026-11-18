@@ -1,111 +1,65 @@
 /** @type {import('next').NextConfig} */
+
+// Preview deployments load the Vercel Toolbar (comments and feedback) from vercel.live.
+// Production does not, so its policy stays strict. Hosts are from Vercel's toolbar docs:
+// https://vercel.com/docs/vercel-toolbar/managing-toolbar#using-a-content-security-policy
+const isProduction = process.env.VERCEL_ENV === 'production';
+const toolbar = (sources) => (isProduction ? '' : ` ${sources}`);
+
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  // Next.js needs inline scripts to start the page.
+  `script-src 'self' 'unsafe-inline'${toolbar('https://vercel.live')}`,
+  `style-src 'self' 'unsafe-inline'${toolbar('https://vercel.live')}`,
+  `img-src 'self' data: blob:${toolbar('https://vercel.live https://vercel.com')}`,
+  `font-src 'self'${toolbar('https://vercel.live https://assets.vercel.com')}`,
+  `connect-src 'self'${toolbar('https://vercel.live wss://ws-us3.pusher.com')}`,
+  `frame-src ${isProduction ? "'none'" : 'https://vercel.live'}`,
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  'upgrade-insecure-requests',
+].join('; ');
+
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
 
-  // Enhanced image optimization settings
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'localhost',
-        pathname: '**',
-      },
-    ],
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
-
-  // Security and performance headers
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
+          { key: 'Content-Security-Policy', value: contentSecurityPolicy },
           {
             key: 'Strict-Transport-Security',
-            value: 'max-age=31536000; includeSubDomains; preload',
+            value: 'max-age=63072000; includeSubDomains; preload',
           },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           {
             key: 'Permissions-Policy',
-            value:
-              'camera=(), microphone=(), geolocation=(), interest-cohort=(), payment=(), usb=(), bluetooth=(), accelerometer=(), gyroscope=()',
-          },
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on',
-          },
-        ],
-      },
-      {
-        source: '/_next/static/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/images/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/logos/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=()',
           },
         ],
       },
     ];
   },
 
-  // Redirect handling for better SEO
+  // Old pages from the previous site send visitors to the home page instead of a 404.
   async redirects() {
     return [
-      {
-        source: '/home',
-        destination: '/',
-        permanent: true,
-      },
-      // --- Not yet launched — remove when ready to go live ---
-      {
-        source: '/case-studies',
-        destination: '/',
-        permanent: false,
-      },
-      {
-        source: '/case-studies/:slug',
-        destination: '/',
-        permanent: false,
-      },
-    ];
+      '/about',
+      '/contact',
+      '/case-studies',
+      '/case-studies/:path*',
+      '/terms',
+      '/blog/:path*',
+      '/resources/:path*',
+      '/customer-stories/:path*',
+    ].map((source) => ({ source, destination: '/', permanent: true }));
   },
 };
 
